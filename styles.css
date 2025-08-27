@@ -587,6 +587,23 @@ body {
     
     .contact-methods {
         grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .contact .section-title {
+        font-size: 2.5rem;
+    }
+    
+    .contact-intro {
+        font-size: 1.2rem;
+    }
+    
+    .contact-method {
+        padding: 1.5rem;
+    }
+    
+    .contact-value {
+        font-size: 1.1rem;
     }
     
     .hero-buttons {
@@ -596,6 +613,52 @@ body {
     
     .btn {
         width: 200px;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 0 15px;
+    }
+    
+    .hero {
+        padding: 100px 0 30px;
+    }
+    
+    .hero-title {
+        font-size: 2rem;
+    }
+    
+    .section-title {
+        font-size: 2rem;
+    }
+    
+    .contact .section-title {
+        font-size: 2rem;
+    }
+    
+    .contact-intro {
+        font-size: 1.1rem;
+        margin-bottom: 3rem;
+    }
+    
+    .project-card {
+        padding: 1rem;
+    }
+    
+    .skill-category {
+        padding: 1.5rem;
+    }
+    
+    .contact-method {
+        padding: 1.2rem;
+        flex-direction: column;
+        text-align: center;
+        gap: 1rem;
+    }
+    
+    .contact-details {
+        text-align: center;
     }
 }
 
