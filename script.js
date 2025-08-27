@@ -1,5 +1,64 @@
+// Mobile Navigation JavaScript - ADD THIS TO YOUR script.js
+
 // Wait for DOM to be fully loaded
 document.addEventListener('DOMContentLoaded', function() {
+    
+    // Mobile menu functionality
+    const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+    const mobileMenu = document.querySelector('.mobile-menu');
+    const body = document.body;
+
+    if (mobileMenuBtn && mobileMenu) {
+        // Toggle mobile menu
+        mobileMenuBtn.addEventListener('click', function() {
+            const isActive = mobileMenu.classList.contains('active');
+            
+            if (isActive) {
+                // Close menu
+                mobileMenu.classList.remove('active');
+                mobileMenuBtn.classList.remove('active');
+                body.style.overflow = 'auto';
+            } else {
+                // Open menu
+                mobileMenu.classList.add('active');
+                mobileMenuBtn.classList.add('active');
+                body.style.overflow = 'hidden'; // Prevent background scrolling
+            }
+        });
+
+        // Close menu when clicking on a link
+        const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
+        mobileNavLinks.forEach(link => {
+            link.addEventListener('click', function() {
+                mobileMenu.classList.remove('active');
+                mobileMenuBtn.classList.remove('active');
+                body.style.overflow = 'auto';
+            });
+        });
+
+        // Close menu when clicking outside
+        document.addEventListener('click', function(event) {
+            const isClickInsideNav = mobileMenuBtn.contains(event.target) || mobileMenu.contains(event.target);
+            
+            if (!isClickInsideNav && mobileMenu.classList.contains('active')) {
+                mobileMenu.classList.remove('active');
+                mobileMenuBtn.classList.remove('active');
+                body.style.overflow = 'auto';
+            }
+        });
+
+        // Close menu when window is resized to desktop size
+        window.addEventListener('resize', function() {
+            if (window.innerWidth > 768) {
+                mobileMenu.classList.remove('active');
+                mobileMenuBtn.classList.remove('active');
+                body.style.overflow = 'auto';
+            }
+        });
+    }
+
+    // Existing JavaScript code for smooth scrolling, tabs, etc.
+    // ... (keep all your existing script.js code)
     
     // Smooth scrolling for navigation links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -27,6 +86,24 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
+    // Tab functionality for project details
+    document.querySelectorAll('.tab-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+            const tabId = btn.dataset.tab;
+            
+            // Remove active class from all buttons and content
+            document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+            document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+            
+            // Add active class to clicked button and corresponding content
+            btn.classList.add('active');
+            const content = document.getElementById(tabId);
+            if (content) {
+                content.classList.add('active');
+            }
+        });
+    });
+
     // Intersection Observer for fade-in animations
     const observerOptions = {
         threshold: 0.1,
@@ -49,82 +126,4 @@ document.addEventListener('DOMContentLoaded', function() {
         element.style.transition = 'all 0.8s ease';
         observer.observe(element);
     });
-
-    // Add loading states to contact methods
-    document.querySelectorAll('.contact-method').forEach(method => {
-        method.addEventListener('click', function(e) {
-            // Add visual feedback for clicks
-            this.style.transform = 'scale(0.98)';
-            setTimeout(() => {
-                this.style.transform = '';
-            }, 150);
-        });
-    });
-
-    // Dynamic typing effect for hero title (optional)
-    const heroTitle = document.querySelector('.hero-title');
-    if (heroTitle) {
-        const originalText = heroTitle.textContent;
-        heroTitle.textContent = '';
-        let i = 0;
-        
-        function typeWriter() {
-            if (i < originalText.length) {
-                heroTitle.textContent += originalText.charAt(i);
-                i++;
-                setTimeout(typeWriter, 100);
-            }
-        }
-        
-        // Start typing effect after a short delay
-        setTimeout(typeWriter, 500);
-    }
-
-    // Add hover effects to metrics
-    document.querySelectorAll('.metric').forEach(metric => {
-        metric.addEventListener('mouseenter', function() {
-            this.style.transform = 'scale(1.05) rotate(1deg)';
-        });
-        
-        metric.addEventListener('mouseleave', function() {
-            this.style.transform = 'scale(1) rotate(0deg)';
-        });
-    });
-
-    // Mobile menu functionality (basic)
-    const navLogo = document.querySelector('.nav-logo');
-    const navMenu = document.querySelector('.nav-menu');
-    
-    if (window.innerWidth <= 768) {
-        navLogo.addEventListener('click', () => {
-            navMenu.style.display = navMenu.style.display === 'flex' ? 'none' : 'flex';
-        });
-    }
-
-    // Update copyright year automatically
-    const currentYear = new Date().getFullYear();
-    const footerText = document.querySelector('.footer p');
-    if (footerText) {
-        footerText.innerHTML = footerText.innerHTML.replace('2025', currentYear);
-    }
-
-    // Form validation for contact (if you add a form later)
-    function validateEmail(email) {
-        const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        return re.test(email);
-    }
-
-    // Add performance monitoring
-    window.addEventListener('load', () => {
-        const loadTime = performance.now();
-        console.log(`Portfolio loaded in ${Math.round(loadTime)}ms`);
-    });
-
-    // Track scroll progress (optional feature)
-    window.addEventListener('scroll', () => {
-        const scrollProgress = (window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100;
-        // You can use this to show a progress bar if desired
-        document.documentElement.style.setProperty('--scroll-progress', `${scrollProgress}%`);
-    });
-
 });
