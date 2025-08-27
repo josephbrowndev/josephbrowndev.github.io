@@ -2007,3 +2007,286 @@ html {
 }
 
 /* Continue with more individual project page styles... */
+
+/* Limitless Runner Green Theme */
+:root {
+    --limitless-green: #22c55e;
+    --limitless-dark-green: #16a34a;
+    --limitless-light-green: #4ade80;
+    --limitless-black: #000000;
+    --limitless-white: #ffffff;
+}
+
+/* Video Hover System */
+.project-video-container {
+    position: relative;
+    width: 100%;
+    height: 250px;
+    overflow: hidden;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.project-thumbnail-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: all 0.4s ease;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+}
+
+.project-video-wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transform: scale(1);
+    transition: all 0.4s ease;
+    z-index: 1;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.project-hover-video {
+    width: 100%;
+    height: 100%;
+    border: none;
+    object-fit: cover;
+}
+
+.thumbnail-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: all 0.3s ease;
+    z-index: 3;
+    border-radius: 10px;
+}
+
+.project-video-container:hover .thumbnail-overlay {
+    opacity: 1;
+}
+
+.play-button {
+    font-size: 3rem;
+    color: var(--primary-gold);
+    margin-bottom: 1rem;
+    animation: pulse-gentle 2s infinite;
+    transition: all 0.3s ease;
+}
+
+/* Limitless Runner Theme Overrides */
+.limitless-theme {
+    border: 1px solid rgba(34, 197, 94, 0.3) !important;
+}
+
+.limitless-theme:hover {
+    border-color: rgba(34, 197, 94, 0.6) !important;
+    box-shadow: 0 20px 40px rgba(34, 197, 94, 0.2) !important;
+}
+
+.limitless-theme .project-info h3 {
+    background: linear-gradient(45deg, var(--limitless-green), var(--limitless-light-green)) !important;
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+    background-clip: text !important;
+}
+
+.limitless-theme .play-button {
+    color: var(--limitless-green) !important;
+}
+
+.limitless-theme .project-preview-content h4 {
+    color: var(--limitless-green) !important;
+}
+
+.limitless-tag {
+    background: var(--dark-gray) !important;
+    color: var(--limitless-green) !important;
+    border: 1px solid rgba(34, 197, 94, 0.3) !important;
+}
+
+.limitless-tag:hover {
+    background: rgba(34, 197, 94, 0.1) !important;
+    border-color: var(--limitless-green) !important;
+}
+
+.limitless-theme .stat {
+    background: rgba(34, 197, 94, 0.1) !important;
+    border: 1px solid rgba(34, 197, 94, 0.2) !important;
+}
+
+.limitless-theme .stat-value {
+    color: var(--limitless-green) !important;
+}
+
+.limitless-btn {
+    background: linear-gradient(45deg, var(--limitless-green), var(--limitless-dark-green)) !important;
+    color: var(--limitless-black) !important;
+    border: 1px solid var(--limitless-green) !important;
+}
+
+.limitless-btn:hover {
+    background: linear-gradient(45deg, var(--limitless-dark-green), var(--limitless-green)) !important;
+    box-shadow: 0 6px 25px rgba(34, 197, 94, 0.4) !important;
+}
+
+.limitless-btn-outline {
+    background: transparent !important;
+    color: var(--limitless-green) !important;
+    border: 2px solid var(--limitless-green) !important;
+}
+
+.limitless-btn-outline:hover {
+    background: var(--limitless-green) !important;
+    color: var(--limitless-black) !important;
+}
+
+/* Enhanced Project Grid Animations */
+.project-grid-item {
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.project-grid-item:hover {
+    transform: translateY(-8px);
+}
+
+.project-grid-item:hover .project-video-container {
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+}
+
+.limitless-theme:hover .project-video-container {
+    box-shadow: 0 15px 35px rgba(34, 197, 94, 0.2) !important;
+}
+
+/* Video Loading States */
+.project-video-wrapper::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 40px;
+    height: 40px;
+    margin: -20px 0 0 -20px;
+    border: 3px solid rgba(255, 255, 255, 0.2);
+    border-top: 3px solid var(--primary-gold);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 2;
+}
+
+.project-video-wrapper:hover::before {
+    opacity: 0;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Mobile Optimizations */
+@media (max-width: 768px) {
+    .project-video-container {
+        height: 200px;
+    }
+    
+    .thumbnail-overlay {
+        opacity: 1;
+        background: rgba(0, 0, 0, 0.4);
+    }
+    
+    .play-button {
+        font-size: 2rem;
+    }
+    
+    /* Disable video hover on mobile for performance */
+    .project-video-wrapper {
+        display: none;
+    }
+    
+    .project-thumbnail-image {
+        opacity: 1 !important;
+    }
+}
+
+/* Smooth transitions for all project elements */
+.project-info h3,
+.project-type,
+.tag,
+.stat-value,
+.btn {
+    transition: all 0.3s ease;
+}
+
+/* Enhanced featured project styling */
+.project-grid-item.featured .project-video-container::after {
+    content: 'FEATURED';
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    background: linear-gradient(45deg, var(--primary-red), var(--dark-red));
+    color: var(--primary-gold);
+    padding: 0.3rem 0.8rem;
+    border-radius: 15px;
+    font-size: 0.7rem;
+    font-weight: bold;
+    z-index: 4;
+}
+
+.limitless-theme.featured .project-video-container::after {
+    background: linear-gradient(45deg, var(--limitless-green), var(--limitless-dark-green)) !important;
+    color: var(--limitless-black) !important;
+}
+
+/* Accessibility improvements */
+.project-grid-item:focus-within {
+    outline: 2px solid var(--primary-gold);
+    outline-offset: 2px;
+}
+
+.limitless-theme:focus-within {
+    outline-color: var(--limitless-green) !important;
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+    .thumbnail-overlay {
+        background: rgba(0, 0, 0, 0.9);
+    }
+    
+    .play-button {
+        filter: contrast(1.5);
+    }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+    .project-video-wrapper,
+    .project-thumbnail-image,
+    .thumbnail-overlay {
+        transition: none;
+    }
+    
+    .play-button {
+        animation: none;
+    }
+    
+    .project-grid-item:hover {
+        transform: none;
+    }
+}
