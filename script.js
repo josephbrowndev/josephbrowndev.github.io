@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', function() {
     if (mobileMenuBtn && mobileMenu) {
         // Toggle mobile menu
         mobileMenuBtn.addEventListener('click', function() {
-            console.log('Mobile menu clicked!'); // Debug line
+            console.log('Mobile menu clicked!');
             
             const isActive = mobileMenu.classList.contains('active');
             
@@ -83,6 +83,50 @@ document.addEventListener('DOMContentLoaded', function() {
             navbar.style.background = 'rgba(10, 10, 10, 0.95)';
             navbar.style.boxShadow = 'none';
         }
+    });
+
+    // Tab functionality for project details
+    document.querySelectorAll('.tab-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+            console.log('Tab clicked:', btn.dataset.tab);
+            
+            const tabId = btn.dataset.tab;
+            
+            // Remove active class from all buttons and content
+            document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+            document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+            
+            // Add active class to clicked button and corresponding content
+            btn.classList.add('active');
+            const content = document.getElementById(tabId);
+            if (content) {
+                content.classList.add('active');
+                console.log('Tab content activated:', tabId);
+            } else {
+                console.log('Tab content not found for:', tabId);
+            }
+        });
+    });
+
+    // Technical tabs functionality (for project detail pages)
+    document.querySelectorAll('.tech-tab-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+            console.log('Tech tab clicked:', btn.dataset.tab);
+            
+            const tabId = btn.dataset.tab;
+            
+            // Remove active classes
+            document.querySelectorAll('.tech-tab-btn').forEach(b => b.classList.remove('active'));
+            document.querySelectorAll('.tech-tab-content').forEach(c => c.classList.remove('active'));
+            
+            // Add active classes
+            btn.classList.add('active');
+            const content = document.getElementById(tabId);
+            if (content) {
+                content.classList.add('active');
+                console.log('Tech tab content activated:', tabId);
+            }
+        });
     });
     
     // Intersection Observer for fade-in animations
