@@ -151,4 +151,15 @@ document.addEventListener('DOMContentLoaded', function() {
         element.style.transition = 'all 0.8s ease';
         observer.observe(element);
     });
+
+    // ✅ Highlight active page in navbar
+    const currentPage = window.location.pathname.split("/").pop() || "index.html";
+    document.querySelectorAll(".nav-link, .mobile-nav-link").forEach(link => {
+        const linkPage = link.getAttribute("href").split("/").pop();
+        if (linkPage === currentPage) {
+            link.classList.add("active");
+        } else {
+            link.classList.remove("active");
+        }
+    });
 });
