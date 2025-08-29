@@ -3400,3 +3400,26 @@ body.mobile-menu-open {
     position: fixed;
     width: 100%;
 }
+/* Green video placeholder for Limitless Runner */
+.limitless-video {
+    border: 2px dashed var(--limitless-green) !important;
+}
+
+.limitless-video::before {
+    background: linear-gradient(90deg, transparent, rgba(34, 197, 94, 0.2), transparent) !important;
+    animation: shimmer-green 2s infinite;
+}
+
+.limitless-video i {
+    color: var(--limitless-green) !important;
+}
+
+.limitless-video .video-note {
+    background: linear-gradient(45deg, var(--limitless-green), var(--limitless-light-green)) !important;
+    color: var(--limitless-white) !important;
+}
+
+@keyframes shimmer-green {
+    0% { left: -100%; }
+    100% { left: 100%; }
+}
