@@ -181,29 +181,34 @@ document.addEventListener('DOMContentLoaded', function() {
         observer.observe(element);
     });
 
-    // Highlight active page in navbar
-    const currentPage = window.location.pathname.split("/").pop() || "index.html";
-    const currentDir = window.location.pathname.includes('/projects/') ? 'projects' : 'root';
+    // Fixed active page highlighting
+    const currentPath = window.location.pathname;
+    const currentPage = currentPath.split("/").pop() || "index.html";
+    const isInProjectsDir = currentPath.includes('/projects/');
     
     document.querySelectorAll(".nav-link, .mobile-nav-link").forEach(link => {
         const linkHref = link.getAttribute("href");
-        const linkPage = linkHref.split("/").pop();
-        const isProjectsLink = linkHref.includes('projects');
+        link.classList.remove("active"); // Clear all first
         
-        // Handle different directory contexts
-        if (currentDir === 'projects') {
-            if (linkPage === currentPage || 
-                (currentPage === 'index.html' && isProjectsLink) ||
-                (linkHref === 'index.html' && currentPage === 'index.html' && isProjectsLink)) {
+        // Handle different scenarios
+        if (isInProjectsDir) {
+            // We're in the projects directory
+            if (linkHref === "index.html" && currentPage === "index.html") {
+                // Projects index page
                 link.classList.add("active");
-            } else {
-                link.classList.remove("active");
+            } else if (linkHref === "../index.html" && currentPage !== "index.html") {
+                // Don't activate home when on project subpages
+                continue;
+            } else if (linkHref.includes(currentPage) && currentPage !== "index.html") {
+                // Other project pages (resume.html, etc.)
+                link.classList.add("active");
             }
         } else {
-            if (linkPage === currentPage) {
+            // We're in the root directory
+            if (linkHref === "index.html" || linkHref === "../index.html") {
                 link.classList.add("active");
-            } else {
-                link.classList.remove("active");
+            } else if (linkHref.includes(currentPage) && !linkHref.includes("projects")) {
+                link.classList.add("active");
             }
         }
     });
