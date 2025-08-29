@@ -181,37 +181,22 @@ document.addEventListener('DOMContentLoaded', function() {
         observer.observe(element);
     });
 
-    // Fixed active page highlighting
-    const currentPath = window.location.pathname;
-    const currentPage = currentPath.split("/").pop() || "index.html";
-    const isInProjectsDir = currentPath.includes('/projects/');
+    // Highlight active page - simplified approach
+const currentPath = window.location.pathname;
+
+document.querySelectorAll(".nav-link, .mobile-nav-link").forEach(link => {
+    link.classList.remove("active");
     
-    document.querySelectorAll(".nav-link, .mobile-nav-link").forEach(link => {
-        const linkHref = link.getAttribute("href");
-        link.classList.remove("active"); // Clear all first
-        
-        // Handle different scenarios
-        if (isInProjectsDir) {
-            // We're in the projects directory
-            if (linkHref === "index.html" && currentPage === "index.html") {
-                // Projects index page
-                link.classList.add("active");
-            } else if (linkHref === "../index.html" && currentPage !== "index.html") {
-                // Don't activate home when on project subpages
-                continue;
-            } else if (linkHref.includes(currentPage) && currentPage !== "index.html") {
-                // Other project pages (resume.html, etc.)
-                link.classList.add("active");
-            }
-        } else {
-            // We're in the root directory
-            if (linkHref === "index.html" || linkHref === "../index.html") {
-                link.classList.add("active");
-            } else if (linkHref.includes(currentPage) && !linkHref.includes("projects")) {
-                link.classList.add("active");
-            }
-        }
-    });
+    const linkHref = link.getAttribute("href");
+    
+    // Check if we're on the exact page this link points to
+    if (currentPath.endsWith(linkHref) || 
+        (currentPath === "/" && linkHref === "index.html") ||
+        (currentPath.endsWith("/index.html") && linkHref === "index.html") ||
+        (currentPath.includes("/projects/") && currentPath.endsWith("index.html") && linkHref === "index.html")) {
+        link.classList.add("active");
+    }
+});
 
     // Enhanced hover video functionality for projects
     const projectItems = document.querySelectorAll('.project-grid-item');
