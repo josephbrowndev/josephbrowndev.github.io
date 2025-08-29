@@ -3402,7 +3402,7 @@ body.mobile-menu-open {
 }
 /* Green video placeholder for Limitless Runner */
 .limitless-video {
-    border: 2px dashed var(--limitless-green) !important;
+    border: 2px solid var(--limitless-green) !important;
 }
 
 .limitless-video::before {
