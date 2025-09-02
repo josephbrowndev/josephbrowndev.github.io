@@ -508,14 +508,14 @@ body {
 
 /* Limitless Runner Video Button */
 
-.limitless-video-close-btn:hover {
-    background: rgba(34, 197, 94, 0.9);
-    transform: scale(1.1);
+.video-modal.limitless-video .video-close-btn {
+    background: rgba(34, 197, 94, 0.9) !important; /* Green background */
+    color: #000000 !important; /* Black X icon */
 }
 
-.limitless-video-close-btn:hover {
-    background: rgba(34, 197, 94, 1);
-    transform: scale(1.1);
+.video-modal.limitless-video .video-close-btn:hover {
+    background: rgba(34, 197, 94, 1) !important; /* Solid green on hover */
+    color: #000000 !important;
 }
 
 
