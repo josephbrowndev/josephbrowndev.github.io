@@ -87,16 +87,223 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
             });
         
-        // Keyboard accessibility for video buttons
-        btn.addEventListener('keydown', function(e) {
-            if (e.key === 'Enter' || e.key === ' ') {
-                e.stopPropagation();
+            // Keyboard accessibility for video buttons
+            btn.addEventListener('keydown', function(e) {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    e.stopPropagation();
+                    e.preventDefault();
+                    
+                    const videoId = this.dataset.videoId;
+                    const videoTitle = this.dataset.videoTitle || 'Project Demo Video';
+                    
+                                if (videoId) {
+                    openVideoModal(videoId, videoTitle);
+                }
+            });
+            
+            // Keyboard accessibility for video buttons
+            btn.addEventListener('keydown', function(e) {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    e.stopPropagation();
+                    e.preventDefault();
+                    
+                    const videoId = this.dataset.videoId;
+                    const videoTitle = this.dataset.videoTitle || 'Project Demo Video';
+                    
+                    if (videoId) {
+                        openVideoModal(videoId, videoTitle);
+                    }
+                }
+            });
+        });
+        
+        // Video modal functions
+        function openVideoModal(videoId, videoTitle) {
+            // Show loading state
+            videoModal.classList.add('loading');
+            
+            // Set video source with autoplay and other parameters
+            const embedUrl = `https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0&modestbranding=1&showinfo=0`;
+            modalVideo.src = embedUrl;
+            modalVideo.title = videoTitle;
+            
+            // Show modal
+            videoModal.style.display = 'flex';
+            document.body.classList.add('modal-open');
+            
+            // Remove loading state after a short delay
+            setTimeout(() => {
+                videoModal.classList.remove('loading');
+            }, 500);
+            
+            // Fade in animation
+            setTimeout(() => {
+                videoModal.classList.add('active');
+            }, 10);
+            
+            console.log('Video modal opened:', videoTitle);
+        }
+        
+        function closeVideoModal() {
+            console.log('Closing video modal...');
+            
+            videoModal.classList.add('closing');
+            videoModal.classList.remove('active');
+            
+            setTimeout(() => {
+                videoModal.style.display = 'none';
+                videoModal.classList.remove('closing', 'loading');
+                modalVideo.src = '';
+                document.body.classList.remove('modal-open');
+            }, 300);
+        }
+        
+        // Close video modal event listeners
+        closeVideoModal.addEventListener('click', function(e) {
+            e.preventDefault();
+            closeVideoModal();
+        });
+        
+        // Close on overlay click
+        videoModal.querySelector('.video-modal-overlay').addEventListener('click', function() {
+            closeVideoModal();
+        });
+        
+        // Close on escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && videoModal.classList.contains('active')) {
+                closeVideoModal();
+            }
+        });
+        
+        // Prevent modal close when clicking on video content
+        videoModal.querySelector('.video-modal-content').addEventListener('click', function(e) {
+            e.stopPropagation();
+        });
+        
+        // Focus management for accessibility
+        videoModal.addEventListener('transitionend', function() {
+            if (videoModal.classList.contains('active')) {
+                // Focus the close button when modal opens
+                closeVideoModal.focus();
+            }
+        });
+        
+        // Trap focus within modal when open
+        videoModal.addEventListener('keydown', function(e) {
+            if (e.key === 'Tab' && videoModal.classList.contains('active')) {
+                // Simple focus trap - keep focus on close button
                 e.preventDefault();
+                closeVideoModal.focus();
+            }
+        });
+        
+        console.log('Project interactions initialized successfully');
+    }
+    
+    // Enhanced hover video functionality for projects (if not already present)
+    function initializeVideoHovers() {
+        const projectItems = document.querySelectorAll('.project-grid-item');
+        
+        projectItems.forEach(item => {
+            const videoContainer = item.querySelector('.project-video-container');
+            const thumbnailImage = item.querySelector('.project-thumbnail-image');
+            const videoWrapper = item.querySelector('.project-video-wrapper');
+            const overlay = item.querySelector('.thumbnail-overlay');
+            
+            if (videoContainer && videoWrapper) {
+                let hoverTimer;
                 
-                const videoId = this.dataset.videoId;
-                const videoTitle = this.dataset.videoTitle || 'Project Demo Video';
-                
-                if (videoId)
+                // Only enable video hover on desktop
+                if (window.innerWidth > 768) {
+                    videoContainer.addEventListener('mouseenter', function() {
+                        clearTimeout(hoverTimer);
+                        
+                        hoverTimer = setTimeout(() => {
+                            if (thumbnailImage) thumbnailImage.style.opacity = '0';
+                            videoWrapper.style.opacity = '1';
+                            videoWrapper.style.transform = 'scale(1.05)';
+                            if (overlay) overlay.style.opacity = '1';
+                        }, 100);
+                    });
+                    
+                    videoContainer.addEventListener('mouseleave', function() {
+                        clearTimeout(hoverTimer);
+                        
+                        if (thumbnailImage) thumbnailImage.style.opacity = '1';
+                        videoWrapper.style.opacity = '0';
+                        videoWrapper.style.transform = 'scale(1)';
+                        if (overlay) overlay.style.opacity = '0';
+                    });
+                }
+            }
+        });
+    }
+    
+    // Window resize handler for responsive behavior
+    window.addEventListener('resize', function() {
+        // Close video modal on resize to prevent layout issues
+        const videoModal = document.getElementById('videoModal');
+        if (videoModal && videoModal.classList.contains('active')) {
+            const closeBtn = document.getElementById('closeVideoModal');
+            if (closeBtn) {
+                closeBtn.click();
+            }
+        }
+        
+        // Disable video hover on mobile resize
+        if (window.innerWidth <= 768) {
+            document.querySelectorAll('.project-video-wrapper').forEach(wrapper => {
+                if (wrapper) wrapper.style.display = 'none';
+            });
+            document.querySelectorAll('.project-thumbnail-image').forEach(img => {
+                if (img) img.style.opacity = '1';
+            });
+        } else {
+            document.querySelectorAll('.project-video-wrapper').forEach(wrapper => {
+                if (wrapper) wrapper.style.display = 'block';
+            });
+            
+            // Re-initialize video hovers for desktop
+            initializeVideoHovers();
+        }
+    });
+    
+    // Initialize video hovers on load
+    document.addEventListener('DOMContentLoaded', function() {
+        initializeVideoHovers();
+    });
+    
+    // Error handling for video loading
+    window.addEventListener('error', function(e) {
+        if (e.target && e.target.tagName === 'IFRAME') {
+            console.warn('Video failed to load:', e.target.src);
+            
+            const videoModal = document.getElementById('videoModal');
+            if (videoModal) {
+                videoModal.classList.remove('loading');
+            }
+        }
+    });
+    
+    // Performance optimization: Throttle resize events
+    function throttle(func, wait) {
+        let timeout;
+        return function executedFunction(...args) {
+            const later = () => {
+                clearTimeout(timeout);
+                func(...args);
+            };
+            clearTimeout(timeout);
+            timeout = setTimeout(later, wait);
+        };
+    }
+    
+    // Apply throttling to resize handler
+    window.addEventListener('resize', throttle(function() {
+        // Resize logic here if needed
+        console.log('Window resized - checking mobile/desktop state');
+    }, 250));
 
     
     // Mobile menu functionality - FIXED VERSION
