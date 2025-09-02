@@ -2754,8 +2754,8 @@ body {
 }
 
 .archetype-card:hover {
-    border-color: #4CAF50;
-    box-shadow: 0 10px 30px rgba(76, 175, 80, 0.2);
+    border-color: #dc2626;
+    box-shadow: 0 10px 30px rgba(220, 38, 38, 0.2);
     transform: translateY(-5px);
 }
 
