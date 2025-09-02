@@ -2760,18 +2760,18 @@ body {
 }
 
 .archetype-card.berserker:hover { 
-    border-color: #f44336; 
-    box-shadow: 0 10px 30px rgba(244, 67, 54, 0.2); 
+    border-color: #dc2626; 
+    box-shadow: 0 10px 30px rgba(220, 38, 38, 0.2); 
 }
 
 .archetype-card.warrior:hover { 
-    border-color: #2196F3; 
-    box-shadow: 0 10px 30px rgba(33, 150, 243, 0.2); 
+    border-color: #dc2626; 
+    box-shadow: 0 10px 30px rgba(220, 38, 38, 0.2); 
 }
 
 .archetype-card.cleric:hover { 
-    border-color: #FF9800; 
-    box-shadow: 0 10px 30px rgba(255, 152, 0, 0.2); 
+    border-color: #dc2626; 
+    box-shadow: 0 10px 30px rgba(220, 38, 38, 0.2); 
 }
 
 .archetype-header {
@@ -2787,8 +2787,8 @@ body {
 
 .archetype-role {
     display: inline-block;
-    background: rgba(76, 175, 80, 0.2);
-    color: #4CAF50;
+    background: rgba(220, 38, 38, 0.2);
+    color: #dc2626;
     padding: 6px 12px;
     border-radius: 20px;
     font-size: 0.9em;
@@ -2796,22 +2796,22 @@ body {
 }
 
 .berserker .archetype-role { 
-    background: rgba(244, 67, 54, 0.2); 
-    color: #f44336; 
+    background: rgba(220, 38, 38, 0.2); 
+    color: #dc2626; 
 }
 
 .warrior .archetype-role { 
-    background: rgba(33, 150, 243, 0.2); 
-    color: #2196F3; 
+    background: rgba(220, 38, 38, 0.2); 
+    color: #dc2626; 
 }
 
 .cleric .archetype-role { 
-    background: rgba(255, 152, 0, 0.2); 
-    color: #FF9800; 
+    background: rgba(220, 38, 38, 0.2); 
+    color: #dc2626; 
 }
 
 .archetype-description h4 {
-    color: #4CAF50;
+    color: #dc2626;
     margin: 20px 0 10px 0;
     font-size: 1.1em;
 }
@@ -2836,15 +2836,15 @@ body {
 }
 
 .behavior-highlight {
-    background: rgba(76, 175, 80, 0.1);
-    border-left: 4px solid #4CAF50;
+    background: rgba(220, 38, 38, 0.1);
+    border-left: 4px solid #dc2626;
     padding: 15px 20px;
     margin-top: 20px;
     border-radius: 0 8px 8px 0;
 }
 
 .behavior-highlight i {
-    color: #4CAF50;
+    color: #dc2626;
     margin-right: 10px;
     font-size: 1.2em;
 }
@@ -2856,30 +2856,30 @@ body {
 }
 
 .berserker .behavior-highlight { 
-    background: rgba(244, 67, 54, 0.1); 
-    border-color: #f44336; 
+    background: rgba(220, 38, 38, 0.1); 
+    border-color: #dc2626; 
 }
 
 .berserker .behavior-highlight i { 
-    color: #f44336; 
+    color: #dc2626; 
 }
 
 .warrior .behavior-highlight { 
-    background: rgba(33, 150, 243, 0.1); 
-    border-color: #2196F3; 
+    background: rgba(220, 38, 38, 0.1); 
+    border-color: #dc2626; 
 }
 
 .warrior .behavior-highlight i { 
-    color: #2196F3; 
+    color: #dc2626; 
 }
 
 .cleric .behavior-highlight { 
-    background: rgba(255, 152, 0, 0.1); 
-    border-color: #FF9800; 
+    background: rgba(220, 38, 38, 0.1); 
+    border-color: #dc2626; 
 }
 
 .cleric .behavior-highlight i { 
-    color: #FF9800; 
+    color: #dc2626; 
 }
 
 /* ========================================
@@ -2952,15 +2952,15 @@ body {
 }
 
 .implementation-highlight {
-    background: rgba(76, 175, 80, 0.1);
-    border: 1px solid rgba(76, 175, 80, 0.3);
+    background: rgba(220, 38, 38, 0.1);
+    border: 1px solid rgba(220, 38, 38, 0.3);
     padding: 20px;
     border-radius: 12px;
     margin-top: 25px;
 }
 
 .implementation-highlight h4 {
-    color: #4CAF50;
+    color: #dc2626;
     margin: 0 0 10px 0;
     font-size: 1.1em;
 }
@@ -3104,7 +3104,7 @@ body {
 .insight-number {
     font-size: 3em;
     font-weight: bold;
-    color: rgba(76, 175, 80, 0.3);
+    color: rgba(220, 38, 38, 0.3);
     position: absolute;
     top: 15px;
     right: 20px;
