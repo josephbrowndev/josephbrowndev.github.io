@@ -948,28 +948,21 @@ function getAssetInfo(assetName) {
  * Initialize UI gallery thumbnail switching
  */
 function initializeUIGallery() {
-    const mainImage = document.querySelector('.ui-image-container .image-placeholder');
+    const mainImage = document.querySelector('.ui-main-image');
     const thumbnails = document.querySelectorAll('.ui-thumb');
     
     if (!mainImage || thumbnails.length === 0) return;
     
     thumbnails.forEach((thumb, index) => {
         thumb.addEventListener('click', () => {
-            // Update main image content
-            const thumbContent = thumb.querySelector('.image-placeholder');
-            if (thumbContent) {
-                const thumbIcon = thumbContent.querySelector('i').className;
-                const thumbText = thumbContent.querySelector('p').textContent;
-                const thumbNote = thumbContent.querySelector('.placeholder-note').textContent;
-                
+            const thumbImg = thumb.querySelector('.ui-thumb-image');
+            const newSrc = thumb.dataset.image;
+            const newAlt = thumb.dataset.alt;
+            
+            if (thumbImg && newSrc) {
                 // Update main image
-                const mainIcon = mainImage.querySelector('i');
-                const mainText = mainImage.querySelector('p');
-                const mainNote = mainImage.querySelector('.placeholder-note');
-                
-                mainIcon.className = thumbIcon;
-                mainText.textContent = thumbText;
-                mainNote.textContent = thumbNote;
+                mainImage.src = newSrc;
+                mainImage.alt = newAlt;
                 
                 // Add selection feedback
                 thumbnails.forEach(t => t.classList.remove('selected'));
@@ -983,6 +976,11 @@ function initializeUIGallery() {
             }
         });
     });
+    
+    // Set first thumbnail as selected by default
+    if (thumbnails.length > 0) {
+        thumbnails[0].classList.add('selected');
+    }
 }
 
 /**
