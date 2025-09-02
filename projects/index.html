@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>All Projects - Joseph Brown | AI Combat Designer</title>
+    <title>Projects Portfolio - Joseph Brown | Entry-Level Game Developer</title>
     <link rel="stylesheet" href="../styles.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-    <meta name="description" content="Complete portfolio of Joseph Brown's game development projects - AI combat systems, endless runner games, and technical achievements.">
+    <meta name="description" content="Portfolio of Joseph Brown's game development projects - Published Steam games, AI learning projects, and continuous skill development.">
 </head>
 <body>
     <!-- Navbar -->
@@ -37,12 +37,31 @@
         <a href="../contact.html" class="mobile-nav-link">Contact</a>
     </div>
 
+    <!-- Video Popup Modal -->
+    <div class="video-modal" id="videoModal">
+        <div class="video-modal-overlay"></div>
+        <div class="video-modal-content">
+            <button class="video-close-btn" id="closeVideoModal">
+                <i class="fas fa-times"></i>
+            </button>
+            <div class="video-container">
+                <iframe id="modalVideo" 
+                        src="" 
+                        title="Project Video Demo" 
+                        frameborder="0" 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                        allowfullscreen>
+                </iframe>
+            </div>
+        </div>
+    </div>
+
     <!-- Projects Hero -->
     <section class="projects-hero">
         <div class="container">
-            <h1 class="projects-hero-title">Game Development Portfolio</h1>
+            <h1 class="projects-hero-title">Learning & Development Portfolio</h1>
             <p class="projects-hero-subtitle">
-                Interactive showcase of AI combat systems, mobile games, and innovative gameplay mechanics
+                Showcasing my journey as an entry-level game developer through published projects, academic work, and continuous learning
             </p>
         </div>
     </section>
@@ -52,68 +71,10 @@
         <div class="container">
             <div class="projects-grid">
                 
-                <!-- Blood and Sand -->
-                <div class="project-grid-item featured" data-project="blood-sand">
-                    <div class="project-thumbnail">
-                        <div class="thumbnail-media">
-                            <div class="project-video-container">
-                                <!-- Static thumbnail image -->
-                                <img src="../assets/images/blood-and-sand/Combat1.png" 
-                                     alt="Blood and Sand Combat" 
-                                     class="project-thumbnail-image">
-                                
-                                <!-- Hover video -->
-                                <div class="project-video-wrapper">
-                                    <iframe class="project-hover-video" 
-                                            src="https://www.youtube.com/embed/BZ1hM8KzCBo?autoplay=1&mute=1&controls=0&showinfo=0&rel=0&loop=1&playlist=BZ1hM8KzCBo&modestbranding=1"
-                                            title="Blood and Sand Combat Demo">
-                                    </iframe>
-                                </div>
-                                
-                                <div class="thumbnail-overlay">
-                                    <div class="play-button">
-                                        <i class="fas fa-play-circle"></i>
-                                    </div>
-                                    <div class="project-preview-content">
-                                        <h4>Combat AI Demo</h4>
-                                        <p>60+ FPS • 3+ AI Types • 3.5km Arena</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="project-info">
-                            <span class="project-badge">Featured</span>
-                            <h3>Blood and Sand</h3>
-                            <p class="project-type">ARPG Combat System</p>
-                            <div class="project-tags">
-                                <span class="tag">Unreal Engine 5</span>
-                                <span class="tag">AI Systems</span>
-                                <span class="tag">C++</span>
-                            </div>
-                            <div class="project-stats">
-                                <div class="stat">
-                                    <span class="stat-value">60+</span>
-                                    <span class="stat-label">FPS</span>
-                                </div>
-                                <div class="stat">
-                                    <span class="stat-value">15+</span>
-                                    <span class="stat-label">AI Types</span>
-                                </div>
-                                <div class="stat">
-                                    <span class="stat-value">95%</span>
-                                    <span class="stat-label">Satisfaction</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="project-actions">
-                            <a href="blood-and-sand.html" class="btn btn-primary">Explore Project</a>
-                            <a href="https://youtu.be/-jrbOJhxaas" class="btn btn-outline" target="_blank">Watch Trailer</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Limitless Runner -->
-                <div class="project-grid-item limitless-theme" data-project="limitless-runner">
+                <!-- Limitless Runner Project -->
+                <div class="project-grid-item limitless-theme featured" 
+                     data-project="limitless-runner" 
+                     data-project-url="limitless-runner.html">
                     <div class="project-thumbnail">
                         <div class="thumbnail-media">
                             <div class="project-video-container">
@@ -122,107 +83,173 @@
                                      alt="Limitless Runner Gameplay" 
                                      class="project-thumbnail-image">
                                 
-                                <!-- Hover video -->
-                                <div class="project-video-wrapper">
-                                    <iframe class="project-hover-video" 
-                                            src="https://www.youtube.com/embed/3yBE9P2Tlfo?autoplay=1&mute=1&controls=0&showinfo=0&rel=0&loop=1&playlist=3yBE9P2Tlfo&modestbranding=1"
-                                            title="Limitless Runner Map Creation">
-                                    </iframe>
-                                </div>
-                                
                                 <div class="thumbnail-overlay">
-                                    <div class="play-button">
+                                    <div class="play-button video-play-btn" 
+                                         data-video-id="YsxuayGGE3Q"
+                                         data-video-title="Limitless Runner - Gameplay Demo">
                                         <i class="fas fa-play-circle"></i>
                                     </div>
                                     <div class="project-preview-content">
-                                        <h4>Limitless Runner</h4>
-                                        <p>Mobile • Procedural • Endless</p>
+                                        <h4>Published Steam Game</h4>
+                                        <p>Procedural • Endless • First Commercial Release</p>
                                     </div>
                                 </div>
                             </div>
                         </div>
                         <div class="project-info">
-                            <h3>Limitless Runner</h3>
-                            <p class="project-type">Endless Runner Steam Game</p>
+                            <span class="project-badge" style="background: linear-gradient(45deg, #22c55e, #16a34a); color: #000;">Published</span>
+                            <h3 style="background: linear-gradient(45deg, #22c55e, #4ade80); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">Limitless Runner</h3>
+                            <p class="project-type">First Published Steam Game</p>
                             <div class="project-tags">
-                                <span class="tag limitless-tag">Mobile Development</span>
+                                <span class="tag limitless-tag">Blueprint Scripting</span>
                                 <span class="tag limitless-tag">Procedural Generation</span>
-                                <span class="tag limitless-tag">Game Design</span>
+                                <span class="tag limitless-tag">Steam Publishing</span>
                             </div>
                             <div class="project-stats">
-                                <div class="stat">
-                                    <span class="stat-value">60+</span>
-                                    <span class="stat-label">FPS</span>
-                                </div>
-                                <div class="stat">
-                                    <span class="stat-value">∞</span>
-                                    <span class="stat-label">Levels</span>
-                                </div>
-                                <div class="stat">
-                                    <span class="stat-value">Released</span>
+                                <div class="stat" style="background: rgba(34, 197, 94, 0.1); border: 1px solid rgba(34, 197, 94, 0.2);">
+                                    <span class="stat-value" style="color: #22c55e;">Published</span>
                                     <span class="stat-label">Status</span>
+                                </div>
+                                <div class="stat" style="background: rgba(34, 197, 94, 0.1); border: 1px solid rgba(34, 197, 94, 0.2);">
+                                    <span class="stat-value" style="color: #22c55e;">5</span>
+                                    <span class="stat-label">Platform Types</span>
+                                </div>
+                                <div class="stat" style="background: rgba(34, 197, 94, 0.1); border: 1px solid rgba(34, 197, 94, 0.2);">
+                                    <span class="stat-value" style="color: #22c55e;">∞</span>
+                                    <span class="stat-label">Levels</span>
                                 </div>
                             </div>
                         </div>
                         <div class="project-actions">
-                            <a href="limitless-runner.html" class="btn btn-primary limitless-btn">Explore Project</a>
-                            <a href="https://youtu.be/F65bM0gajLo" class="btn btn-outline limitless-btn-outline" target="_blank">View Development</a>
+                            <a href="https://store.steampowered.com/app/3843330/Limitless_Runner/" class="btn limitless-btn-primary" target="_blank" onclick="event.stopPropagation()">
+                                <i class="fab fa-steam"></i> View on Steam
+                            </a>
+                            <a href="limitless-runner.html" class="btn limitless-btn-secondary" onclick="event.stopPropagation()">
+                                <i class="fas fa-info-circle"></i> Project Details
+                            </a>
                         </div>
                     </div>
                 </div>
 
-                <!-- Backend Systems -->
-                <div class="project-grid-item" data-project="backend">
+                <!-- Blood and Sand Project -->
+                <div class="project-grid-item" 
+                     data-project="blood-sand" 
+                     data-project-url="blood-and-sand.html">
                     <div class="project-thumbnail">
                         <div class="thumbnail-media">
                             <div class="project-video-container">
-                                <!-- Static thumbnail for backend project -->
+                                <!-- Static thumbnail image -->
+                                <img src="../assets/images/blood-and-sand/Combat1.png" 
+                                     alt="Blood and Sand Combat" 
+                                     class="project-thumbnail-image">
+                                
+                                <div class="thumbnail-overlay">
+                                    <div class="play-button video-play-btn" 
+                                         data-video-id="BZ1hM8KzCBo"
+                                         data-video-title="Blood and Sand - AI Learning Demo">
+                                        <i class="fas fa-play-circle"></i>
+                                    </div>
+                                    <div class="project-preview-content">
+                                        <h4>AI Learning Project</h4>
+                                        <p>Academic • Blueprint-Based • Basic AI</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-info">
+                            <span class="project-badge">Academic Project</span>
+                            <h3>Blood and Sand</h3>
+                            <p class="project-type">AI Behavior Learning Project</p>
+                            <div class="project-tags">
+                                <span class="tag">Blueprint Visual Scripting</span>
+                                <span class="tag">Basic AI Behaviors</span>
+                                <span class="tag">Learning Focus</span>
+                            </div>
+                            <div class="project-stats">
+                                <div class="stat">
+                                    <span class="stat-value">Basic</span>
+                                    <span class="stat-label">AI Level</span>
+                                </div>
+                                <div class="stat">
+                                    <span class="stat-value">Academic</span>
+                                    <span class="stat-label">Project Type</span>
+                                </div>
+                                <div class="stat">
+                                    <span class="stat-value">Blueprint</span>
+                                    <span class="stat-label">Primary Tool</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-actions">
+                            <a href="https://youtu.be/-jrbOJhxaas" class="btn btn-primary" target="_blank" onclick="event.stopPropagation()">
+                                <i class="fab fa-youtube"></i> View Trailer
+                            </a>
+                            <a href="blood-and-sand.html" class="btn btn-outline" onclick="event.stopPropagation()">
+                                <i class="fas fa-info-circle"></i> Project Details
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Current Learning -->
+                <div class="project-grid-item" 
+                     data-project="current-learning" 
+                     data-project-url="../index.html#skills">
+                    <div class="project-thumbnail">
+                        <div class="thumbnail-media">
+                            <div class="project-video-container">
+                                <!-- Static image for learning project -->
                                 <div class="project-image" style="background: linear-gradient(45deg, #7c3aed, #5b21b6);">
-                                    <i class="fas fa-server"></i>
+                                    <i class="fas fa-graduation-cap"></i>
                                 </div>
                                 
                                 <div class="thumbnail-overlay">
                                     <div class="play-button">
-                                        <i class="fas fa-code"></i>
+                                        <i class="fas fa-book-open"></i>
                                     </div>
                                     <div class="project-preview-content">
-                                        <h4>System Architecture</h4>
-                                        <p>Scalable • Real-time • Performance</p>
+                                        <h4>Continuous Learning</h4>
+                                        <p>C++ • Backend • Professional Development</p>
                                     </div>
                                 </div>
                             </div>
                         </div>
                         <div class="project-info">
-                            <h3>Scalable Backend Systems</h3>
-                            <p class="project-type">Backend Engineering | Real-time Systems</p>
+                            <span class="project-badge" style="background: linear-gradient(45deg, #7c3aed, #5b21b6); color: #fff;">In Progress</span>
+                            <h3>Current Learning & Development</h3>
+                            <p class="project-type">Skill Development | Professional Growth</p>
                             <div class="project-tags">
-                                <span class="tag">Backend</span>
-                                <span class="tag">Real-time</span>
-                                <span class="tag">Scalable</span>
+                                <span class="tag">C++ Learning</span>
+                                <span class="tag">Backend Development</span>
+                                <span class="tag">Revature Training</span>
                             </div>
                             <div class="project-stats">
                                 <div class="stat">
-                                    <span class="stat-value">99%</span>
-                                    <span class="stat-label">Uptime</span>
+                                    <span class="stat-value">Active</span>
+                                    <span class="stat-label">Status</span>
                                 </div>
                                 <div class="stat">
-                                    <span class="stat-value">1000+</span>
-                                    <span class="stat-label">Users</span>
+                                    <span class="stat-value">C++</span>
+                                    <span class="stat-label">Focus</span>
                                 </div>
                                 <div class="stat">
-                                    <span class="stat-value">24/7</span>
-                                    <span class="stat-label">Active</span>
+                                    <span class="stat-value">Daily</span>
+                                    <span class="stat-label">Practice</span>
                                 </div>
                             </div>
                         </div>
                         <div class="project-actions">
-                            <a href="backend-systems.html" class="btn btn-primary">Explore Project</a>
-                            <a href="#" class="btn btn-outline">Tech Stack</a>
+                            <a href="../skills.html" class="btn btn-primary" onclick="event.stopPropagation()">
+                                <i class="fas fa-code"></i> View Skills
+                            </a>
+                            <a href="../index.html#contact" class="btn btn-outline" onclick="event.stopPropagation()">
+                                <i class="fas fa-envelope"></i> Get In Touch
+                            </a>
                         </div>
                     </div>
                 </div>
 
-                <!-- More Projects Coming Soon -->
+                <!-- Future Projects -->
                 <div class="project-grid-item coming-soon">
                     <div class="project-thumbnail">
                         <div class="thumbnail-media">
@@ -232,15 +259,16 @@
                             <div class="thumbnail-overlay">
                                 <div class="project-preview-content">
                                     <h4>More Projects Coming</h4>
-                                    <p>Stay tuned for additional showcases</p>
+                                    <p>As I continue learning and growing</p>
                                 </div>
                             </div>
                         </div>
                         <div class="project-info">
                             <h3>Future Projects</h3>
-                            <p class="project-type">Coming Soon</p>
+                            <p class="project-type">Coming as I Learn & Develop</p>
                             <div class="project-tags">
-                                <span class="tag">TBA</span>
+                                <span class="tag">Future</span>
+                                <span class="tag">Learning Goals</span>
                             </div>
                         </div>
                         <div class="project-actions">
@@ -255,11 +283,11 @@
     <!-- Call to Action -->
     <section class="projects-cta">
         <div class="container">
-            <h2>Ready to Build Something Amazing?</h2>
-            <p>Let's discuss how these technical achievements can contribute to your next project.</p>
+            <h2>Ready to Learn & Contribute</h2>
+            <p>Looking for entry-level opportunities to apply my current skills while growing in a supportive environment.</p>
             <div class="cta-buttons">
                 <a href="../index.html#contact" class="btn btn-primary">Start a Conversation</a>
-                <a href="../assets/resume/JosephBrownAICombatResume.pdf" class="btn btn-secondary" target="_blank">Download Resume</a>
+                <a href="../assets/resume/JosephBrownGameDesignResume.pdf" class="btn btn-secondary" target="_blank">Download Resume</a>
             </div>
         </div>
     </section>
@@ -267,52 +295,11 @@
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
-            <p>&copy; 2025 Joseph Brown - AI Combat Designer | Game Developer</p>
-            <p class="footer-note">Specialized in performance-optimized combat systems and mobile game development</p>
+            <p>&copy; 2025 Joseph Brown - Entry-Level Game Developer | Unreal Engine Blueprint Developer</p>
+            <p class="footer-note">Recent graduate specializing in Blueprint development and eager to learn C++ programming</p>
         </div>
     </footer>
 
     <script src="../script.js"></script>
-    <script>
-        // Enhanced hover video functionality
-        document.addEventListener('DOMContentLoaded', function() {
-            const projectItems = document.querySelectorAll('.project-grid-item');
-            
-            projectItems.forEach(item => {
-                const videoContainer = item.querySelector('.project-video-container');
-                const thumbnailImage = item.querySelector('.project-thumbnail-image');
-                const videoWrapper = item.querySelector('.project-video-wrapper');
-                const overlay = item.querySelector('.thumbnail-overlay');
-                
-                if (videoContainer && videoWrapper) {
-                    let hoverTimer;
-                    
-                    videoContainer.addEventListener('mouseenter', function() {
-                        // Clear any existing timer
-                        clearTimeout(hoverTimer);
-                        
-                        // Start hover effect immediately
-                        hoverTimer = setTimeout(() => {
-                            if (thumbnailImage) thumbnailImage.style.opacity = '0';
-                            videoWrapper.style.opacity = '1';
-                            videoWrapper.style.transform = 'scale(1.05)';
-                            if (overlay) overlay.style.opacity = '1';
-                        }, 100);
-                    });
-                    
-                    videoContainer.addEventListener('mouseleave', function() {
-                        // Clear hover timer
-                        clearTimeout(hoverTimer);
-                        
-                        // Reverse the effect
-                        if (thumbnailImage) thumbnailImage.style.opacity = '1';
-                        videoWrapper.style.opacity = '0';
-                        videoWrapper.style.transform = 'scale(1)';
-                        if (overlay) overlay.style.opacity = '0';
-                    });
-                }
-            });
-        });
-    </script>
 </body>
 </html>
