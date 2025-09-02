@@ -1,7 +1,17 @@
+// ========================================
+// JOSEPH BROWN PORTFOLIO - ENHANCED JAVASCRIPT
+// ========================================
+// Professional JavaScript implementation with conflict resolution
+// for hover, video, navigation, and project detail interactions
+// ========================================
+
 // Conflict resolution on hover, video, and nav bar selection fixed
 document.addEventListener('DOMContentLoaded', function() {
     
-    // Mobile menu functionality
+    // ========================================
+    // MOBILE MENU FUNCTIONALITY
+    // ========================================
+    
     const hamburger = document.querySelector('.hamburger');
     const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
     const mobileMenu = document.querySelector('.mobile-menu');
@@ -86,7 +96,10 @@ document.addEventListener('DOMContentLoaded', function() {
         console.log('Mobile menu elements not found');
     }
     
-    // Smooth scrolling for navigation links
+    // ========================================
+    // SMOOTH SCROLLING FOR NAVIGATION LINKS
+    // ========================================
+    
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             e.preventDefault();
@@ -100,7 +113,10 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Navbar background change on scroll
+    // ========================================
+    // NAVBAR BACKGROUND CHANGE ON SCROLL
+    // ========================================
+    
     const navbar = document.querySelector('.navbar');
     if (navbar) {
         window.addEventListener('scroll', () => {
@@ -114,7 +130,32 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // Tab functionality for project details
+    // ========================================
+    // NAVIGATION ACTIVE STATE MANAGEMENT
+    // ========================================
+    
+    // Highlight active page - simplified approach
+    const currentPath = window.location.pathname;
+
+    document.querySelectorAll(".nav-link, .mobile-nav-link").forEach(link => {
+        link.classList.remove("active");
+        
+        const linkHref = link.getAttribute("href");
+        
+        // Check if we're on the exact page this link points to
+        if (currentPath.endsWith(linkHref) || 
+            (currentPath === "/" && linkHref === "index.html") ||
+            (currentPath.endsWith("/index.html") && linkHref === "index.html") ||
+            (currentPath.includes("/projects/") && currentPath.endsWith("index.html") && linkHref === "index.html")) {
+            link.classList.add("active");
+        }
+    });
+
+    // ========================================
+    // TAB FUNCTIONALITY FOR PROJECT DETAILS
+    // ========================================
+    
+    // Standard tab functionality
     document.querySelectorAll('.tab-btn').forEach(btn => {
         btn.addEventListener('click', () => {
             console.log('Tab clicked:', btn.dataset.tab);
@@ -157,8 +198,55 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     });
+
+    // ========================================
+    // PROJECT DETAIL PAGE FUNCTIONALITY
+    // ========================================
     
-    // Intersection Observer for fade-in animations
+    // Gallery thumbnail interactions for project detail pages
+    document.querySelectorAll('.thumbnail').forEach((thumb, index) => {
+        thumb.addEventListener('click', () => {
+            const mainImage = document.querySelector('.gallery-item.main img');
+            const thumbImage = thumb.querySelector('img');
+            if (mainImage && thumbImage) {
+                const tempSrc = mainImage.src;
+                const tempAlt = mainImage.alt;
+                mainImage.src = thumbImage.src;
+                mainImage.alt = thumbImage.alt;
+                thumbImage.src = tempSrc;
+                thumbImage.alt = tempAlt;
+            }
+        });
+        
+        // Keyboard accessibility for thumbnails
+        thumb.addEventListener('keydown', function(e) {
+            if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                thumb.click();
+            }
+        });
+    });
+
+    // ========================================
+    // ENEMY ARCHETYPE CARD INTERACTIONS
+    // ========================================
+    
+    // Add hover effects to archetype cards
+    document.querySelectorAll('.archetype-card').forEach(card => {
+        card.addEventListener('mouseenter', () => {
+            card.style.transform = 'translateY(-5px)';
+            card.style.transition = 'transform 0.3s ease';
+        });
+        
+        card.addEventListener('mouseleave', () => {
+            card.style.transform = 'translateY(0)';
+        });
+    });
+
+    // ========================================
+    // INTERSECTION OBSERVER FOR ANIMATIONS
+    // ========================================
+    
     const observerOptions = {
         threshold: 0.1,
         rootMargin: '0px 0px -50px 0px'
@@ -173,31 +261,18 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }, observerOptions);
 
-    // Observe project cards and skill categories for animation
-    document.querySelectorAll('.project-card, .skill-category').forEach(element => {
+    // Observe project cards, skill categories, and archetype cards for animation
+    document.querySelectorAll('.project-card, .skill-category, .archetype-card, .aspect-card, .insight-card').forEach(element => {
         element.style.opacity = '0';
         element.style.transform = 'translateY(50px)';
         element.style.transition = 'all 0.8s ease';
         observer.observe(element);
     });
 
-    // Highlight active page - simplified approach
-    const currentPath = window.location.pathname;
-
-    document.querySelectorAll(".nav-link, .mobile-nav-link").forEach(link => {
-        link.classList.remove("active");
-        
-        const linkHref = link.getAttribute("href");
-        
-        // Check if we're on the exact page this link points to
-        if (currentPath.endsWith(linkHref) || 
-            (currentPath === "/" && linkHref === "index.html") ||
-            (currentPath.endsWith("/index.html") && linkHref === "index.html") ||
-            (currentPath.includes("/projects/") && currentPath.endsWith("index.html") && linkHref === "index.html")) {
-            link.classList.add("active");
-        }
-    });
-
+    // ========================================
+    // INITIALIZE MAIN FUNCTIONALITY
+    // ========================================
+    
     // Initialize video hovers and project interactions
     initializeVideoHovers();
     initializeProjectInteractions();
@@ -205,7 +280,14 @@ document.addEventListener('DOMContentLoaded', function() {
     console.log('JavaScript initialized successfully');
 });
 
-// Video Modal and Enhanced Project Interactions
+// ========================================
+// VIDEO MODAL AND PROJECT INTERACTIONS
+// ========================================
+
+/**
+ * Initialize enhanced project interactions including video modals
+ * and clickable project cards with proper event handling
+ */
 function initializeProjectInteractions() {
     const projectItems = document.querySelectorAll('.project-grid-item[data-project-url]');
     const videoModal = document.getElementById('videoModal');
@@ -221,7 +303,10 @@ function initializeProjectInteractions() {
     
     console.log('Initializing project interactions...');
     
-    // Make project cards clickable (excluding coming-soon)
+    // ========================================
+    // CLICKABLE PROJECT CARDS
+    // ========================================
+    
     projectItems.forEach(item => {
         if (!item.classList.contains('coming-soon')) {
             item.style.cursor = 'pointer';
@@ -273,7 +358,10 @@ function initializeProjectInteractions() {
         }
     });
     
-    // Video popup functionality
+    // ========================================
+    // VIDEO POPUP FUNCTIONALITY
+    // ========================================
+    
     videoPlayBtns.forEach(btn => {
         btn.addEventListener('click', function(e) {
             e.stopPropagation();
@@ -305,7 +393,15 @@ function initializeProjectInteractions() {
         });
     });
     
-    // Video modal functions
+    // ========================================
+    // VIDEO MODAL FUNCTIONS
+    // ========================================
+    
+    /**
+     * Open video modal with proper loading states and theming
+     * @param {string} videoId - YouTube video ID
+     * @param {string} videoTitle - Video title for accessibility
+     */
     function openVideoModal(videoId, videoTitle) {
         // Show loading state
         videoModal.classList.add('loading');
@@ -316,7 +412,6 @@ function initializeProjectInteractions() {
         } else {
             videoModal.classList.remove('limitless-video');
         }
-        
         
         // Set video source with autoplay and other parameters
         const embedUrl = `https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0&modestbranding=1&showinfo=0`;
@@ -340,6 +435,9 @@ function initializeProjectInteractions() {
         console.log('Video modal opened:', videoTitle);
     }
     
+    /**
+     * Close video modal with proper cleanup
+     */
     function closeVideoModalFunc() {
         console.log('Closing video modal...');
         
@@ -353,6 +451,10 @@ function initializeProjectInteractions() {
             document.body.classList.remove('modal-open');
         }, 300);
     }
+    
+    // ========================================
+    // VIDEO MODAL EVENT LISTENERS
+    // ========================================
     
     // Close video modal event listeners
     closeVideoModal.addEventListener('click', function(e) {
@@ -397,7 +499,14 @@ function initializeProjectInteractions() {
     console.log('Project interactions initialized successfully');
 }
 
-// Enhanced hover video functionality for projects
+// ========================================
+// ENHANCED HOVER VIDEO FUNCTIONALITY
+// ========================================
+
+/**
+ * Initialize video hover functionality for project cards
+ * Only enables on desktop to avoid mobile performance issues
+ */
 function initializeVideoHovers() {
     const projectItems = document.querySelectorAll('.project-grid-item');
     
@@ -436,7 +545,13 @@ function initializeVideoHovers() {
     });
 }
 
-// Window resize handler for responsive behavior
+// ========================================
+// WINDOW RESIZE HANDLER
+// ========================================
+
+/**
+ * Handle window resize events for responsive behavior
+ */
 window.addEventListener('resize', function() {
     // Close mobile menu on resize
     if (window.innerWidth > 768) {
@@ -482,7 +597,13 @@ window.addEventListener('resize', function() {
     }
 });
 
-// Error handling for video loading
+// ========================================
+// ERROR HANDLING AND PERFORMANCE
+// ========================================
+
+/**
+ * Error handling for video loading
+ */
 window.addEventListener('error', function(e) {
     if (e.target && e.target.tagName === 'IFRAME') {
         console.warn('Video failed to load:', e.target.src);
@@ -494,7 +615,12 @@ window.addEventListener('error', function(e) {
     }
 });
 
-// Performance optimization: Throttle resize events
+/**
+ * Performance optimization: Throttle resize events
+ * @param {Function} func - Function to throttle
+ * @param {number} wait - Wait time in milliseconds
+ * @returns {Function} Throttled function
+ */
 function throttle(func, wait) {
     let timeout;
     return function executedFunction(...args) {
@@ -513,3 +639,154 @@ const throttledResize = throttle(function() {
 }, 250);
 
 window.addEventListener('resize', throttledResize);
+
+// ========================================
+// PROJECT DETAIL PAGE SPECIFIC FUNCTIONS
+// ========================================
+
+/**
+ * Initialize Blood and Sand project page specific functionality
+ * This runs when the DOM is loaded and adds enhanced interactions
+ */
+function initializeBloodSandProject() {
+    console.log('Initializing Blood and Sand project functionality...');
+    
+    // Enhanced archetype card interactions
+    document.querySelectorAll('.archetype-card').forEach(card => {
+        // Add ripple effect on click
+        card.addEventListener('click', function(e) {
+            const ripple = document.createElement('div');
+            ripple.style.position = 'absolute';
+            ripple.style.width = '10px';
+            ripple.style.height = '10px';
+            ripple.style.background = 'rgba(76, 175, 80, 0.5)';
+            ripple.style.borderRadius = '50%';
+            ripple.style.transform = 'translate(-50%, -50%)';
+            ripple.style.left = e.clientX - card.getBoundingClientRect().left + 'px';
+            ripple.style.top = e.clientY - card.getBoundingClientRect().top + 'px';
+            ripple.style.pointerEvents = 'none';
+            ripple.style.animation = 'ripple 0.6s ease-out';
+            
+            card.style.position = 'relative';
+            card.appendChild(ripple);
+            
+            setTimeout(() => {
+                ripple.remove();
+            }, 600);
+        });
+    });
+    
+    // Smooth reveal animations for insights
+    const insightCards = document.querySelectorAll('.insight-card');
+    insightCards.forEach((card, index) => {
+        card.style.animationDelay = `${index * 0.2}s`;
+    });
+    
+    console.log('Blood and Sand project functionality initialized');
+}
+
+// ========================================
+// UTILITY FUNCTIONS
+// ========================================
+
+/**
+ * Utility function to add CSS animation keyframes dynamically
+ */
+function addRippleAnimation() {
+    if (!document.querySelector('#ripple-animation')) {
+        const style = document.createElement('style');
+        style.id = 'ripple-animation';
+        style.textContent = `
+            @keyframes ripple {
+                0% {
+                    transform: translate(-50%, -50%) scale(0);
+                    opacity: 1;
+                }
+                100% {
+                    transform: translate(-50%, -50%) scale(20);
+                    opacity: 0;
+                }
+            }
+        `;
+        document.head.appendChild(style);
+    }
+}
+
+/**
+ * Initialize page-specific functionality based on current page
+ */
+function initializePageSpecificFunctionality() {
+    const currentPath = window.location.pathname;
+    
+    if (currentPath.includes('blood-and-sand')) {
+        initializeBloodSandProject();
+        addRippleAnimation();
+    }
+    
+    // Add other project-specific initializations here as needed
+    // if (currentPath.includes('limitless-runner')) {
+    //     initializeLimitlessRunnerProject();
+    // }
+}
+
+// Initialize page-specific functionality when DOM is ready
+document.addEventListener('DOMContentLoaded', function() {
+    setTimeout(initializePageSpecificFunctionality, 100);
+});
+
+// ========================================
+// ACCESSIBILITY ENHANCEMENTS
+// ========================================
+
+/**
+ * Enhanced keyboard navigation for project cards
+ */
+document.addEventListener('keydown', function(e) {
+    // Handle arrow key navigation between project cards
+    if (e.key === 'ArrowRight' || e.key === 'ArrowLeft') {
+        const focusedElement = document.activeElement;
+        if (focusedElement.classList.contains('project-grid-item')) {
+            const projectCards = Array.from(document.querySelectorAll('.project-grid-item[tabindex="0"]'));
+            const currentIndex = projectCards.indexOf(focusedElement);
+            
+            if (currentIndex !== -1) {
+                let nextIndex;
+                if (e.key === 'ArrowRight') {
+                    nextIndex = (currentIndex + 1) % projectCards.length;
+                } else {
+                    nextIndex = (currentIndex - 1 + projectCards.length) % projectCards.length;
+                }
+                
+                projectCards[nextIndex].focus();
+                e.preventDefault();
+            }
+        }
+    }
+});
+
+/**
+ * Screen reader announcements for dynamic content
+ */
+function announceToScreenReader(message) {
+    const announcement = document.createElement('div');
+    announcement.setAttribute('aria-live', 'polite');
+    announcement.setAttribute('aria-atomic', 'true');
+    announcement.style.position = 'absolute';
+    announcement.style.left = '-10000px';
+    announcement.style.width = '1px';
+    announcement.style.height = '1px';
+    announcement.style.overflow = 'hidden';
+    
+    document.body.appendChild(announcement);
+    announcement.textContent = message;
+    
+    setTimeout(() => {
+        document.body.removeChild(announcement);
+    }, 1000);
+}
+
+// ========================================
+// END OF ENHANCED JAVASCRIPT
+// ========================================
+
+console.log('Blood and Sand enhanced JavaScript loaded successfully');
