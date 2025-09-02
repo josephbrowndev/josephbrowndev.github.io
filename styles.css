@@ -5222,6 +5222,37 @@ body.modal-open {
         gap: 0.8rem;
     }
 }
+/* Limitless Runner Tab Override - Make Active Tab Green Instead of Red */
+.limitless-tab.active {
+    background: linear-gradient(45deg, var(--limitless-green), var(--limitless-dark-green)) !important;
+    color: var(--limitless-black) !important;
+    box-shadow: 0 4px 15px rgba(34, 197, 94, 0.3) !important;
+}
+
+.limitless-tab:hover {
+    background: rgba(34, 197, 94, 0.1) !important;
+    color: var(--limitless-green) !important;
+}
+
+/* Ensure the tab navigation container uses green theme */
+.limitless-hero .tech-tabs-container .tab-navigation {
+    background: var(--dark-gray);
+}
+
+.limitless-hero .tech-tabs-container .tech-tab-btn {
+    color: var(--light-gray);
+}
+
+.limitless-hero .tech-tabs-container .tech-tab-btn:hover {
+    background: rgba(34, 197, 94, 0.1);
+    color: var(--limitless-green);
+}
+
+.limitless-hero .tech-tabs-container .tech-tab-btn.active {
+    background: linear-gradient(45deg, var(--limitless-green), var(--limitless-dark-green));
+    color: var(--limitless-black);
+    box-shadow: 0 4px 15px rgba(34, 197, 94, 0.3);
+}
 
 // ========================================
 // 24. ASSET TOOLTIP STYLES
