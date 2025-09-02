@@ -1,5 +1,103 @@
 // Updated script.js with proper mobile menu functionality
 document.addEventListener('DOMContentLoaded', function() {
+
+    // Video Modal and Enhanced Project Interactions
+        initializeProjectInteractions();
+    });
+    
+    function initializeProjectInteractions() {
+        const projectItems = document.querySelectorAll('.project-grid-item[data-project-url]');
+        const videoModal = document.getElementById('videoModal');
+        const modalVideo = document.getElementById('modalVideo');
+        const closeVideoModal = document.getElementById('closeVideoModal');
+        const videoPlayBtns = document.querySelectorAll('.video-play-btn');
+        
+        // Only initialize if we have the required elements (projects page)
+        if (!videoModal || !modalVideo || !closeVideoModal) {
+            return;
+        }
+        
+        console.log('Initializing project interactions...');
+        
+        // Make project cards clickable (excluding coming-soon)
+        projectItems.forEach(item => {
+            if (!item.classList.contains('coming-soon')) {
+                item.style.cursor = 'pointer';
+                item.setAttribute('tabindex', '0'); // Make keyboard accessible
+                
+                // Click handler for project navigation
+                item.addEventListener('click', function(e) {
+                    // Don't navigate if clicking on action buttons or video play button
+                    if (e.target.closest('.project-actions') || e.target.closest('.video-play-btn')) {
+                        return;
+                    }
+                    
+                    const projectUrl = this.dataset.projectUrl;
+                    if (projectUrl) {
+                        console.log('Navigating to:', projectUrl);
+                        window.location.href = projectUrl;
+                    }
+                });
+                
+                // Keyboard handler for accessibility
+                item.addEventListener('keydown', function(e) {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                        e.preventDefault();
+                        if (!e.target.closest('.project-actions') && !e.target.closest('.video-play-btn')) {
+                            const projectUrl = this.dataset.projectUrl;
+                            if (projectUrl) {
+                                window.location.href = projectUrl;
+                            }
+                        }
+                    }
+                });
+                
+                // Enhanced hover effects
+                item.addEventListener('mouseenter', function() {
+                    if (!this.querySelector('.thumbnail-overlay').matches(':hover')) {
+                        this.style.transform = 'translateY(-5px)';
+                        this.style.transition = 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)';
+                    }
+                });
+                
+                item.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateY(-2px)';
+                    setTimeout(() => {
+                        if (!this.matches(':hover')) {
+                            this.style.transform = '';
+                        }
+                    }, 200);
+                });
+            }
+        });
+        
+        // Video popup functionality
+        videoPlayBtns.forEach(btn => {
+            btn.addEventListener('click', function(e) {
+                e.stopPropagation();
+                e.preventDefault();
+                
+                const videoId = this.dataset.videoId;
+                const videoTitle = this.dataset.videoTitle || 'Project Demo Video';
+                
+                console.log('Opening video modal for:', videoId);
+                
+                if (videoId) {
+                    openVideoModal(videoId, videoTitle);
+                }
+            });
+        
+        // Keyboard accessibility for video buttons
+        btn.addEventListener('keydown', function(e) {
+            if (e.key === 'Enter' || e.key === ' ') {
+                e.stopPropagation();
+                e.preventDefault();
+                
+                const videoId = this.dataset.videoId;
+                const videoTitle = this.dataset.videoTitle || 'Project Demo Video';
+                
+                if (videoId)
+
     
     // Mobile menu functionality - FIXED VERSION
     const hamburger = document.querySelector('.hamburger');
