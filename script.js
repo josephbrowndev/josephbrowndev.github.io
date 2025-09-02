@@ -659,7 +659,7 @@ function initializeBloodSandProject() {
             ripple.style.position = 'absolute';
             ripple.style.width = '10px';
             ripple.style.height = '10px';
-            ripple.style.background = 'rgba(76, 175, 80, 0.5)';
+            ripple.style.background = 'rgba(220, 38, 38, 0.5)';
             ripple.style.borderRadius = '50%';
             ripple.style.transform = 'translate(-50%, -50%)';
             ripple.style.left = e.clientX - card.getBoundingClientRect().left + 'px';
