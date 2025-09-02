@@ -4235,6 +4235,16 @@ body.modal-open {
    23. LIMITLESS RUNNER TECHNICAL PAGE STYLES
    ======================================== */
 
+/* Hero Stats Bubbles*/
+.limitless-hero-stat {
+    text-align: center;
+    padding: 1.5rem;
+    background: rgba(34, 197, 94, 0.1);
+    border-radius: 15px;
+    border: 1px solid rgba(34, 197, 94, 0.3);
+}
+
+
 /* Development Philosophy Section */
 .development-philosophy {
     padding: 80px 0;
