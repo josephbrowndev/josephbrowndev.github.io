@@ -5253,6 +5253,69 @@ body.modal-open {
     color: var(--limitless-black);
     box-shadow: 0 4px 15px rgba(34, 197, 94, 0.3);
 }
+/* Real Image Styling for Limitless Runner */
+.limitless-image {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(34, 197, 94, 0.2);
+    transition: all 0.3s ease;
+}
+
+.limitless-image:hover {
+    transform: scale(1.02);
+    box-shadow: 0 15px 40px rgba(34, 197, 94, 0.3);
+    border-color: var(--limitless-green);
+}
+
+.image-container {
+    overflow: hidden;
+    border-radius: 12px;
+    background: var(--charcoal);
+}
+
+/* UI Gallery Specific Styling */
+.ui-main-image {
+    max-height: 400px;
+    object-fit: cover;
+}
+
+.ui-thumb-image {
+    height: 100px;
+    object-fit: cover;
+}
+
+.ui-thumb {
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.ui-thumb:hover {
+    transform: scale(1.05);
+}
+
+.ui-thumb.selected {
+    border: 2px solid var(--limitless-green);
+    box-shadow: 0 0 15px rgba(34, 197, 94, 0.4);
+}
+
+/* Character Design Image */
+.character-design {
+    max-height: 500px;
+    object-fit: cover;
+}
+
+/* Blueprint Images */
+.blueprint-visual .image-container,
+.additional-blueprint .image-container {
+    margin-bottom: 1.5rem;
+}
+
+/* Achievement Image */
+.achievement-visual .image-container {
+    max-width: 500px;
+}
 
 // ========================================
 // 24. ASSET TOOLTIP STYLES
