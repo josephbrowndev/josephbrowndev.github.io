@@ -784,6 +784,347 @@ function announceToScreenReader(message) {
         document.body.removeChild(announcement);
     }, 1000);
 }
+// ========================================
+// LIMITLESS RUNNER TECHNICAL PAGE FUNCTIONALITY
+// ========================================
+
+/**
+ * Initialize Limitless Runner specific functionality
+ */
+function initializeLimitlessRunnerTechnical() {
+    console.log('Initializing Limitless Runner technical page functionality...');
+    
+    // Enhanced image placeholder interactions
+    initializeImagePlaceholders();
+    
+    // UI thumbnail gallery functionality
+    initializeUIGallery();
+    
+    // Step animation on scroll
+    initializeStepAnimations();
+    
+    // Metric counting animation
+    initializeMetricAnimations();
+    
+    // Enhanced tab switching with smooth transitions
+    enhanceTabSwitching();
+    
+    console.log('Limitless Runner technical functionality initialized');
+}
+
+/**
+ * Initialize image placeholder interactions with asset references
+ */
+function initializeImagePlaceholders() {
+    const placeholders = document.querySelectorAll('.image-placeholder');
+    
+    placeholders.forEach(placeholder => {
+        const noteElement = placeholder.querySelector('.placeholder-note');
+        if (noteElement) {
+            const assetName = noteElement.textContent;
+            
+            // Add click handler to show asset information
+            placeholder.addEventListener('click', function() {
+                showAssetInfo(assetName, placeholder);
+            });
+            
+            // Add hover effect for interactive placeholders
+            placeholder.style.cursor = 'pointer';
+            placeholder.addEventListener('mouseenter', function() {
+                noteElement.style.transform = 'scale(1.1)';
+                noteElement.style.transition = 'transform 0.3s ease';
+            });
+            
+            placeholder.addEventListener('mouseleave', function() {
+                noteElement.style.transform = 'scale(1)';
+            });
+        }
+    });
+}
+
+/**
+ * Show asset information modal or tooltip
+ */
+function showAssetInfo(assetName, element) {
+    const assetInfo = getAssetInfo(assetName);
+    
+    // Create tooltip
+    const tooltip = document.createElement('div');
+    tooltip.className = 'asset-tooltip';
+    tooltip.innerHTML = `
+        <h4>${assetInfo.title}</h4>
+        <p>${assetInfo.description}</p>
+        <span class="asset-path">${assetInfo.path}</span>
+    `;
+    
+    // Position tooltip
+    const rect = element.getBoundingClientRect();
+    tooltip.style.position = 'fixed';
+    tooltip.style.top = `${rect.top - 10}px`;
+    tooltip.style.left = `${rect.right + 10}px`;
+    tooltip.style.zIndex = '10000';
+    
+    document.body.appendChild(tooltip);
+    
+    // Remove tooltip after 3 seconds or on click
+    setTimeout(() => {
+        if (tooltip.parentNode) {
+            tooltip.parentNode.removeChild(tooltip);
+        }
+    }, 3000);
+    
+    tooltip.addEventListener('click', () => {
+        if (tooltip.parentNode) {
+            tooltip.parentNode.removeChild(tooltip);
+        }
+    });
+}
+
+/**
+ * Get asset information based on filename
+ */
+function getAssetInfo(assetName) {
+    const assetDatabase = {
+        'CleanCoding.png': {
+            title: 'Clean Coding Architecture',
+            description: 'Visual representation of the level generation system architecture and code organization',
+            path: 'assets/images/limitless-runner/CleanCoding.png'
+        },
+        'animationlocomotion.png': {
+            title: 'Animation Locomotion System',
+            description: 'Blueprint showing the character movement and animation state machine',
+            path: 'assets/images/limitless-runner/animationlocomotion.png'
+        },
+        'animationlocomotion2.png': {
+            title: 'Advanced Animation System',
+            description: 'Detailed view of the animation blueprint with state transitions',
+            path: 'assets/images/limitless-runner/animationlocomotion2.png'
+        },
+        'animationmontage.png': {
+            title: 'Animation Montage Code',
+            description: 'Code implementation for animation montage system',
+            path: 'assets/images/limitless-runner/animationmontage.png'
+        },
+        'UI1.png': {
+            title: 'Main Menu Interface',
+            description: 'Clean main menu design with navigation hierarchy',
+            path: 'assets/images/limitless-runner/UI1.png'
+        },
+        'UI2.png': {
+            title: 'HUD Design',
+            description: 'In-game heads-up display with score and power-up indicators',
+            path: 'assets/images/limitless-runner/UI2.png'
+        },
+        'UI3.png': {
+            title: 'Settings Menu',
+            description: 'Comprehensive settings interface with visual feedback',
+            path: 'assets/images/limitless-runner/UI3.png'
+        },
+        'UI4.png': {
+            title: 'Pause Interface',
+            description: 'Non-intrusive pause menu overlay design',
+            path: 'assets/images/limitless-runner/UI4.png'
+        },
+        'UICleanCoding.png': {
+            title: 'UI Clean Coding',
+            description: 'Code structure and organization for UI components',
+            path: 'assets/images/limitless-runner/UICleanCoding.png'
+        },
+        'MouseTinkering.jpg': {
+            title: 'Mouse Character Development',
+            description: 'Character design and development process',
+            path: 'assets/images/limitless-runner/MouseTinkering.jpg'
+        }
+    };
+    
+    return assetDatabase[assetName] || {
+        title: 'Development Asset',
+        description: 'Technical implementation asset from Limitless Runner development',
+        path: `assets/images/limitless-runner/${assetName}`
+    };
+}
+
+/**
+ * Initialize UI gallery thumbnail switching
+ */
+function initializeUIGallery() {
+    const mainImage = document.querySelector('.ui-image-container .image-placeholder');
+    const thumbnails = document.querySelectorAll('.ui-thumb');
+    
+    if (!mainImage || thumbnails.length === 0) return;
+    
+    thumbnails.forEach((thumb, index) => {
+        thumb.addEventListener('click', () => {
+            // Update main image content
+            const thumbContent = thumb.querySelector('.image-placeholder');
+            if (thumbContent) {
+                const thumbIcon = thumbContent.querySelector('i').className;
+                const thumbText = thumbContent.querySelector('p').textContent;
+                const thumbNote = thumbContent.querySelector('.placeholder-note').textContent;
+                
+                // Update main image
+                const mainIcon = mainImage.querySelector('i');
+                const mainText = mainImage.querySelector('p');
+                const mainNote = mainImage.querySelector('.placeholder-note');
+                
+                mainIcon.className = thumbIcon;
+                mainText.textContent = thumbText;
+                mainNote.textContent = thumbNote;
+                
+                // Add selection feedback
+                thumbnails.forEach(t => t.classList.remove('selected'));
+                thumb.classList.add('selected');
+                
+                // Animate transition
+                mainImage.style.transform = 'scale(0.95)';
+                setTimeout(() => {
+                    mainImage.style.transform = 'scale(1)';
+                }, 150);
+            }
+        });
+    });
+}
+
+/**
+ * Initialize step animations on scroll
+ */
+function initializeStepAnimations() {
+    const steps = document.querySelectorAll('.step-item');
+    
+    const stepObserver = new IntersectionObserver((entries) => {
+        entries.forEach((entry, index) => {
+            if (entry.isIntersecting) {
+                setTimeout(() => {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateX(0)';
+                }, index * 200);
+            }
+        });
+    }, {
+        threshold: 0.3,
+        rootMargin: '0px 0px -50px 0px'
+    });
+    
+    steps.forEach(step => {
+        step.style.opacity = '0';
+        step.style.transform = 'translateX(-30px)';
+        step.style.transition = 'all 0.6s ease';
+        stepObserver.observe(step);
+    });
+}
+
+/**
+ * Initialize metric counting animations
+ */
+function initializeMetricAnimations() {
+    const metrics = document.querySelectorAll('.metric-value');
+    
+    const metricObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                animateMetric(entry.target);
+            }
+        });
+    }, {
+        threshold: 0.5
+    });
+    
+    metrics.forEach(metric => {
+        metricObserver.observe(metric);
+    });
+}
+
+/**
+ * Animate individual metric counting
+ */
+function animateMetric(element) {
+    const finalValue = element.textContent;
+    
+    // Only animate numeric values
+    if (finalValue.match(/^\d+$/)) {
+        const numValue = parseInt(finalValue);
+        const duration = 1000;
+        const startTime = Date.now();
+        
+        const animate = () => {
+            const elapsed = Date.now() - startTime;
+            const progress = Math.min(elapsed / duration, 1);
+            
+            // Easing function
+            const easeOut = 1 - Math.pow(1 - progress, 3);
+            const currentValue = Math.floor(easeOut * numValue);
+            
+            element.textContent = currentValue;
+            
+            if (progress < 1) {
+                requestAnimationFrame(animate);
+            } else {
+                element.textContent = finalValue; // Ensure final value is exact
+            }
+        };
+        
+        animate();
+    }
+}
+
+/**
+ * Enhance tab switching with smooth transitions
+ */
+function enhanceTabSwitching() {
+    const tabButtons = document.querySelectorAll('.tech-tab-btn');
+    const tabContents = document.querySelectorAll('.tech-tab-content');
+    
+    tabButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            const targetTab = button.dataset.tab;
+            const targetContent = document.getElementById(targetTab);
+            
+            if (targetContent) {
+                // Add loading state
+                button.style.opacity = '0.7';
+                
+                // Fade out current content
+                tabContents.forEach(content => {
+                    if (content.classList.contains('active')) {
+                        content.style.opacity = '0';
+                        content.style.transform = 'translateY(20px)';
+                    }
+                });
+                
+                setTimeout(() => {
+                    // Switch active states
+                    tabContents.forEach(content => content.classList.remove('active'));
+                    tabButtons.forEach(btn => btn.classList.remove('active'));
+                    
+                    targetContent.classList.add('active');
+                    button.classList.add('active');
+                    
+                    // Fade in new content
+                    targetContent.style.opacity = '1';
+                    targetContent.style.transform = 'translateY(0)';
+                    
+                    // Remove loading state
+                    button.style.opacity = '1';
+                }, 200);
+            }
+        });
+    });
+    
+    // Initialize transition styles
+    tabContents.forEach(content => {
+        content.style.transition = 'all 0.3s ease';
+    });
+}
+
+// Initialize when DOM is loaded
+document.addEventListener('DOMContentLoaded', function() {
+    // Check if we're on the Limitless Runner technical page
+    if (window.location.pathname.includes('limitless-runner') || 
+        document.querySelector('.limitless-hero')) {
+        setTimeout(initializeLimitlessRunnerTechnical, 100);
+    }
+});
+
 
 // ========================================
 // END OF ENHANCED JAVASCRIPT
