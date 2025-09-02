@@ -309,6 +309,14 @@ function initializeProjectInteractions() {
     function openVideoModal(videoId, videoTitle) {
         // Show loading state
         videoModal.classList.add('loading');
+
+        // Check if it's Limitless Runner video
+        if (videoId === 'YsxuayGGE3Q') {
+            videoModal.classList.add('limitless-video');
+        } else {
+            videoModal.classList.remove('limitless-video');
+        }
+        
         
         // Set video source with autoplay and other parameters
         const embedUrl = `https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0&modestbranding=1&showinfo=0`;
@@ -340,7 +348,7 @@ function initializeProjectInteractions() {
         
         setTimeout(() => {
             videoModal.style.display = 'none';
-            videoModal.classList.remove('closing', 'loading');
+            videoModal.classList.remove('closing', 'loading', 'limitless-video');
             modalVideo.src = '';
             document.body.classList.remove('modal-open');
         }, 300);
