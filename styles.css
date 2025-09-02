@@ -3423,3 +3423,388 @@ body.mobile-menu-open {
     0% { left: -100%; }
     100% { left: 100%; }
 }
+/* ========================================
+   VIDEO MODAL STYLES
+   ======================================== */
+
+/* Video Modal Styles */
+.video-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.9);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 10000;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.video-modal.active {
+    opacity: 1;
+}
+
+.video-modal-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+}
+
+.video-modal-content {
+    position: relative;
+    width: 90%;
+    max-width: 900px;
+    background: var(--charcoal);
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
+    transform: scale(0.8);
+    transition: transform 0.3s ease;
+}
+
+.video-modal.active .video-modal-content {
+    transform: scale(1);
+}
+
+.video-close-btn {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: rgba(220, 38, 38, 0.9);
+    border: none;
+    color: var(--primary-gold);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 1.2rem;
+    z-index: 10001;
+    transition: all 0.3s ease;
+}
+
+.video-close-btn:hover {
+    background: rgba(220, 38, 38, 1);
+    transform: scale(1.1);
+}
+
+.video-modal .video-container {
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%; /* 16:9 aspect ratio */
+    overflow: hidden;
+}
+
+.video-modal iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+/* ========================================
+   ENHANCED PROJECT GRID INTERACTIONS
+   ======================================== */
+
+/* Enhanced project grid interactions */
+.project-grid-item[data-project-url]:not(.coming-soon) {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    cursor: pointer;
+}
+
+.project-grid-item[data-project-url]:not(.coming-soon):hover {
+    transform: translateY(-5px);
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
+}
+
+.limitless-theme[data-project-url]:not(.coming-soon):hover {
+    box-shadow: 0 25px 50px rgba(34, 197, 94, 0.2) !important;
+}
+
+.project-grid-item[data-project-url]:not(.coming-soon) .thumbnail-overlay {
+    transition: all 0.3s ease;
+}
+
+.project-grid-item[data-project-url]:not(.coming-soon):hover .thumbnail-overlay {
+    opacity: 1;
+}
+
+/* Enhanced play button */
+.video-play-btn {
+    cursor: pointer !important;
+    transition: all 0.3s ease;
+    z-index: 10;
+    position: relative;
+}
+
+.video-play-btn:hover {
+    transform: scale(1.2);
+    color: var(--light-gold) !important;
+}
+
+.limitless-theme .video-play-btn:hover {
+    color: var(--limitless-light-green) !important;
+}
+
+/* Accessibility improvements */
+.video-play-btn:focus {
+    outline: 2px solid var(--primary-gold);
+    outline-offset: 2px;
+    border-radius: 50%;
+}
+
+.limitless-theme .video-play-btn:focus {
+    outline-color: var(--limitless-green);
+}
+
+.video-close-btn:focus {
+    outline: 2px solid var(--primary-gold);
+    outline-offset: 2px;
+}
+
+/* Project card click indicators */
+.project-grid-item[data-project-url]:not(.coming-soon)::after {
+    content: '';
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: 8px;
+    height: 8px;
+    background: var(--primary-gold);
+    border-radius: 50%;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.project-grid-item[data-project-url]:not(.coming-soon):hover::after {
+    opacity: 0.8;
+}
+
+.limitless-theme[data-project-url]:not(.coming-soon)::after {
+    background: var(--limitless-green);
+}
+
+/* ========================================
+   MOBILE RESPONSIVE STYLES
+   ======================================== */
+
+@media (max-width: 768px) {
+    .video-modal-content {
+        width: 95%;
+        margin: 0 2.5%;
+    }
+    
+    .video-close-btn {
+        width: 35px;
+        height: 35px;
+        font-size: 1rem;
+    }
+    
+    .project-grid-item[data-project-url]:not(.coming-soon) {
+        cursor: pointer;
+    }
+    
+    /* Enhanced mobile project interactions */
+    .project-grid-item[data-project-url]:not(.coming-soon) .thumbnail-overlay {
+        opacity: 0.8;
+        background: rgba(0, 0, 0, 0.6);
+    }
+    
+    .video-play-btn {
+        font-size: 2.5rem !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .video-modal-content {
+        width: 98%;
+        margin: 0 1%;
+    }
+    
+    .video-close-btn {
+        top: 10px;
+        right: 10px;
+        width: 30px;
+        height: 30px;
+        font-size: 0.9rem;
+    }
+    
+    .project-preview-content h4 {
+        font-size: 1.1rem;
+    }
+    
+    .project-preview-content p {
+        font-size: 0.9rem;
+    }
+}
+
+/* ========================================
+   ANIMATION ENHANCEMENTS
+   ======================================== */
+
+/* Smooth hover transitions for all interactive elements */
+.project-actions .btn,
+.video-play-btn,
+.project-grid-item {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Loading animation for video modal */
+.video-modal-content::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 40px;
+    height: 40px;
+    margin: -20px 0 0 -20px;
+    border: 3px solid rgba(251, 191, 36, 0.2);
+    border-top: 3px solid var(--primary-gold);
+    border-radius: 50%;
+    animation: video-loading-spin 1s linear infinite;
+    opacity: 0;
+    z-index: 10000;
+    pointer-events: none;
+}
+
+.video-modal.loading .video-modal-content::before {
+    opacity: 1;
+}
+
+@keyframes video-loading-spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Pulse animation for play buttons */
+.video-play-btn .fas {
+    animation: subtle-pulse 2s ease-in-out infinite;
+}
+
+@keyframes subtle-pulse {
+    0%, 100% { 
+        transform: scale(1); 
+        opacity: 0.9;
+    }
+    50% { 
+        transform: scale(1.05); 
+        opacity: 1;
+    }
+}
+
+/* Hover stop pulse */
+.video-play-btn:hover .fas {
+    animation: none;
+    transform: scale(1.1);
+}
+
+/* ========================================
+   HIGH CONTRAST AND ACCESSIBILITY
+   ======================================== */
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+    .video-modal {
+        background: rgba(0, 0, 0, 0.95);
+    }
+    
+    .video-close-btn {
+        background: var(--primary-red);
+        border: 2px solid var(--primary-gold);
+    }
+    
+    .thumbnail-overlay {
+        background: rgba(0, 0, 0, 0.9);
+    }
+    
+    .play-button {
+        filter: contrast(1.5);
+    }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+    .video-modal,
+    .video-modal-content,
+    .project-grid-item,
+    .video-play-btn,
+    .video-close-btn {
+        transition: none;
+    }
+    
+    .video-play-btn .fas {
+        animation: none;
+    }
+    
+    .project-grid-item[data-project-url]:not(.coming-soon):hover {
+        transform: none;
+    }
+    
+    .video-play-btn:hover {
+        transform: none;
+    }
+}
+
+/* Focus visible for better keyboard navigation */
+.project-grid-item[data-project-url]:focus-visible {
+    outline: 3px solid var(--primary-gold);
+    outline-offset: 2px;
+}
+
+.limitless-theme[data-project-url]:focus-visible {
+    outline-color: var(--limitless-green);
+}
+
+/* ========================================
+   PRINT STYLES
+   ======================================== */
+
+@media print {
+    .video-modal,
+    .video-play-btn,
+    .thumbnail-overlay {
+        display: none !important;
+    }
+    
+    .project-grid-item {
+        break-inside: avoid;
+        page-break-inside: avoid;
+    }
+}
+
+/* ========================================
+   DARK MODE SUPPORT (if needed)
+   ======================================== */
+
+@media (prefers-color-scheme: dark) {
+    .video-modal-content {
+        background: var(--deep-black);
+        border: 1px solid var(--primary-red);
+    }
+}
+
+/* Smooth scrolling prevention when modal is open */
+body.modal-open {
+    overflow: hidden;
+    position: fixed;
+    width: 100%;
+}
+
+/* Additional video modal states */
+.video-modal.closing {
+    opacity: 0;
+}
+
+.video-modal.closing .video-modal-content {
+    transform: scale(0.8);
+}
