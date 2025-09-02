@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Limitless Runner | Joseph Brown - Endless PC Game</title>
+    <title>Limitless Runner | Joseph Brown - Technical Deep Dive</title>
     <link rel="stylesheet" href="../styles.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-    <meta name="description" content="Limitless Runner - Procedurally generated endless runner on Steam featuring dynamic animation systems, intelligent level generation algorithms, and unique grappling hook mechanics.">
+    <meta name="description" content="Deep dive into the procedural generation algorithms, UI development, and animation systems behind Limitless Runner - showcasing technical implementation and development process.">
 </head>
 <body>
      <!-- Navbar -->
@@ -44,29 +44,29 @@
                 <i class="fas fa-chevron-right"></i>
                 <a href="index.html">Projects</a>
                 <i class="fas fa-chevron-right"></i>
-                <span style="color: var(--limitless-green);">Limitless Runner</span>
+                <span style="color: var(--limitless-green);">Limitless Runner - Technical Deep Dive</span>
             </nav>
             
             <div class="project-hero-content">
                 <h1 class="project-title limitless-title">Limitless Runner</h1>
-                <p class="project-subtitle">Procedural Generation | Animation Systems | Published on Steam</p>
+                <p class="project-subtitle">Technical Deep Dive | Procedural Generation | Animation Systems | UI Development</p>
                 
                 <div class="project-hero-stats">
                     <div class="hero-stat">
-                        <span class="stat-number limitless-stat">∞</span>
-                        <span class="stat-label">Procedural Levels</span>
+                        <span class="stat-number limitless-stat">2</span>
+                        <span class="stat-label">Generation Systems</span>
                     </div>
                     <div class="hero-stat">
-                        <span class="stat-number limitless-stat">60+</span>
-                        <span class="stat-label">FPS Performance</span>
-                    </div>
-                    <div class="hero-stat">
-                        <span class="stat-number limitless-stat">5</span>
-                        <span class="stat-label">Platform Types</span>
+                        <span class="stat-number limitless-stat">15+</span>
+                        <span class="stat-label">UI Components</span>
                     </div>
                     <div class="hero-stat">
                         <span class="stat-number limitless-stat">12</span>
                         <span class="stat-label">Animation States</span>
+                    </div>
+                    <div class="hero-stat">
+                        <span class="stat-number limitless-stat">3</span>
+                        <span class="stat-label">Core Algorithms</span>
                     </div>
                 </div>
                 
@@ -74,324 +74,572 @@
                     <a href="https://store.steampowered.com/app/3843330/Limitless_Runner/" class="btn limitless-btn btn-large" target="_blank">
                         <i class="fab fa-steam"></i> View on Steam
                     </a>
-                    <a href="https://youtu.be/F65bM0gajLo" class="btn limitless-btn-outline btn-large" target="_blank">
-                        <i class="fas fa-play"></i> Watch Gameplay
-                    </a>
-                    <a href="#technical-details" class="btn btn-outline">
-                        <i class="fas fa-code"></i> Technical Details
+                    <a href="#development-process" class="btn limitless-btn-outline btn-large">
+                        <i class="fas fa-code"></i> Development Process
                     </a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Main Demo -->
+    <!-- Development Philosophy -->
+    <section class="development-philosophy">
+        <div class="container">
+            <h2 class="section-title" style="color: var(--limitless-green);">Development Philosophy</h2>
+            <div class="philosophy-content">
+                <p class="philosophy-intro">
+                    Limitless Runner represents my exploration into <strong>intelligent procedural generation</strong> and <strong>responsive game systems</strong>. 
+                    Rather than random generation, I focused on creating algorithms that understand player behavior and adapt accordingly. 
+                    This project demonstrates my approach to building scalable, maintainable game systems that prioritize both performance and player experience.
+                </p>
+                
+                <div class="core-principles">
+                    <div class="principle-card">
+                        <i class="fas fa-brain"></i>
+                        <h3>Intelligent Generation</h3>
+                        <p>Algorithms that understand context and player progression, not just random placement</p>
+                    </div>
+                    <div class="principle-card">
+                        <i class="fas fa-tachometer-alt"></i>
+                        <h3>Performance First</h3>
+                        <p>Every system designed with memory efficiency and frame rate stability as primary concerns</p>
+                    </div>
+                    <div class="principle-card">
+                        <i class="fas fa-user-cog"></i>
+                        <h3>Player-Centric UI</h3>
+                        <p>Interface design that enhances gameplay without creating visual noise or confusion</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Video Showcase -->
     <section class="project-media-showcase">
         <div class="container">
-            <div class="main-demo-video">
-                <div class="video-placeholder featured-video limitless-video">
-                    <i class="fas fa-gamepad" style="color: var(--limitless-green);"></i>
-                    <h3>Endless Runner Gameplay</h3>
-                    <p>Experience the procedural level generation, dynamic animation systems, and optimized PC performance</p>
-                    <span class="video-duration">3:42</span>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Project Overview -->
-    <section class="project-overview-section">
-        <div class="container">
-            <div class="overview-grid">
-                <div class="overview-content">
-                    <h2 style="color: var(--limitless-green);">Project Overview</h2>
-                    <p class="overview-text">
-                        <strong>Limitless Runner</strong> is a published Steam game that showcases advanced procedural generation and animation design. 
-                        The game features a sophisticated <strong>tile-spawning algorithm</strong> that continuously generates platforms while 
-                        efficiently culling off-screen tiles to maintain optimal performance. Players control a charming mouse protagonist with 
-                        <strong>12 distinct animation states</strong>, collecting berries for points while dodging or destroying bee enemies. 
-                        The strategic placement of obstacles forces lateral movement decisions, while cheese power-ups provide game-changing 
-                        abilities like slow-motion, invincibility, and double-jump mechanics.
-                    </p>
-                    
-                    <div class="key-features">
-                        <h3>Core Innovations</h3>
-                        <div class="features-grid">
-                            <div class="feature-item limitless-feature">
-                                <i class="fas fa-infinity" style="color: var(--limitless-green);"></i>
-                                <div>
-                                    <h4>Procedural Level Algorithm</h4>
-                                    <p>Infinite variety through 5 platform types: flat, ascending, descending, swing left, and swing right - all seamlessly generated</p>
-                                </div>
-                            </div>
-                            <div class="feature-item limitless-feature">
-                                <i class="fas fa-running" style="color: var(--limitless-green);"></i>
-                                <div>
-                                    <h4>Advanced Animation Design</h4>
-                                    <p>Fluid mouse character animations with dynamic grappling hook mechanics that appear and disappear based on context</p>
-                                </div>
-                            </div>
-                            <div class="feature-item limitless-feature">
-                                <i class="fas fa-cheese" style="color: var(--limitless-green);"></i>
-                                <div>
-                                    <h4>Strategic Power-Up System</h4>
-                                    <p>Three cheese power-ups: slow-motion for precision, invincibility for aggressive play, and double-jump for advanced navigation</p>
-                                </div>
-                            </div>
-                            <div class="feature-item limitless-feature">
-                                <i class="fas fa-layer-group" style="color: var(--limitless-green);"></i>
-                                <div>
-                                    <h4>Dynamic Platform Generation</h4>
-                                    <p>Algorithm continuously spawns tiles ahead while deleting behind, creating endless gameplay without memory issues</p>
-                                </div>
-                            </div>
-                        </div>
+            <h2 class="section-title" style="color: var(--limitless-green);">Development Videos</h2>
+            <div class="video-showcase-grid">
+                <div class="video-showcase-item">
+                    <div class="video-container">
+                        <iframe src="https://www.youtube.com/embed/3yBE9P2Tlfo" 
+                                title="Limitless Runner - Map Creation System"
+                                allowfullscreen>
+                        </iframe>
                     </div>
-                    
-                    <div class="steam-callout" style="background: linear-gradient(145deg, var(--charcoal), var(--dark-gray)); border: 2px solid var(--limitless-green); border-radius: 15px; padding: 2rem; margin-top: 2rem;">
-                        <h3 style="color: var(--limitless-green); margin-bottom: 1rem;">
-                            <i class="fab fa-steam"></i> Available Now on Steam
-                        </h3>
-                        <p style="color: var(--light-gray); margin-bottom: 1.5rem;">
-                            Limitless Runner is fully released and available for purchase on Steam. Experience the endless procedural 
-                            generation and refined gameplay mechanics that have been optimized through extensive playtesting.
-                        </p>
-                        <a href="https://store.steampowered.com/app/3843330/Limitless_Runner/" class="btn limitless-btn" target="_blank">
-                            <i class="fab fa-steam"></i> Get It On Steam
-                        </a>
+                    <div class="video-info">
+                        <h3>Procedural Map Generation</h3>
+                        <p>Deep dive into the tile spawning algorithm and level generation logic</p>
                     </div>
                 </div>
                 
-                <div class="overview-media">
-                    <div class="media-gallery">
-                        <div class="gallery-item main">
-                            <div class="image-placeholder limitless-placeholder">
-                                <i class="fas fa-mouse"></i>
-                                <p>Mouse Character Animation</p>
-                            </div>
-                        </div>
-                        <div class="gallery-thumbnails">
-                            <div class="thumbnail">
-                                <div class="image-placeholder limitless-placeholder">
-                                    <i class="fas fa-layer-group"></i>
-                                    <p>Platform Variety</p>
-                                </div>
-                            </div>
-                            <div class="thumbnail">
-                                <div class="image-placeholder limitless-placeholder">
-                                    <i class="fas fa-bug"></i>
-                                    <p>Bee Obstacles</p>
-                                </div>
-                            </div>
-                            <div class="thumbnail">
-                                <div class="image-placeholder limitless-placeholder">
-                                    <i class="fas fa-berry"></i>
-                                    <p>Berry Collection</p>
-                                </div>
-                            </div>
-                            <div class="thumbnail">
-                                <div class="image-placeholder limitless-placeholder">
-                                    <i class="fas fa-link"></i>
-                                    <p>Hook Mechanics</p>
-                                </div>
-                            </div>
-                        </div>
+                <div class="video-showcase-item">
+                    <div class="video-container">
+                        <iframe src="https://www.youtube.com/embed/F65bM0gajLo" 
+                                title="Limitless Runner - Gameplay Systems"
+                                allowfullscreen>
+                        </iframe>
+                    </div>
+                    <div class="video-info">
+                        <h3>Gameplay & Animation Systems</h3>
+                        <p>Complete gameplay demonstration with animation blueprint in action</p>
+                    </div>
+                </div>
+                
+                <div class="video-showcase-item">
+                    <div class="video-container">
+                        <iframe src="https://www.youtube.com/embed/YRCotXqavGc" 
+                                title="Limitless Runner - Memory Management"
+                                allowfullscreen>
+                        </iframe>
+                    </div>
+                    <div class="video-info">
+                        <h3>Memory Management System</h3>
+                        <p>Efficient tile deletion and memory optimization techniques</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Technical Details -->
-    <section id="technical-details" class="technical-section">
+    <!-- Technical Implementation -->
+    <section id="development-process" class="technical-section">
         <div class="container">
             <h2 class="section-title" style="color: var(--limitless-green);">Technical Implementation</h2>
             
             <div class="tech-tabs-container">
                 <div class="tab-navigation">
-                    <button class="tech-tab-btn limitless-tab active" data-tab="procedural">Level Generation Algorithm</button>
-                    <button class="tech-tab-btn limitless-tab" data-tab="animation">Animation Systems</button>
-                    <button class="tech-tab-btn limitless-tab" data-tab="gameplay">Core Mechanics</button>
-                    <button class="tech-tab-btn limitless-tab" data-tab="optimization">Performance</button>
+                    <button class="tech-tab-btn limitless-tab active" data-tab="level-generation">Level Generation</button>
+                    <button class="tech-tab-btn limitless-tab" data-tab="object-spawning">Object Spawning</button>
+                    <button class="tech-tab-btn limitless-tab" data-tab="ui-development">UI Development</button>
+                    <button class="tech-tab-btn limitless-tab" data-tab="animation-system">Animation System</button>
                 </div>
                 
                 <div class="tab-content-container">
-                    <div class="tech-tab-content active" id="procedural">
+                    <!-- Level Generation Tab -->
+                    <div class="tech-tab-content active" id="level-generation">
                         <div class="tab-content-grid">
                             <div class="content-text">
                                 <h3>Procedural Level Generation Algorithm</h3>
-                                <ul class="feature-list">
-                                    <li><strong>Continuous Tile Spawning:</strong> Algorithm generates platforms ahead of player view, ensuring seamless infinite gameplay</li>
-                                    <li><strong>Intelligent Culling System:</strong> Tiles behind player are automatically deleted, maintaining constant memory footprint regardless of session length</li>
-                                    <li><strong>Platform Pattern Variety:</strong> Five distinct types - flat segments for speed, ascending/descending for verticality, swing patterns for dynamic movement</li>
-                                    <li><strong>Berry Placement Logic:</strong> Strategic collectible spawning that rewards skill while maintaining achievable paths</li>
-                                    <li><strong>Difficulty Curve Integration:</strong> Algorithm adjusts spacing, obstacle density, and platform complexity based on player progress</li>
-                                    <li><strong>Seamless Transitions:</strong> Smart blending ensures no impossible gaps or jarring difficulty spikes between segments</li>
-                                </ul>
+                                <div class="algorithm-overview">
+                                    <h4>Core Philosophy</h4>
+                                    <p>My approach to level generation focuses on <strong>intelligent tile placement</strong> rather than pure randomization. The system considers player progression, difficulty curves, and visual variety to create engaging sequences.</p>
+                                </div>
                                 
-                                <div class="tech-metrics">
-                                    <div class="metric-item">
-                                        <span class="metric-number" style="color: var(--limitless-green);">∞</span>
-                                        <span class="metric-desc">Unique Levels</span>
+                                <div class="generation-process">
+                                    <h4>Generation Process</h4>
+                                    <div class="process-steps">
+                                        <div class="step-item">
+                                            <span class="step-number">01</span>
+                                            <div class="step-content">
+                                                <h5>Lookahead System</h5>
+                                                <p>Algorithm continuously monitors player position and spawns tiles 3-5 segments ahead to ensure seamless gameplay</p>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="step-item">
+                                            <span class="step-number">02</span>
+                                            <div class="step-content">
+                                                <h5>Pattern Validation</h5>
+                                                <p>Each new tile type is validated against previous segments to prevent impossible jumps or awkward transitions</p>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="step-item">
+                                            <span class="step-number">03</span>
+                                            <div class="step-content">
+                                                <h5>Difficulty Scaling</h5>
+                                                <p>Progressive complexity increases based on distance traveled, introducing more challenging platform combinations</p>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="step-item">
+                                            <span class="step-number">04</span>
+                                            <div class="step-content">
+                                                <h5>Memory Cleanup</h5>
+                                                <p>Automatic deletion of tiles behind player maintains constant memory usage regardless of play session length</p>
+                                            </div>
+                                        </div>
                                     </div>
-                                    <div class="metric-item">
-                                        <span class="metric-number" style="color: var(--limitless-green);">5</span>
-                                        <span class="metric-desc">Platform Types</span>
+                                </div>
+                                
+                                <div class="algorithm-metrics">
+                                    <div class="metric-card">
+                                        <span class="metric-value" style="color: var(--limitless-green);">5</span>
+                                        <span class="metric-label">Platform Types</span>
                                     </div>
-                                    <div class="metric-item">
-                                        <span class="metric-number" style="color: var(--limitless-green);">0.02s</span>
-                                        <span class="metric-desc">Generation Time</span>
+                                    <div class="metric-card">
+                                        <span class="metric-value" style="color: var(--limitless-green);">∞</span>
+                                        <span class="metric-label">Unique Combinations</span>
+                                    </div>
+                                    <div class="metric-card">
+                                        <span class="metric-value" style="color: var(--limitless-green);">60</span>
+                                        <span class="metric-label">FPS Maintained</span>
                                     </div>
                                 </div>
                             </div>
+                            
                             <div class="content-visual">
-                                <div class="code-preview">
-                                    <div class="code-header">
-                                        <span class="code-title">Platform Generation</span>
-                                        <span class="code-lang">Algorithm Design</span>
+                                <div class="generation-visual">
+                                    <div class="visual-header">
+                                        <h4>Level Generation Flow</h4>
+                                        <p>Visual representation of the tile spawning system</p>
                                     </div>
-                                    <div class="code-placeholder limitless-code">
-                                        <i class="fas fa-cube"></i>
-                                        <p>Tile Spawning Logic</p>
+                                    <div class="image-placeholder limitless-placeholder generation-diagram">
+                                        <i class="fas fa-project-diagram"></i>
+                                        <p>Generation Algorithm Diagram</p>
+                                        <span class="placeholder-note">CleanCoding.png</span>
+                                    </div>
+                                </div>
+                                
+                                <div class="platform-types">
+                                    <h4>Platform Variations</h4>
+                                    <div class="platform-grid">
+                                        <div class="platform-type">
+                                            <div class="platform-icon">
+                                                <i class="fas fa-minus"></i>
+                                            </div>
+                                            <span>Flat Segments</span>
+                                        </div>
+                                        <div class="platform-type">
+                                            <div class="platform-icon">
+                                                <i class="fas fa-long-arrow-alt-up"></i>
+                                            </div>
+                                            <span>Ascending</span>
+                                        </div>
+                                        <div class="platform-type">
+                                            <div class="platform-icon">
+                                                <i class="fas fa-long-arrow-alt-down"></i>
+                                            </div>
+                                            <span>Descending</span>
+                                        </div>
+                                        <div class="platform-type">
+                                            <div class="platform-icon">
+                                                <i class="fas fa-undo"></i>
+                                            </div>
+                                            <span>Swing Left</span>
+                                        </div>
+                                        <div class="platform-type">
+                                            <div class="platform-icon">
+                                                <i class="fas fa-redo"></i>
+                                            </div>
+                                            <span>Swing Right</span>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                     
-                    <div class="tech-tab-content" id="animation">
+                    <!-- Object Spawning Tab -->
+                    <div class="tech-tab-content" id="object-spawning">
                         <div class="tab-content-grid">
                             <div class="content-text">
-                                <h3>Character Animation Design</h3>
-                                <ul class="feature-list">
-                                    <li><strong>Mouse Protagonist States:</strong> 12 meticulously crafted animations including run, jump, double-jump, grapple, and contextual reactions</li>
-                                    <li><strong>Dynamic Hook System:</strong> Grappling hook appears/disappears seamlessly based on proximity to swing points and player input</li>
-                                    <li><strong>Physics-Based Movement:</strong> Realistic momentum and weight in all animations, especially noticeable in swing mechanics</li>
-                                    <li><strong>State Machine Architecture:</strong> Smooth transitions between all animation states without jarring cuts or delays</li>
-                                    <li><strong>Visual Feedback Systems:</strong> Particle effects, speed lines, and impact responses synchronized with animation events</li>
-                                    <li><strong>Power-Up Visual States:</strong> Distinct visual changes for invincibility glow, slow-motion trails, and double-jump effects</li>
-                                </ul>
+                                <h3>Object Spawning System</h3>
+                                <div class="spawning-philosophy">
+                                    <h4>Strategic Placement Logic</h4>
+                                    <p>Object spawning goes beyond random placement. Each collectible, obstacle, and power-up is positioned using <strong>contextual awareness</strong> to create meaningful gameplay decisions.</p>
+                                </div>
                                 
+                                <div class="spawning-categories">
+                                    <div class="spawn-category">
+                                        <h5><i class="fas fa-seedling"></i> Berry Collection System</h5>
+                                        <ul>
+                                            <li><strong>Risk-Reward Placement:</strong> Berries positioned to encourage exploration of dangerous paths</li>
+                                            <li><strong>Chain Opportunities:</strong> Sequential berries create scoring combo possibilities</li>
+                                            <li><strong>Accessibility Balance:</strong> Mix of easy and challenging berry locations maintains flow</li>
+                                            <li><strong>Visual Guidance:</strong> Berry trails subtly guide players toward optimal routes</li>
+                                        </ul>
+                                    </div>
+                                    
+                                    <div class="spawn-category">
+                                        <h5><i class="fas fa-bug"></i> Obstacle Intelligence</h5>
+                                        <ul>
+                                            <li><strong>Pattern Recognition:</strong> Bees follow predictable but challenging movement patterns</li>
+                                            <li><strong>Reaction Windows:</strong> Precisely timed obstacle placement allows for skillful dodging</li>
+                                            <li><strong>Lateral Movement:</strong> Strategic barrier placement forces left/right positioning decisions</li>
+                                            <li><strong>Escalation Logic:</strong> Obstacle density increases with player progression</li>
+                                        </ul>
+                                    </div>
+                                    
+                                    <div class="spawn-category">
+                                        <h5><i class="fas fa-cheese"></i> Power-Up Distribution</h5>
+                                        <ul>
+                                            <li><strong>Calculated Scarcity:</strong> Power-ups spawn at intervals that maintain excitement without trivializing challenges</li>
+                                            <li><strong>Contextual Timing:</strong> Slow-motion cheese appears before complex obstacle sequences</li>
+                                            <li><strong>Strategic Variety:</strong> Different power-up types encourage varied playstyles</li>
+                                            <li><strong>Emergency Assistance:</strong> System detects player struggle and adjusts power-up frequency</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                
+                                <div class="spawning-metrics">
+                                    <div class="metric-card">
+                                        <span class="metric-value" style="color: var(--limitless-green);">3</span>
+                                        <span class="metric-label">Power-Up Types</span>
+                                    </div>
+                                    <div class="metric-card">
+                                        <span class="metric-value" style="color: var(--limitless-green);">7</span>
+                                        <span class="metric-label">Obstacle Patterns</span>
+                                    </div>
+                                    <div class="metric-card">
+                                        <span class="metric-value" style="color: var(--limitless-green);">∞</span>
+                                        <span class="metric-label">Berry Combinations</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="content-visual">
+                                <div class="spawning-visual">
+                                    <div class="visual-header">
+                                        <h4>Object Spawning Logic</h4>
+                                        <p>How objects are strategically placed on generated tiles</p>
+                                    </div>
+                                    <div class="image-placeholder limitless-placeholder spawning-diagram">
+                                        <i class="fas fa-sitemap"></i>
+                                        <p>Object Placement System</p>
+                                        <span class="placeholder-note">animationmontage.png</span>
+                                    </div>
+                                </div>
+                                
+                                <div class="object-showcase">
+                                    <h4>Object Interaction Examples</h4>
+                                    <div class="object-examples">
+                                        <div class="object-example">
+                                            <div class="object-icon berry-icon">
+                                                <i class="fas fa-seedling"></i>
+                                            </div>
+                                            <div class="object-info">
+                                                <h5>Berry Chains</h5>
+                                                <p>Sequential placement creates combo opportunities</p>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="object-example">
+                                            <div class="object-icon obstacle-icon">
+                                                <i class="fas fa-bug"></i>
+                                            </div>
+                                            <div class="object-info">
+                                                <h5>Bee Patterns</h5>
+                                                <p>Predictable movement with skillful dodge windows</p>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="object-example">
+                                            <div class="object-icon powerup-icon">
+                                                <i class="fas fa-cheese"></i>
+                                            </div>
+                                            <div class="object-info">
+                                                <h5>Strategic Power-ups</h5>
+                                                <p>Context-aware placement for maximum impact</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- UI Development Tab -->
+                    <div class="tech-tab-content" id="ui-development">
+                        <div class="tab-content-grid">
+                            <div class="content-text">
+                                <h3>UI Development & Design</h3>
+                                <div class="ui-philosophy">
+                                    <h4>Clean, Functional Interface Design</h4>
+                                    <p>My UI approach prioritizes <strong>clarity and accessibility</strong> while maintaining visual appeal. Every element serves a functional purpose and enhances rather than distracts from the gameplay experience.</p>
+                                </div>
+                                
+                                <div class="ui-components">
+                                    <div class="ui-category">
+                                        <h5><i class="fas fa-tachometer-alt"></i> HUD Design</h5>
+                                        <ul>
+                                            <li><strong>Score Display:</strong> Clean, readable typography with subtle animations for score increases</li>
+                                            <li><strong>Power-up Indicators:</strong> Visual feedback system showing active abilities and durations</li>
+                                            <li><strong>Health System:</strong> Intuitive visual representation of player status</li>
+                                            <li><strong>Minimal Distraction:</strong> HUD elements positioned to complement gameplay flow</li>
+                                        </ul>
+                                    </div>
+                                    
+                                    <div class="ui-category">
+                                        <h5><i class="fas fa-cog"></i> Menu Systems</h5>
+                                        <ul>
+                                            <li><strong>Main Menu:</strong> Clean layout with clear navigation hierarchy</li>
+                                            <li><strong>Settings Interface:</strong> Comprehensive options with immediate visual feedback</li>
+                                            <li><strong>Pause System:</strong> Non-intrusive overlay that maintains game context</li>
+                                            <li><strong>Responsive Design:</strong> Consistent experience across different screen resolutions</li>
+                                        </ul>
+                                    </div>
+                                    
+                                    <div class="ui-category">
+                                        <h5><i class="fas fa-gamepad"></i> Player Feedback</h5>
+                                        <ul>
+                                            <li><strong>Visual Cues:</strong> Clear indicators for interactable objects and power-up availability</li>
+                                            <li><strong>Transition Effects:</strong> Smooth animations that enhance rather than interrupt gameplay</li>
+                                            <li><strong>Status Communication:</strong> Immediate visual feedback for player actions and state changes</li>
+                                            <li><strong>Error Prevention:</strong> UI design that prevents accidental inputs during gameplay</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                
+                                <div class="ui-principles">
+                                    <h4>Design Principles Applied</h4>
+                                    <div class="principle-list">
+                                        <div class="principle-item">
+                                            <strong>Functional Clarity:</strong> Every UI element has a clear, specific purpose
+                                        </div>
+                                        <div class="principle-item">
+                                            <strong>Visual Hierarchy:</strong> Important information is prominently displayed
+                                        </div>
+                                        <div class="principle-item">
+                                            <strong>Consistency:</strong> Unified design language across all interface elements
+                                        </div>
+                                        <div class="principle-item">
+                                            <strong>Accessibility:</strong> Design considerations for different player needs and abilities
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="content-visual">
+                                <div class="ui-showcase">
+                                    <div class="visual-header">
+                                        <h4>UI Design Showcase</h4>
+                                        <p>Clean, functional interface components</p>
+                                    </div>
+                                    
+                                    <div class="ui-gallery">
+                                        <div class="ui-image-container">
+                                            <div class="image-placeholder limitless-placeholder ui-mockup">
+                                                <i class="fas fa-desktop"></i>
+                                                <p>Main Menu Interface</p>
+                                                <span class="placeholder-note">UI1.png</span>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="ui-thumbnails">
+                                            <div class="ui-thumb">
+                                                <div class="image-placeholder limitless-placeholder">
+                                                    <i class="fas fa-gamepad"></i>
+                                                    <p>HUD Design</p>
+                                                    <span class="placeholder-note">UI2.png</span>
+                                                </div>
+                                            </div>
+                                            <div class="ui-thumb">
+                                                <div class="image-placeholder limitless-placeholder">
+                                                    <i class="fas fa-cog"></i>
+                                                    <p>Settings Menu</p>
+                                                    <span class="placeholder-note">UI3.png</span>
+                                                </div>
+                                            </div>
+                                            <div class="ui-thumb">
+                                                <div class="image-placeholder limitless-placeholder">
+                                                    <i class="fas fa-pause"></i>
+                                                    <p>Pause Interface</p>
+                                                    <span class="placeholder-note">UI4.png</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="ui-features">
+                                    <h4>Key UI Features</h4>
+                                    <div class="feature-grid">
+                                        <div class="ui-feature">
+                                            <i class="fas fa-mobile-alt" style="color: var(--limitless-green);"></i>
+                                            <span>Responsive Design</span>
+                                        </div>
+                                        <div class="ui-feature">
+                                            <i class="fas fa-universal-access" style="color: var(--limitless-green);"></i>
+                                            <span>Accessibility Focus</span>
+                                        </div>
+                                        <div class="ui-feature">
+                                            <i class="fas fa-magic" style="color: var(--limitless-green);"></i>
+                                            <span>Smooth Animations</span>
+                                        </div>
+                                        <div class="ui-feature">
+                                            <i class="fas fa-eye" style="color: var(--limitless-green);"></i>
+                                            <span>Visual Clarity</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Animation System Tab -->
+                    <div class="tech-tab-content" id="animation-system">
+                        <div class="tab-content-grid">
+                            <div class="content-text">
+                                <h3>Animation Blueprint System</h3>
+                                <div class="animation-philosophy">
+                                    <h4>Responsive Character Movement</h4>
+                                    <p>The animation system uses Unreal's Blueprint system to create <strong>context-aware character responses</strong>. Every movement and reaction feels natural and responsive to both player input and environmental conditions.</p>
+                                </div>
+                                
+                                <div class="animation-systems">
+                                    <div class="animation-category">
+                                        <h5><i class="fas fa-running"></i> Locomotion System</h5>
+                                        <ul>
+                                            <li><strong>Base Movement:</strong> Fluid running animation with speed-responsive frame rate</li>
+                                            <li><strong>Jump Mechanics:</strong> Distinct animations for single and double jumps with proper physics</li>
+                                            <li><strong>Landing System:</strong> Context-aware landing animations based on fall height and surface</li>
+                                            <li><strong>Direction Changes:</strong> Smooth transitions for left/right movement without animation jarring</li>
+                                        </ul>
+                                    </div>
+                                    
+                                    <div class="animation-category">
+                                        <h5><i class="fas fa-link"></i> Grappling Hook System</h5>
+                                        <ul>
+                                            <li><strong>Dynamic Appearance:</strong> Hook visually appears only when swing points are within range</li>
+                                            <li><strong>Physics Integration:</strong> Realistic rope physics with proper momentum transfer</li>
+                                            <li><strong>Swing Animations:</strong> Character posture changes based on swing direction and velocity</li>
+                                            <li><strong>Release Timing:</strong> Visual and mechanical feedback for optimal swing release points</li>
+                                        </ul>
+                                    </div>
+                                    
+                                    <div class="animation-category">
+                                        <h5><i class="fas fa-magic"></i> Reaction Systems</h5>
+                                        <ul>
+                                            <li><strong>Power-up Activation:</strong> Distinct visual states for each cheese power-up type</li>
+                                            <li><strong>Damage Reactions:</strong> Brief invincibility frames with appropriate visual feedback</li>
+                                            <li><strong>Environmental Response:</strong> Character reacts to platform types and obstacles</li>
+                                            <li><strong>Collectible Feedback:</strong> Subtle animations for berry collection and scoring</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                
+                                <div class="blueprint-architecture">
+                                    <h4>Blueprint Architecture</h4>
+                                    <p>The animation blueprint uses a <strong>state machine approach</strong> that seamlessly transitions between 12 distinct animation states based on player input, environmental context, and game events.</p>
+                                    
+                                    <div class="state-flow">
+                                        <div class="state-item">
+                                            <span class="state-name">Idle/Running</span>
+                                            <i class="fas fa-arrow-right"></i>
+                                        </div>
+                                        <div class="state-item">
+                                            <span class="state-name">Jump/Double Jump</span>
+                                            <i class="fas fa-arrow-right"></i>
+                                        </div>
+                                        <div class="state-item">
+                                            <span class="state-name">Grapple/Swing</span>
+                                            <i class="fas fa-arrow-right"></i>
+                                        </div>
+                                        <div class="state-item">
+                                            <span class="state-name">Landing/Recovery</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="content-visual">
                                 <div class="animation-showcase">
+                                    <div class="visual-header">
+                                        <h4>Animation Blueprint Flow</h4>
+                                        <p>State machine logic and transition system</p>
+                                    </div>
+                                    
+                                    <div class="blueprint-visual">
+                                        <div class="image-placeholder limitless-placeholder blueprint-diagram">
+                                            <i class="fas fa-project-diagram"></i>
+                                            <p>Animation Blueprint Structure</p>
+                                            <span class="placeholder-note">animationlocomotion.png</span>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="additional-blueprint">
+                                        <div class="image-placeholder limitless-placeholder">
+                                            <i class="fas fa-code"></i>
+                                            <p>Advanced Animation Logic</p>
+                                            <span class="placeholder-note">animationlocomotion2.png</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="animation-states">
                                     <h4>Core Animation States</h4>
-                                    <div class="animation-grid">
-                                        <div class="anim-state">
-                                            <i class="fas fa-running"></i>
-                                            <span>Running</span>
+                                    <div class="states-grid">
+                                        <div class="state-card">
+                                            <i class="fas fa-running" style="color: var(--limitless-green);"></i>
+                                            <h5>Running</h5>
+                                            <p>Base locomotion with speed variation</p>
                                         </div>
-                                        <div class="anim-state">
-                                            <i class="fas fa-arrow-up"></i>
-                                            <span>Jumping</span>
+                                        <div class="state-card">
+                                            <i class="fas fa-arrow-up" style="color: var(--limitless-green);"></i>
+                                            <h5>Jumping</h5>
+                                            <p>Single and double jump mechanics</p>
                                         </div>
-                                        <div class="anim-state">
-                                            <i class="fas fa-link"></i>
-                                            <span>Grappling</span>
+                                        <div class="state-card">
+                                            <i class="fas fa-link" style="color: var(--limitless-green);"></i>
+                                            <h5>Swinging</h5>
+                                            <p>Grapple hook with physics integration</p>
                                         </div>
-                                        <div class="anim-state">
-                                            <i class="fas fa-shield-alt"></i>
-                                            <span>Invincible</span>
+                                        <div class="state-card">
+                                            <i class="fas fa-shield-alt" style="color: var(--limitless-green);"></i>
+                                            <h5>Power-ups</h5>
+                                            <p>Visual states for cheese abilities</p>
                                         </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="content-visual">
-                                <div class="animation-preview">
-                                    <div class="anim-header">
-                                        <span class="anim-title">Animation Flow</span>
-                                        <span class="anim-subtitle">State Transitions</span>
-                                    </div>
-                                    <div class="anim-placeholder limitless-anim">
-                                        <i class="fas fa-mouse"></i>
-                                        <p>Animation States</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="tech-tab-content" id="gameplay">
-                        <div class="tab-content-grid">
-                            <div class="content-text">
-                                <h3>Core Gameplay Mechanics</h3>
-                                <ul class="feature-list">
-                                    <li><strong>Berry Collection System:</strong> Point-scoring collectibles strategically placed to encourage exploration and risk-taking</li>
-                                    <li><strong>Bee Enemy Patterns:</strong> Intelligent obstacles that can be dodged or destroyed, forcing split-second movement decisions</li>
-                                    <li><strong>Obstacle Placement Design:</strong> Barriers positioned to create left/right movement puzzles without breaking gameplay flow</li>
-                                    <li><strong>Cheese Power-Up Mechanics:</strong> Three distinct abilities - slow-motion for precise timing, invincibility for aggressive routes, double-jump for vertical exploration</li>
-                                    <li><strong>Progressive Difficulty System:</strong> Speed and complexity increase based on distance traveled and score milestones</li>
-                                    <li><strong>Score Multiplier Chain:</strong> Consecutive berry collection and near-miss bonuses reward skillful play</li>
-                                </ul>
-                                
-                                <div class="gameplay-highlights">
-                                    <div class="highlight-card limitless-card">
-                                        <h4>Power-Up Balance</h4>
-                                        <p>Each cheese type spawns at calculated intervals to maintain variety without trivializing challenges</p>
-                                    </div>
-                                    <div class="highlight-card limitless-card">
-                                        <h4>Enemy AI Logic</h4>
-                                        <p>Bees follow predictable but challenging patterns that reward pattern recognition</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="content-visual">
-                                <div class="gameplay-diagram">
-                                    <div class="diagram-header">
-                                        <span class="diagram-title">Gameplay Loop</span>
-                                        <span class="diagram-subtitle">Core mechanics</span>
-                                    </div>
-                                    <div class="diagram-placeholder limitless-diagram">
-                                        <i class="fas fa-gamepad"></i>
-                                        <p>Mechanics Flow</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="tech-tab-content" id="optimization">
-                        <div class="tab-content-grid">
-                            <div class="content-text">
-                                <h3>Performance Optimization</h3>
-                                <ul class="feature-list">
-                                    <li><strong>Object Pooling System:</strong> Reusable tile, enemy, and particle pools eliminate garbage collection stutters</li>
-                                    <li><strong>Efficient Culling Pipeline:</strong> Off-screen elements immediately deactivated to minimize draw calls and physics calculations</li>
-                                    <li><strong>Texture Atlasing:</strong> Combined sprite sheets reduce texture swaps and improve rendering batch efficiency</li>
-                                    <li><strong>LOD Implementation:</strong> Background and distant elements use simplified assets based on camera distance</li>
-                                    <li><strong>Frame Rate Stability:</strong> Consistent 60+ FPS maintained across various hardware configurations</li>
-                                    <li><strong>Memory Management:</strong> Constant memory footprint regardless of play session length through aggressive cleanup</li>
-                                </ul>
-                                
-                                <div class="performance-chart">
-                                    <h4>PC Performance Benchmarks</h4>
-                                    <div class="benchmark-grid">
-                                        <div class="benchmark-item">
-                                            <div class="benchmark-value" style="color: var(--limitless-green);">60+</div>
-                                            <div class="benchmark-label">FPS Average</div>
-                                        </div>
-                                        <div class="benchmark-item">
-                                            <div class="benchmark-value" style="color: var(--limitless-green);">2GB</div>
-                                            <div class="benchmark-label">RAM Usage</div>
-                                        </div>
-                                        <div class="benchmark-item">
-                                            <div class="benchmark-value" style="color: var(--limitless-green);">500MB</div>
-                                            <div class="benchmark-label">Install Size</div>
-                                        </div>
-                                        <div class="benchmark-item">
-                                            <div class="benchmark-value" style="color: var(--limitless-green);">DX11</div>
-                                            <div class="benchmark-label">Min Requirement</div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="content-visual">
-                                <div class="performance-graph">
-                                    <div class="graph-header">
-                                        <span class="graph-title">Performance</span>
-                                        <span class="graph-subtitle">Optimization metrics</span>
-                                    </div>
-                                    <div class="graph-placeholder limitless-graph">
-                                        <i class="fas fa-chart-line"></i>
-                                        <p>FPS Stability</p>
                                     </div>
                                 </div>
                             </div>
@@ -402,59 +650,164 @@
         </div>
     </section>
 
-    <!-- Technology Stack -->
-    <section class="tech-stack-section">
+    <!-- Development Insights -->
+    <section class="development-insights">
         <div class="container">
-            <h2 class="section-title" style="color: var(--limitless-green);">Technology Stack</h2>
-            <div class="tech-stack-grid">
-                <div class="tech-category">
-                    <h3>Core Development</h3>
-                    <div class="tech-items">
-                        <div class="tech-item limitless-tech-primary">
-                            <i class="fas fa-gamepad"></i>
-                            <span>Unreal Engine</span>
+            <h2 class="section-title" style="color: var(--limitless-green);">Development Insights & Challenges</h2>
+            
+            <div class="insights-grid">
+                <div class="insight-card limitless-insight">
+                    <div class="insight-icon">
+                        <i class="fas fa-memory"></i>
+                    </div>
+                    <h3>Memory Management</h3>
+                    <p>Implementing efficient tile cleanup without causing frame drops required careful timing and object pooling strategies. The solution involved predictive deletion based on player velocity.</p>
+                    <div class="insight-detail">
+                        <strong>Solution:</strong> Lookahead deletion system that removes tiles before memory pressure builds
+                    </div>
+                </div>
+                
+                <div class="insight-card limitless-insight">
+                    <div class="insight-icon">
+                        <i class="fas fa-balance-scale"></i>
+                    </div>
+                    <h3>Difficulty Balancing</h3>
+                    <p>Creating a progression system that felt challenging but fair required extensive playtesting and algorithm refinement to find the perfect difficulty curve.</p>
+                    <div class="insight-detail">
+                        <strong>Solution:</strong> Dynamic difficulty adjustment based on player performance metrics
+                    </div>
+                </div>
+                
+                <div class="insight-card limitless-insight">
+                    <div class="insight-icon">
+                        <i class="fas fa-sync-alt"></i>
+                    </div>
+                    <h3>Animation Synchronization</h3>
+                    <p>Ensuring grappling hook animations felt responsive while maintaining realistic physics required fine-tuning the relationship between input lag and visual feedback.</p>
+                    <div class="insight-detail">
+                        <strong>Solution:</strong> Predictive animation system that anticipates player input
+                    </div>
+                </div>
+                
+                <div class="insight-card limitless-insight">
+                    <div class="insight-icon">
+                        <i class="fas fa-paint-brush"></i>
+                    </div>
+                    <h3>UI Responsiveness</h3>
+                    <p>Maintaining clean UI design while providing all necessary information to players required multiple iterations and user feedback integration.</p>
+                    <div class="insight-detail">
+                        <strong>Solution:</strong> Contextual UI elements that appear only when relevant
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Technical Achievements -->
+    <section class="technical-achievements">
+        <div class="container">
+            <h2 class="section-title" style="color: var(--limitless-green);">Technical Achievements</h2>
+            
+            <div class="achievements-content">
+                <div class="achievement-showcase">
+                    <div class="achievement-main">
+                        <div class="achievement-visual">
+                            <div class="image-placeholder limitless-placeholder achievement-diagram">
+                                <i class="fas fa-trophy"></i>
+                                <p>Technical Implementation</p>
+                                <span class="placeholder-note">UICleanCoding.png</span>
+                            </div>
                         </div>
-                        <div class="tech-item limitless-tech-primary">
-                            <i class="fas fa-code"></i>
-                            <span>C++ & Blueprints</span>
-                        </div>
-                        <div class="tech-item limitless-tech-primary">
-                            <i class="fab fa-steam"></i>
-                            <span>Steamworks SDK</span>
+                        
+                        <div class="achievement-content">
+                            <h3>Key Technical Accomplishments</h3>
+                            <div class="accomplishment-list">
+                                <div class="accomplishment-item">
+                                    <i class="fas fa-check-circle" style="color: var(--limitless-green);"></i>
+                                    <div class="accomplishment-text">
+                                        <strong>Infinite Level Generation</strong>
+                                        <p>Created truly endless gameplay with zero memory bloat through intelligent cleanup algorithms</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="accomplishment-item">
+                                    <i class="fas fa-check-circle" style="color: var(--limitless-green);"></i>
+                                    <div class="accomplishment-text">
+                                        <strong>Responsive Animation System</strong>
+                                        <p>Developed context-aware character animations that react intelligently to gameplay situations</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="accomplishment-item">
+                                    <i class="fas fa-check-circle" style="color: var(--limitless-green);"></i>
+                                    <div class="accomplishment-text">
+                                        <strong>Performance Optimization</strong>
+                                        <p>Maintained stable 60+ FPS across various hardware configurations through careful system design</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="accomplishment-item">
+                                    <i class="fas fa-check-circle" style="color: var(--limitless-green);"></i>
+                                    <div class="accomplishment-text">
+                                        <strong>Steam Integration</strong>
+                                        <p>Successfully published and launched on Steam platform with achievements and cloud saves</p>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="tech-category">
-                    <h3>Animation & Graphics</h3>
-                    <div class="tech-items">
-                        <div class="tech-item limitless-tech-secondary">
-                            <i class="fas fa-film"></i>
-                            <span>Sprite Animation</span>
-                        </div>
-                        <div class="tech-item limitless-tech-secondary">
-                            <i class="fas fa-paint-brush"></i>
-                            <span>2D Art Pipeline</span>
-                        </div>
-                        <div class="tech-item limitless-tech-secondary">
-                            <i class="fas fa-magic"></i>
-                            <span>Particle Effects</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Character Development Showcase -->
+    <section class="character-development">
+        <div class="container">
+            <h2 class="section-title" style="color: var(--limitless-green);">Character Development Process</h2>
+            
+            <div class="character-showcase">
+                <div class="character-content">
+                    <div class="character-visual">
+                        <div class="image-placeholder limitless-placeholder character-design">
+                            <i class="fas fa-mouse"></i>
+                            <p>Mouse Character Design Evolution</p>
+                            <span class="placeholder-note">MouseTinkering.jpg</span>
                         </div>
                     </div>
-                </div>
-                <div class="tech-category">
-                    <h3>Development Tools</h3>
-                    <div class="tech-items">
-                        <div class="tech-item limitless-tech-secondary">
-                            <i class="fab fa-git"></i>
-                            <span>Version Control</span>
-                        </div>
-                        <div class="tech-item limitless-tech-secondary">
-                            <i class="fas fa-bug"></i>
-                            <span>Unreal Profiler</span>
-                        </div>
-                        <div class="tech-item limitless-tech-secondary">
-                            <i class="fas fa-tasks"></i>
-                            <span>Agile Development</span>
+                    
+                    <div class="character-details">
+                        <h3>Mouse Protagonist Design</h3>
+                        <p>The character design process focused on creating a charming, relatable protagonist that would feel natural in the procedurally generated environments. The mouse character needed to be expressive enough to convey different states while remaining simple enough for smooth animation at 60fps.</p>
+                        
+                        <div class="design-considerations">
+                            <h4>Design Considerations</h4>
+                            <div class="consideration-list">
+                                <div class="consideration-item">
+                                    <i class="fas fa-palette" style="color: var(--limitless-green);"></i>
+                                    <div class="consideration-content">
+                                        <strong>Visual Clarity:</strong> Silhouette design that reads clearly against varied backgrounds
+                                    </div>
+                                </div>
+                                <div class="consideration-item">
+                                    <i class="fas fa-running" style="color: var(--limitless-green);"></i>
+                                    <div class="consideration-content">
+                                        <strong>Animation Friendly:</strong> Simple geometry that deforms naturally during movement
+                                    </div>
+                                </div>
+                                <div class="consideration-item">
+                                    <i class="fas fa-heart" style="color: var(--limitless-green);"></i>
+                                    <div class="consideration-content">
+                                        <strong>Character Appeal:</strong> Expressive features that create emotional connection
+                                    </div>
+                                </div>
+                                <div class="consideration-item">
+                                    <i class="fas fa-tachometer-alt" style="color: var(--limitless-green);"></i>
+                                    <div class="consideration-content">
+                                        <strong>Performance Optimized:</strong> Efficient polygon count for consistent frame rates
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -466,14 +819,14 @@
     <section class="project-next-steps">
         <div class="container">
             <div class="next-steps-content">
-                <h2 style="color: var(--limitless-green);">Experience Limitless Runner</h2>
-                <p>Ready to see the procedural generation and animation systems in action? Limitless Runner is available now on Steam!</p>
+                <h2 style="color: var(--limitless-green);">Experience the Technical Implementation</h2>
+                <p>Ready to see these systems in action? Check out the development videos above or play the finished game on Steam to experience the procedural generation and animation systems firsthand.</p>
                 <div class="next-actions">
                     <a href="https://store.steampowered.com/app/3843330/Limitless_Runner/" class="btn limitless-btn btn-large" target="_blank">
                         <i class="fab fa-steam"></i> Play on Steam
                     </a>
                     <a href="../index.html#contact" class="btn btn-secondary btn-large">
-                        <i class="fas fa-comments"></i> Discuss This Project
+                        <i class="fas fa-comments"></i> Discuss Implementation
                     </a>
                     <a href="index.html" class="btn btn-outline btn-large">
                         <i class="fas fa-arrow-left"></i> View All Projects
@@ -487,106 +840,10 @@
     <footer class="footer">
         <div class="container">
             <p>&copy; 2025 Joseph Brown - AI Combat Designer | Game Developer</p>
-            <p class="footer-note">Creator of Limitless Runner - Available on Steam</p>
+            <p class="footer-note">Technical Deep Dive: Limitless Runner Development Process</p>
         </div>
     </footer>
 
     <script src="../script.js"></script>
-    <script>
-        // Project-specific JavaScript
-        document.addEventListener('DOMContentLoaded', function() {
-            // Technical tabs functionality
-            document.querySelectorAll('.tech-tab-btn').forEach(btn => {
-                btn.addEventListener('click', () => {
-                    const tabId = btn.dataset.tab;
-                    
-                    document.querySelectorAll('.tech-tab-btn').forEach(b => b.classList.remove('active'));
-                    document.querySelectorAll('.tech-tab-content').forEach(c => c.classList.remove('active'));
-                    
-                    btn.classList.add('active');
-                    document.getElementById(tabId).classList.add('active');
-                });
-            });
-        });
-    </script>
-
-    <style>
-        /* Limitless Runner Specific Styles */
-        .limitless-title {
-            background: linear-gradient(45deg, var(--limitless-green), var(--limitless-light-green)) !important;
-            -webkit-background-clip: text !important;
-            -webkit-text-fill-color: transparent !important;
-        }
-        
-        .limitless-stat {
-            color: var(--limitless-green) !important;
-        }
-        
-        .limitless-feature:hover {
-            border-color: var(--limitless-green) !important;
-        }
-        
-        .limitless-tech-primary {
-            background: linear-gradient(45deg, var(--limitless-green), var(--limitless-dark-green)) !important;
-            color: var(--limitless-black) !important;
-            border: 1px solid var(--limitless-green) !important;
-        }
-        
-        .limitless-tech-secondary {
-            background: var(--dark-gray) !important;
-            color: var(--limitless-green) !important;
-            border: 1px solid rgba(34, 197, 94, 0.3) !important;
-        }
-        
-        .limitless-tab {
-            color: var(--light-gray) !important;
-        }
-        
-        .limitless-tab:hover {
-            background: rgba(34, 197, 94, 0.1) !important;
-            color: var(--limitless-green) !important;
-        }
-        
-        .limitless-tab.active {
-            background: linear-gradient(45deg, var(--limitless-green), var(--limitless-dark-green)) !important;
-            color: var(--limitless-black) !important;
-        }
-        
-        .limitless-placeholder {
-            border-color: rgba(34, 197, 94, 0.3) !important;
-        }
-        
-        .limitless-placeholder:hover {
-            border-color: var(--limitless-green) !important;
-            color: var(--limitless-green) !important;
-        }
-        
-        .limitless-card {
-            background: rgba(34, 197, 94, 0.05) !important;
-            border: 1px solid rgba(34, 197, 94, 0.2) !important;
-        }
-        
-        .animation-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 1rem;
-            margin-top: 1rem;
-        }
-        
-        .anim-state {
-            text-align: center;
-            padding: 1rem;
-            background: rgba(34, 197, 94, 0.1);
-            border-radius: 10px;
-            border: 1px solid rgba(34, 197, 94, 0.3);
-        }
-        
-        .anim-state i {
-            font-size: 1.5rem;
-            color: var(--limitless-green);
-            margin-bottom: 0.5rem;
-            display: block;
-        }
-    </style>
 </body>
 </html>
