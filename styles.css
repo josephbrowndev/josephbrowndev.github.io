@@ -3097,8 +3097,8 @@ body {
 
 .insight-card:hover {
     transform: translateY(-5px);
-    border-color: #4CAF50;
-    box-shadow: 0 15px 40px rgba(76, 175, 80, 0.2);
+    border-color: #dc2626;
+    box-shadow: 0 15px 40px rgba(255, 255, 255, 0.2);
 }
 
 .insight-number {
