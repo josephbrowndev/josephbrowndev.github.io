@@ -2999,13 +2999,13 @@ body {
 
 .aspect-card:hover {
     transform: translateY(-5px);
-    border-color: #4CAF50;
+    border-color: #dc2626;
     box-shadow: 0 10px 30px rgba(255, 255, 255, 0.15);
 }
 
 .aspect-card i {
     font-size: 2.5em;
-    color: #4CAF50;
+    color: #dc2626;
     margin-bottom: 15px;
 }
 
