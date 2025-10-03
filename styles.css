@@ -263,9 +263,10 @@ body {
 .hero-container {
     max-width: 1200px;
     margin: 0 auto;
-    gap: 4rem;
+    display: flex;
+    justify-content: center;
     align-items: center;
-    padding: 0 0px;
+    padding: 0 20px;
     position: relative;
     z-index: 1;
 }
@@ -294,11 +295,14 @@ body {
     color: var(--light-gray);
     margin-bottom: 2rem;
     line-height: 1.8;
+    max-width: 800px;
 }
 
 .hero-buttons {
     display: flex;
     gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
     margin-bottom: 2rem;
 }
 
@@ -331,6 +335,7 @@ body {
     text-align: center;
     position: relative;
     z-index: 1;
+    max-width: 900px;
 }
 
 .project-title {
@@ -3565,8 +3570,14 @@ body.modal-open {
 
     /* Project adjustments */
     .project-card {
+        overflow: hidden;
         grid-template-columns: 1fr;
         padding: 1.5rem;
+    }
+   
+    .project-card * {
+    max-width: 100%;
+    box-sizing: border-box;
     }
     
     .projects-grid {
@@ -3580,7 +3591,25 @@ body.modal-open {
         width: 100%;
         box-sizing: border-box;
     }
-    
+   .project-media {
+    width: 100%;
+    overflow: hidden;
+    }
+   
+    .project-media iframe {
+        max-width: 100%;
+        width: 100%;
+        height: auto;
+        aspect-ratio: 16 / 9;
+    }
+   
+    .image-placeholder iframe {
+        max-width: 100%;
+        width: 100%;
+        height: auto;
+        aspect-ratio: 16 / 9;
+    }
+       
     .project-info {
         padding: 1.5rem;
     }
@@ -3800,6 +3829,7 @@ body.modal-open {
     .container {
         max-width: 100%;
         padding: 0 1rem;
+        overflow-x: hidden;
     }
     
     .btn {
