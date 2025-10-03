@@ -25,6 +25,7 @@
    22. Limitless Runner Theme
    23. Limitless Runner Technical Page Styles
    24. Asset Tooltips Style
+   25. Core Specializations Section
    ======================================== */
 
 /* ========================================
@@ -3866,7 +3867,20 @@ body.modal-open {
     .about-buttons {
         flex-direction: column;
     }
-}
+
+   /* Specializations mobile */
+    .spec-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .spec-item {
+        padding: 2rem;
+    }
+    
+    .spec-section-title {
+        font-size: 2rem;
+    }
 
 /* Mobile Small */
 @media (max-width: 480px) {
@@ -5366,11 +5380,9 @@ body.modal-open {
     max-width: 500px;
 }
 
-// ========================================
-// 24. ASSET TOOLTIP STYLES
-// ========================================
-/*
-Add this CSS to your styles.css file:
+ /* ========================================
+   24. ASSET TOOLTIP STYLES
+   ======================================== */
 
 .asset-tooltip {
     background: linear-gradient(145deg, var(--charcoal), var(--dark-gray));
@@ -5420,6 +5432,65 @@ Add this CSS to your styles.css file:
         transform: translateY(0);
     }
 }
-*/
+
+/* ========================================
+   25. CORE SPECIALIZATIONS SECTION
+   ======================================== */
+
+.specializations {
+    padding: 80px 0;
+    background: linear-gradient(135deg, var(--charcoal) 0%, var(--deep-black) 100%);
+}
+
+.spec-section-title {
+    text-align: center;
+    font-size: 2.5rem;
+    background: linear-gradient(45deg, var(--primary-red), var(--primary-gold));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 3rem;
+}
+
+.spec-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.spec-item {
+    background: linear-gradient(145deg, var(--charcoal), var(--dark-gray));
+    padding: 2.5rem;
+    border-radius: 15px;
+    border: 1px solid rgba(220, 38, 38, 0.2);
+    transition: all 0.3s ease;
+    text-align: center;
+}
+
+.spec-item:hover {
+    transform: translateY(-5px);
+    border-color: var(--primary-red);
+    box-shadow: 0 15px 30px rgba(220, 38, 38, 0.3);
+}
+
+.spec-icon {
+    font-size: 2.5rem;
+    color: var(--primary-gold);
+    margin-bottom: 1.5rem;
+}
+
+.spec-item h4 {
+    color: var(--primary-red);
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+}
+
+.spec-item p {
+    color: var(--light-gray);
+    line-height: 1.7;
+    font-size: 1rem;
+}
 
 
