@@ -263,8 +263,6 @@ body {
 .hero-container {
     max-width: 1200px;
     margin: 0 auto;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
     gap: 4rem;
     align-items: center;
     padding: 0 0px;
