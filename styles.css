@@ -3573,11 +3573,19 @@ body.modal-open {
         overflow: hidden;
         grid-template-columns: 1fr;
         padding: 1.5rem;
+        width: 100%;
+        max-width: 100%;
+        overflow: hidden;
+        box-sizing: border-box;
     }
    
     .project-card * {
-    max-width: 100%;
-    box-sizing: border-box;
+        max-width: 100%;
+        box-sizing: border-box;
+        width: 100%;
+        max-width: 100%;
+        overflow: hidden;
+        box-sizing: border-box;
     }
     
     .projects-grid {
@@ -3592,21 +3600,24 @@ body.modal-open {
         box-sizing: border-box;
     }
    .project-media {
-    width: 100%;
-    overflow: hidden;
+        width: 100%;
+        overflow: hidden;
+        max-width: 100%;
+        overflow: hidden;
+        box-sizing: border-box;
     }
    
     .project-media iframe {
-        max-width: 100%;
-        width: 100%;
-        height: auto;
+        max-width: 100% !important;
+        width: 100% !important;
+        height: auto !important;
         aspect-ratio: 16 / 9;
     }
    
     .image-placeholder iframe {
-        max-width: 100%;
-        width: 100%;
-        height: auto;
+        max-width: 100% !important;
+        width: 100% !important;
+        height: auto !important;
         aspect-ratio: 16 / 9;
     }
        
