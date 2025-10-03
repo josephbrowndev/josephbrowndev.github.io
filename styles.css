@@ -5461,10 +5461,10 @@ body.modal-open {
 }
 
 .spec-item {
-    background: linear-gradient(145deg, var(--charcoal), var(--dark-gray));
-    padding: 2.5rem;
+    background: rgba(220, 38, 38, 0.1);
+    padding: 2rem;
     border-radius: 15px;
-    border: 1px solid rgba(220, 38, 38, 0.2);
+    border: 1px solid rgba(220, 38, 38, 0.3);
     transition: all 0.3s ease;
     text-align: center;
 }
@@ -5475,22 +5475,28 @@ body.modal-open {
     box-shadow: 0 15px 30px rgba(220, 38, 38, 0.3);
 }
 
-.spec-icon {
-    font-size: 2.5rem;
+.spec-number {
+    display: block;
+    font-size: 3rem;
+    font-weight: bold;
     color: var(--primary-gold);
-    margin-bottom: 1.5rem;
+    margin-bottom: 0.5rem;
 }
 
-.spec-item h4 {
-    color: var(--primary-red);
-    font-size: 1.3rem;
+.spec-label {
+    display: block;
+    font-size: 0.85rem;
+    color: var(--light-gray);
+    text-transform: uppercase;
+    letter-spacing: 1px;
     margin-bottom: 1rem;
+    font-weight: 600;
 }
 
 .spec-item p {
     color: var(--light-gray);
-    line-height: 1.7;
-    font-size: 1rem;
+    line-height: 1.6;
+    font-size: 0.95rem;
 }
 
 
