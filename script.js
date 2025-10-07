@@ -158,6 +158,12 @@ function initializeMobileMenuAfterLoad() {
 
 // Conflict resolution on hover, video, and nav bar selection fixed
 document.addEventListener('DOMContentLoaded', function() {
+
+    // ========================================
+    // LOAD MODULAR NAVBAR AND FOOTER
+    // ========================================
+    
+    loadModularComponents();  // ← ADD THIS LINE!
     
     // ========================================
     // MOBILE MENU FUNCTIONALITY
