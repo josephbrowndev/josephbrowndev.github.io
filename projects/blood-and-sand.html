@@ -37,7 +37,7 @@
     </div>
 
     <!-- Project Hero -->
-    <section class="project-detail-hero">
+    <section class="detail-hero">
         <div class="container">
             <nav class="breadcrumb">
                 <a href="../index.html">Home</a>
@@ -47,12 +47,12 @@
                 <span>Blood and Sand</span>
             </nav>
             
-            <div class="project-hero-content">
+            <div class="hero-content">
                 <span class="project-badge featured">AI Combat Development</span>
-                <h1 class="project-title">Blood and Sand</h1>
-                <p class="project-subtitle">From Concept to Combat: Building Intelligent AI Enemies</p>
+                <h1 class="hero-title">Blood and Sand</h1>
+                <p class="hero-subtitle">From Concept to Combat: Building Intelligent AI Enemies</p>
                 
-                <div class="project-hero-stats">
+                <div class="hero-stat-grid">
                     <div class="hero-stat">
                         <span class="stat-number">3</span>
                         <span class="stat-label">Enemy Archetypes</span>
@@ -71,7 +71,7 @@
                     </div>
                 </div>
                 
-                <div class="project-hero-actions">
+                <div class="hero-buttons">
                     <a href="#combat-demo" class="btn btn-primary btn-large">
                         <i class="fas fa-play"></i> Watch Combat Demo  
                     </a>
@@ -87,10 +87,10 @@
     </section>
 
     <!-- Combat Demo Video -->
-    <section id="combat-demo" class="project-media-showcase">
+    <section id="combat-demo" class="section alt-bg">
         <div class="container">
             <h2 class="section-title">Combat System in Action</h2>
-            <div class="main-demo-video">
+            <div style="max-width: 1000px; margin: 0 auto; text-align: center;">
                 <div class="video-container">
                     <iframe 
                     width="100%" 
@@ -104,7 +104,7 @@
                     style="border-radius: 12px; max-width: 1000px;"
                 ></iframe>
                 </div>
-                <p class="video-description">
+                <p style="margin-top: 1.5rem; font-size: 1.1rem; color: var(--color-light-gray); line-height: 1.6;">
                     This demo showcases the Berserker's relentless aggression, the Warrior's tactical defense, 
                     and the Cleric's supportive healing behaviors all working in harmony to create challenging combat encounters.
                 </p>
@@ -113,21 +113,21 @@
     </section>
 
     <!-- Development Process Overview -->
-    <section id="development-process" class="project-overview-section">
+    <section id="development-process" class="section">
         <div class="container">
-            <div class="overview-grid">
-                <div class="overview-content">
+            <div class="two-col text-first">
+                <div class="content-text">
                     <h2>My Development Journey</h2>
-                    <p class="overview-text">
+                    <p>
                         Creating Blood and Sand's AI combat system was about solving a core challenge: 
                         <strong>How do you make AI enemies that feel intelligent, varied, and fun to fight?</strong> 
                         My approach focused on giving each enemy archetype a distinct personality through their combat behaviors, 
                         creating a rock-paper-scissors dynamic that keeps players engaged.
                     </p>
                     
-                    <div class="key-features">
+                    <div style="margin-top: 3rem;">
                         <h3>My Core Design Philosophy</h3>
-                        <div class="features-grid">
+                        <div class="feature-list">
                             <div class="feature-item">
                                 <i class="fas fa-lightbulb"></i>
                                 <div>
@@ -160,27 +160,27 @@
                     </div>
                 </div>
                 
-                <div class="overview-media">
+                <div>
                     <div class="media-gallery">
                         <div class="gallery-item main">
-                            <img src="../assets/images/blood-and-sand/Arena.png" alt="Blood and Sand Combat Arena" style="width: 100%; border-radius: 8px;">
+                            <img src="../assets/images/blood-and-sand/Arena.png" alt="Blood and Sand Combat Arena">
                             <p>The 3.5km combat arena where all AI behaviors come together</p>
                         </div>
                         <div class="gallery-thumbnails">
                             <div class="thumbnail">
-                                <img src="../assets/images/blood-and-sand/Combat1.png" alt="Combat Screenshot 1" style="width: 100%; border-radius: 4px;">
+                                <img src="../assets/images/blood-and-sand/Combat1.png" alt="Combat Screenshot 1">
                                 <p>Multi-enemy Encounter</p>
                             </div>
                             <div class="thumbnail">
-                                <img src="../assets/images/blood-and-sand/Combat3.png" alt="Combat Screenshot 3" style="width: 100%; border-radius: 4px;">
+                                <img src="../assets/images/blood-and-sand/Combat3.png" alt="Combat Screenshot 3">
                                 <p>Tactical Positioning</p>
                             </div>
                             <div class="thumbnail">
-                                <img src="../assets/images/blood-and-sand/Combat4.png" alt="Combat Screenshot 4" style="width: 100%; border-radius: 4px;">
+                                <img src="../assets/images/blood-and-sand/Combat4.png" alt="Combat Screenshot 4">
                                 <p>Dynamic Combat Flow</p>
                             </div>
                             <div class="thumbnail">
-                                <img src="../assets/images/blood-and-sand/GladiatorBack.png" alt="Gladiator Character" style="width: 100%; border-radius: 4px;">
+                                <img src="../assets/images/blood-and-sand/GladiatorBack.png" alt="Gladiator Character">
                                 <p>Player Character</p>
                             </div>
                         </div>
@@ -191,86 +191,80 @@
     </section>
 
     <!-- Enemy Archetypes -->
-    <section class="enemy-archetypes-section">
+    <section class="section alt-bg">
         <div class="container">
             <h2 class="section-title">Designing the Enemy Archetypes</h2>
             <p class="section-subtitle">Each enemy type was designed to solve a specific gameplay problem and create unique tactical challenges</p>
             
-            <div class="archetypes-grid">
-                <div class="archetype-card">
-                    <div class="archetype-header">
+            <div class="grid-2">
+                <div class="content-card">
+                    <div class="card-header">
                         <h3>The Berserker</h3>
-                        <span class="archetype-role">Relentless Aggressor</span>
+                        <span class="card-subtitle">Relentless Aggressor</span>
                     </div>
-                    <div class="archetype-content">
-                        <div class="archetype-description">
-                            <h4>Design Challenge</h4>
-                            <p>Create constant pressure that forces players to stay mobile and think quickly under stress.</p>
-                            
-                            <h4>My Solution</h4>
-                            <ul>
-                                <li><strong>No Shield:</strong> Pure offense - vulnerable but dangerous</li>
-                                <li><strong>Constant Aggression:</strong> Never stops attacking once engaged</li>
-                                <li><strong>High Damage Output:</strong> Punishes players who get caught</li>
-                                <li><strong>Predictable Pattern:</strong> Readable but relentless</li>
-                            </ul>
-                            
-                            <div class="behavior-highlight">
-                                <i class="fas fa-sword"></i>
-                                <p>"The Berserker teaches players to maintain distance and timing"</p>
-                            </div>
+                    <div class="card-body">
+                        <h4>Design Challenge</h4>
+                        <p>Create constant pressure that forces players to stay mobile and think quickly under stress.</p>
+                        
+                        <h4>My Solution</h4>
+                        <ul>
+                            <li><strong>No Shield:</strong> Pure offense - vulnerable but dangerous</li>
+                            <li><strong>Constant Aggression:</strong> Never stops attacking once engaged</li>
+                            <li><strong>High Damage Output:</strong> Punishes players who get caught</li>
+                            <li><strong>Predictable Pattern:</strong> Readable but relentless</li>
+                        </ul>
+                        
+                        <div class="highlight-box">
+                            <i class="fas fa-sword"></i>
+                            <p>"The Berserker teaches players to maintain distance and timing"</p>
                         </div>
                     </div>
                 </div>
                 
-                <div class="archetype-card">
-                    <div class="archetype-header">
+                <div class="content-card">
+                    <div class="card-header">
                         <h3>The Warrior</h3>
-                        <span class="archetype-role">Tactical Defender</span>
+                        <span class="card-subtitle">Tactical Defender</span>
                     </div>
-                    <div class="archetype-content">
-                        <div class="archetype-description">
-                            <h4>Design Challenge</h4>
-                            <p>Create a methodical opponent that rewards patient, strategic play over button mashing.</p>
-                            
-                            <h4>My Solution</h4>
-                            <ul>
-                                <li><strong>Guard Stance:</strong> Blocks incoming attacks strategically</li>
-                                <li><strong>Random Attack Windows:</strong> Unpredictable openings to exploit</li>
-                                <li><strong>Counter-Attack Focus:</strong> Punishes reckless aggression</li>
-                                <li><strong>Defensive Positioning:</strong> Controls space effectively</li>
-                            </ul>
-                            
-                            <div class="behavior-highlight">
-                                <i class="fas fa-shield-alt"></i>
-                                <p>"The Warrior forces players to learn patience and timing"</p>
-                            </div>
+                    <div class="card-body">
+                        <h4>Design Challenge</h4>
+                        <p>Create a methodical opponent that rewards patient, strategic play over button mashing.</p>
+                        
+                        <h4>My Solution</h4>
+                        <ul>
+                            <li><strong>Guard Stance:</strong> Blocks incoming attacks strategically</li>
+                            <li><strong>Random Attack Windows:</strong> Unpredictable openings to exploit</li>
+                            <li><strong>Counter-Attack Focus:</strong> Punishes reckless aggression</li>
+                            <li><strong>Defensive Positioning:</strong> Controls space effectively</li>
+                        </ul>
+                        
+                        <div class="highlight-box">
+                            <i class="fas fa-shield-alt"></i>
+                            <p>"The Warrior forces players to learn patience and timing"</p>
                         </div>
                     </div>
                 </div>
                 
-                <div class="archetype-card">
-                    <div class="archetype-header">
+                <div class="content-card">
+                    <div class="card-header">
                         <h3>The Cleric</h3>
-                        <span class="archetype-role">Support Healer</span>
+                        <span class="card-subtitle">Support Healer</span>
                     </div>
-                    <div class="archetype-content">
-                        <div class="archetype-description">
-                            <h4>Design Challenge</h4>
-                            <p>Add a priority target that changes the entire flow of multi-enemy encounters.</p>
-                            
-                            <h4>My Solution</h4>
-                            <ul>
-                                <li><strong>Evasive Behavior:</strong> Runs from direct confrontation</li>
-                                <li><strong>Smart Healing:</strong> Only heals damaged allies (&lt;100% HP)</li>
-                                <li><strong>Positioning AI:</strong> Stays behind other enemies for protection</li>
-                                <li><strong>Threat Assessment:</strong> Prioritizes healing the most damaged ally</li>
-                            </ul>
-                            
-                            <div class="behavior-highlight">
-                                <i class="fas fa-heart"></i>
-                                <p>"The Cleric creates tactical depth in group encounters"</p>
-                            </div>
+                    <div class="card-body">
+                        <h4>Design Challenge</h4>
+                        <p>Add a priority target that changes the entire flow of multi-enemy encounters.</p>
+                        
+                        <h4>My Solution</h4>
+                        <ul>
+                            <li><strong>Evasive Behavior:</strong> Runs from direct confrontation</li>
+                            <li><strong>Smart Healing:</strong> Only heals damaged allies (&lt;100% HP)</li>
+                            <li><strong>Positioning AI:</strong> Stays behind other enemies for protection</li>
+                            <li><strong>Threat Assessment:</strong> Prioritizes healing the most damaged ally</li>
+                        </ul>
+                        
+                        <div class="highlight-box">
+                            <i class="fas fa-heart"></i>
+                            <p>"The Cleric creates tactical depth in group encounters"</p>
                         </div>
                     </div>
                 </div>
@@ -279,50 +273,57 @@
     </section>
 
     <!-- Technical Implementation -->
-    <section class="technical-section">
+    <section class="section">
         <div class="container">
             <h2 class="section-title">Technical Implementation Deep Dive</h2>
             
-            <div class="tech-tabs-container">
+            <div>
                 <div class="tab-navigation">
-                    <button class="tech-tab-btn active" data-tab="behavior-trees">Behavior Trees</button>
-                    <button class="tech-tab-btn" data-tab="ai-architecture">AI Architecture</button>
-                    <button class="tech-tab-btn" data-tab="performance">Performance & Polish</button>
+                    <button class="tab-btn active" data-tab="behavior-trees">Behavior Trees</button>
+                    <button class="tab-btn" data-tab="ai-architecture">AI Architecture</button>
+                    <button class="tab-btn" data-tab="performance">Performance & Polish</button>
                 </div>
                 
-                <div class="tab-content-container">
-                    <div class="tech-tab-content active" id="behavior-trees">
-                        <div class="tab-content-grid">
+                <div>
+                    <div class="tab-content active" id="behavior-trees">
+                        <div class="two-col">
                             <div class="content-text">
                                 <h3>Building Intelligent Behavior Trees</h3>
                                 <p>My approach to AI behavior was to create modular, readable behavior trees that designers could easily modify and expand.</p>
                                 
                                 <h4>Key Design Decisions:</h4>
-                                <ul class="feature-list">
+                                <ul>
                                     <li><strong>Hierarchical Structure:</strong> Each enemy has a master behavior tree with specialized sub-trees for combat, movement, and decision-making</li>
                                     <li><strong>State-Based Logic:</strong> Clear separation between idle, combat, and special ability states</li>
                                     <li><strong>Priority Systems:</strong> Higher-priority behaviors can interrupt lower-priority ones (healing trumps attacking for Clerics)</li>
                                     <li><strong>Contextual Awareness:</strong> AI considers player position, ally health, and environmental factors</li>
                                 </ul>
                                 
-                                <div class="implementation-highlight">
-                                    <h4>Berserker Behavior Tree Logic</h4>
-                                    <p>Simple but effective: <em>Can See Player? → Chase → Attack → Repeat</em></p>
-                                    <p>The beauty is in the relentlessness - no complex decision making, just pure aggression.</p>
+                                <div class="highlight-box">
+                                    <i class="fas fa-lightbulb"></i>
+                                    <div>
+                                        <h4>Berserker Behavior Tree Logic</h4>
+                                        <p>Simple but effective: <em>Can See Player? → Chase → Attack → Repeat</em></p>
+                                        <p>The beauty is in the relentlessness - no complex decision making, just pure aggression.</p>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="content-visual">
-                                <div class="behavior-tree-showcase">
-                                    <img src="../assets/images/blood-and-sand/BehaviorTree1.png" alt="Main Behavior Tree" style="width: 100%; border-radius: 8px; margin-bottom: 15px;">
-                                    <h4>Master Behavior Tree</h4>
-                                    <div class="tree-thumbnails" style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 15px;">
+                            <div>
+                                <div class="visual-container">
+                                    <div class="visual-header">
+                                        <h4>Master Behavior Tree</h4>
+                                    </div>
+                                    <div class="image-container">
+                                        <img src="../assets/images/blood-and-sand/BehaviorTree1.png" alt="Main Behavior Tree">
+                                    </div>
+                                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 15px;">
                                         <div>
                                             <img src="../assets/images/blood-and-sand/BehaviorSubTree1.png" alt="Combat Sub-tree" style="width: 100%; border-radius: 4px;">
-                                            <p style="text-align: center; margin-top: 5px; font-size: 0.9em;">Combat Sub-tree</p>
+                                            <p style="text-align: center; margin-top: 5px; font-size: 0.9em; color: var(--color-light-gray);">Combat Sub-tree</p>
                                         </div>
                                         <div>
                                             <img src="../assets/images/blood-and-sand/BehaviorSubTree2.png" alt="Movement Sub-tree" style="width: 100%; border-radius: 4px;">
-                                            <p style="text-align: center; margin-top: 5px; font-size: 0.9em;">Movement Sub-tree</p>
+                                            <p style="text-align: center; margin-top: 5px; font-size: 0.9em; color: var(--color-light-gray);">Movement Sub-tree</p>
                                         </div>
                                     </div>
                                 </div>
@@ -330,21 +331,21 @@
                         </div>
                     </div>
                     
-                    <div class="tech-tab-content" id="ai-architecture">
-                        <div class="tab-content-grid">
+                    <div class="tab-content" id="ai-architecture">
+                        <div class="two-col">
                             <div class="content-text">
                                 <h3>Scalable AI Architecture</h3>
                                 <p>Building a system that could handle multiple intelligent enemies required careful architectural planning.</p>
                                 
                                 <h4>My Architectural Approach:</h4>
-                                <ul class="feature-list">
+                                <ul>
                                     <li><strong>Component-Based Design:</strong> Separate components for perception, decision-making, and action execution</li>
                                     <li><strong>Shared Knowledge System:</strong> Enemies can communicate threats and coordinate behaviors</li>
                                     <li><strong>Modular Abilities:</strong> Easy to add new attacks, movements, and special abilities</li>
                                     <li><strong>Data-Driven Configuration:</strong> Designers can tweak AI parameters without code changes</li>
                                 </ul>
                                 
-                                <div class="architecture-diagram">
+                                <div style="margin: 2rem 0;">
                                     <h4>AI System Architecture</h4>
                                     <div style="background: #2a2a2a; padding: 20px; border-radius: 8px; margin-top: 15px;">
                                         <div style="text-align: center; color: #dc2626; font-family: monospace;">
@@ -357,60 +358,74 @@
                                     </div>
                                 </div>
                                 
-                                <div class="implementation-highlight">
-                                    <h4>Group AI Coordination</h4>
-                                    <p>Clerics communicate with other enemies to determine healing priorities, while Warriors can call for backup when overwhelmed.</p>
+                                <div class="highlight-box">
+                                    <i class="fas fa-users"></i>
+                                    <div>
+                                        <h4>Group AI Coordination</h4>
+                                        <p>Clerics communicate with other enemies to determine healing priorities, while Warriors can call for backup when overwhelmed.</p>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="content-visual">
-                                <div class="architecture-showcase">
-                                    <img src="../assets/images/blood-and-sand/BehaviorTree2.png" alt="Behavior Tree Architecture" style="width: 100%; border-radius: 8px; margin-bottom: 15px;">
-                                    <h4>Advanced Behavior Tree</h4>
-                                    <img src="../assets/images/blood-and-sand/BehaviorSubTree3.png" alt="Decision Making Sub-tree" style="width: 100%; border-radius: 8px; margin-top: 15px;">
-                                    <p style="text-align: center; margin-top: 10px;">Decision Making Sub-tree</p>
+                            <div>
+                                <div class="visual-container">
+                                    <div class="visual-header">
+                                        <h4>Advanced Behavior Tree</h4>
+                                    </div>
+                                    <div class="image-container">
+                                        <img src="../assets/images/blood-and-sand/BehaviorTree2.png" alt="Behavior Tree Architecture">
+                                    </div>
+                                    <div class="image-container" style="margin-top: 15px;">
+                                        <img src="../assets/images/blood-and-sand/BehaviorSubTree3.png" alt="Decision Making Sub-tree">
+                                        <p style="text-align: center; margin-top: 10px; color: var(--color-light-gray);">Decision Making Sub-tree</p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                     
-                    <div class="tech-tab-content" id="performance">
-                        <div class="tab-content-grid">
+                    <div class="tab-content" id="performance">
+                        <div class="two-col">
                             <div class="content-text">
                                 <h3>Performance Optimization & Polish</h3>
                                 <p>Smart AI means nothing if the game doesn't run smoothly. My focus was on maintaining 60+ FPS even with complex AI calculations.</p>
                                 
                                 <h4>Optimization Strategies:</h4>
-                                <ul class="feature-list">
+                                <ul>
                                     <li><strong>LOD System for AI:</strong> Distant enemies use simplified behavior trees</li>
                                     <li><strong>Perception Optimization:</strong> Staggered sight checks to spread CPU load across frames</li>
                                     <li><strong>Smart Update Rates:</strong> Non-combat AI updates less frequently</li>
                                     <li><strong>Memory Pooling:</strong> Reuse objects for projectiles and temporary effects</li>
                                 </ul>
                                 
-                                <div class="performance-metrics" style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 15px; margin-top: 20px;">
-                                    <div style="background: #2a2a2a; padding: 15px; border-radius: 8px; text-align: center;">
-                                        <div style="font-size: 2em; color: #dc2626; font-weight: bold;">60+</div>
-                                        <div>FPS Maintained</div>
+                                <div class="metrics-grid" style="grid-template-columns: repeat(2, 1fr);">
+                                    <div class="metric-card">
+                                        <span class="metric-value">60+</span>
+                                        <span class="metric-label">FPS Maintained</span>
                                     </div>
-                                    <div style="background: #2a2a2a; padding: 15px; border-radius: 8px; text-align: center;">
-                                        <div style="font-size: 2em; color: #dc2626; font-weight: bold;">20+</div>
-                                        <div>Concurrent AI</div>
+                                    <div class="metric-card">
+                                        <span class="metric-value">20+</span>
+                                        <span class="metric-label">Concurrent AI</span>
                                     </div>
                                 </div>
                                 
-                                <div class="implementation-highlight">
-                                    <h4>The Polish Phase</h4>
-                                    <p>Fine-tuning AI timing, attack telegraphs, and visual feedback to make combat feel responsive and fair. Players needed to feel like victories and defeats were earned.</p>
+                                <div class="highlight-box">
+                                    <i class="fas fa-paint-brush"></i>
+                                    <div>
+                                        <h4>The Polish Phase</h4>
+                                        <p>Fine-tuning AI timing, attack telegraphs, and visual feedback to make combat feel responsive and fair. Players needed to feel like victories and defeats were earned.</p>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="content-visual">
-                                <div class="polish-showcase">
-                                    <h4>Combat Flow & Feel</h4>
+                            <div>
+                                <div class="visual-container">
+                                    <div class="visual-header">
+                                        <h4>Combat Flow & Feel</h4>
+                                    </div>
                                     <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 15px;">
                                         <img src="../assets/images/blood-and-sand/Combat1.png" alt="Combat Polish 1" style="width: 100%; border-radius: 4px;">
                                         <img src="../assets/images/blood-and-sand/Combat3.png" alt="Combat Polish 2" style="width: 100%; border-radius: 4px;">
                                     </div>
-                                    <p style="text-align: center; margin-top: 10px;">Before and after polish passes - notice the improved visual clarity and spacing</p>
+                                    <p style="text-align: center; margin-top: 10px; color: var(--color-light-gray);">Before and after polish passes - notice the improved visual clarity and spacing</p>
                                 </div>
                             </div>
                         </div>
@@ -421,49 +436,57 @@
     </section>
 
     <!-- The Feeling of the Game -->
-    <section class="game-feeling-section">
+    <section class="section alt-bg">
         <div class="container">
             <h2 class="section-title">Creating the Right Combat Feel</h2>
-            <div class="feeling-grid">
-                <div class="feeling-content">
-                    <p class="feeling-intro">
+            <div class="two-col">
+                <div class="content-text">
+                    <p style="font-size: 1.2rem; line-height: 1.8; color: var(--color-light-gray); margin-bottom: 2rem;">
                         Beyond the technical implementation, I wanted to create a specific <em>feeling</em> when players experienced combat. 
                         Every decision was made to support this emotional goal.
                     </p>
                     
-                    <div class="feeling-aspects">
-                        <div class="aspect-card">
+                    <div class="feature-list">
+                        <div class="feature-item">
                             <i class="fas fa-fist-raised"></i>
-                            <h3>Visceral Impact</h3>
-                            <p>Every hit needed to feel weighty and consequential. AI timing and player feedback were tuned to create that satisfying "crunch" when attacks connect.</p>
+                            <div>
+                                <h4>Visceral Impact</h4>
+                                <p>Every hit needed to feel weighty and consequential. AI timing and player feedback were tuned to create that satisfying "crunch" when attacks connect.</p>
+                            </div>
                         </div>
                         
-                        <div class="aspect-card">
+                        <div class="feature-item">
                             <i class="fas fa-chess"></i>
-                            <h3>Strategic Depth</h3>
-                            <p>Players should feel smart when they figure out the optimal approach for each enemy combination. The "aha!" moment when they realize they need to target the Cleric first.</p>
+                            <div>
+                                <h4>Strategic Depth</h4>
+                                <p>Players should feel smart when they figure out the optimal approach for each enemy combination. The "aha!" moment when they realize they need to target the Cleric first.</p>
+                            </div>
                         </div>
                         
-                        <div class="aspect-card">
+                        <div class="feature-item">
                             <i class="fas fa-heartbeat"></i>
-                            <h3>Mounting Tension</h3>
-                            <p>Combat encounters build intensity naturally. Starting with single enemies, escalating to coordinated group attacks that test everything the player has learned.</p>
+                            <div>
+                                <h4>Mounting Tension</h4>
+                                <p>Combat encounters build intensity naturally. Starting with single enemies, escalating to coordinated group attacks that test everything the player has learned.</p>
+                            </div>
                         </div>
                         
-                        <div class="aspect-card">
+                        <div class="feature-item">
                             <i class="fas fa-trophy"></i>
-                            <h3>Earned Victory</h3>
-                            <p>When players win, they should feel like they outplayed intelligent opponents, not just executed the right button sequence. AI behaviors reward skill and punish mistakes fairly.</p>
+                            <div>
+                                <h4>Earned Victory</h4>
+                                <p>When players win, they should feel like they outplayed intelligent opponents, not just executed the right button sequence. AI behaviors reward skill and punish mistakes fairly.</p>
+                            </div>
                         </div>
                     </div>
                 </div>
                 
-                <div class="feeling-visual">
-                    <div class="combat-showcase">
+                <div>
+                    <div style="position: relative; border-radius: var(--radius-lg); overflow: hidden;">
                         <img src="../assets/images/blood-and-sand/Combat4.png" alt="Epic Combat Moment" style="width: 100%; border-radius: 12px;">
-                        <div class="showcase-overlay">
-                            <h3>"The moment when everything clicks"</h3>
-                            <p>Player facing multiple enemy types, using terrain and tactics to overcome the challenge</p>
+                        <div style="position: absolute; bottom: 0; left: 0; right: 0; padding: 2rem; background: linear-gradient(to top, rgba(10, 10, 10, 0.95), transparent);">
+                            <h3 style="color: var(--theme-secondary); margin-bottom: 0.5rem;">"The moment when everything clicks"</h3>
+                            <p style="color: var(--color-light-gray);">Player facing multiple enemy types, using terrain and tactics to overcome the challenge</p>
                         </div>
                     </div>
                 </div>
@@ -472,30 +495,30 @@
     </section>
 
     <!-- Development Insights -->
-    <section class="development-insights">
+    <section class="section">
         <div class="container">
             <h2 class="section-title">Key Development Insights</h2>
-            <div class="insights-grid">
-                <div class="insight-card">
-                    <div class="insight-number">01</div>
+            <div class="grid-4">
+                <div class="content-card">
+                    <div style="font-size: 3rem; font-weight: bold; color: var(--theme-secondary); margin-bottom: 1rem;">01</div>
                     <h3>Simple Can Be Sophisticated</h3>
                     <p>The Berserker's straightforward aggression was more effective than complex behaviors. Sometimes the best AI is the most readable AI.</p>
                 </div>
                 
-                <div class="insight-card">
-                    <div class="insight-number">02</div>
+                <div class="content-card">
+                    <div style="font-size: 3rem; font-weight: bold; color: var(--theme-secondary); margin-bottom: 1rem;">02</div>
                     <h3>Player Psychology Matters</h3>
                     <p>AI behavior timing had to account for human reaction time and decision-making patterns. Frame-perfect AI isn't fun AI.</p>
                 </div>
                 
-                <div class="insight-card">
-                    <div class="insight-number">03</div>
+                <div class="content-card">
+                    <div style="font-size: 3rem; font-weight: bold; color: var(--theme-secondary); margin-bottom: 1rem;">03</div>
                     <h3>Group Dynamics Change Everything</h3>
                     <p>Individual enemy behaviors that worked perfectly solo needed adjustment when fighting in groups. The whole is different than the sum of its parts.</p>
                 </div>
                 
-                <div class="insight-card">
-                    <div class="insight-number">04</div>
+                <div class="content-card">
+                    <div style="font-size: 3rem; font-weight: bold; color: var(--theme-secondary); margin-bottom: 1rem;">04</div>
                     <h3>Performance Is Part of Design</h3>
                     <p>Optimization wasn't an afterthought—it was integrated into the design process. Smooth performance enhances the feeling of responsive, intelligent AI.</p>
                 </div>
@@ -504,62 +527,62 @@
     </section>
 
     <!-- Technology Stack -->
-    <section class="tech-stack-section">
+    <section class="section alt-bg">
         <div class="container">
             <h2 class="section-title">Technology & Tools</h2>
-            <div class="tech-stack-grid">
-                <div class="tech-category">
-                    <h3>Core Development</h3>
-                    <div class="tech-items">
-                        <div class="tech-item primary">
+            <div class="grid-3">
+                <div class="card">
+                    <h3 style="margin-bottom: 1.5rem;">Core Development</h3>
+                    <div style="display: flex; flex-direction: column; gap: 1rem;">
+                        <div class="icon-item" style="flex-direction: row; justify-content: start; text-align: left;">
                             <i class="fab fa-unreal-engine"></i>
                             <span>Unreal Engine 5</span>
                         </div>
-                        <div class="tech-item primary">
+                        <div class="icon-item" style="flex-direction: row; justify-content: start; text-align: left;">
                             <i class="fas fa-code"></i>
                             <span>C++</span>
                         </div>
-                        <div class="tech-item primary">
+                        <div class="icon-item" style="flex-direction: row; justify-content: start; text-align: left;">
                             <i class="fas fa-project-diagram"></i>
                             <span>Blueprint Visual Scripting</span>
                         </div>
                     </div>
                 </div>
                 
-                <div class="tech-category">
-                    <h3>AI Systems</h3>
-                    <div class="tech-items">
-                        <div class="tech-item secondary">
+                <div class="card">
+                    <h3 style="margin-bottom: 1.5rem;">AI Systems</h3>
+                    <div style="display: flex; flex-direction: column; gap: 1rem;">
+                        <div class="icon-item" style="flex-direction: row; justify-content: start; text-align: left;">
                             <i class="fas fa-brain"></i>
                             <span>Behavior Trees</span>
                         </div>
-                        <div class="tech-item secondary">
+                        <div class="icon-item" style="flex-direction: row; justify-content: start; text-align: left;">
                             <i class="fas fa-eye"></i>
                             <span>AI Perception</span>
                         </div>
-                        <div class="tech-item secondary">
+                        <div class="icon-item" style="flex-direction: row; justify-content: start; text-align: left;">
                             <i class="fas fa-route"></i>
                             <span>Navigation Mesh</span>
                         </div>
-                        <div class="tech-item secondary">
+                        <div class="icon-item" style="flex-direction: row; justify-content: start; text-align: left;">
                             <i class="fas fa-sitemap"></i>
                             <span>State Machines</span>
                         </div>
                     </div>
                 </div>
                 
-                <div class="tech-category">
-                    <h3>Development Pipeline</h3>
-                    <div class="tech-items">
-                        <div class="tech-item secondary">
+                <div class="card">
+                    <h3 style="margin-bottom: 1.5rem;">Development Pipeline</h3>
+                    <div style="display: flex; flex-direction: column; gap: 1rem;">
+                        <div class="icon-item" style="flex-direction: row; justify-content: start; text-align: left;">
                             <i class="fas fa-code-branch"></i>
                             <span>Perforce Version Control</span>
                         </div>
-                        <div class="tech-item secondary">
+                        <div class="icon-item" style="flex-direction: row; justify-content: start; text-align: left;">
                             <i class="fas fa-chart-line"></i>
                             <span>Custom Profiling Tools</span>
                         </div>
-                        <div class="tech-item secondary">
+                        <div class="icon-item" style="flex-direction: row; justify-content: start; text-align: left;">
                             <i class="fas fa-bug"></i>
                             <span>Debug Visualization</span>
                         </div>
@@ -570,22 +593,20 @@
     </section>
 
     <!-- Call to Action -->
-    <section class="project-next-steps">
+    <section class="section gradient-bg" style="text-align: center;">
         <div class="container">
-            <div class="next-steps-content">
-                <h2>Want to Discuss AI Combat Design?</h2>
-                <p>I'd love to talk about the specific challenges, architectural decisions, and lessons learned from building this AI combat system. Every project teaches something new about creating engaging, intelligent opponents.</p>
-                <div class="next-actions">
-                    <a href="../index.html#contact" class="btn btn-primary btn-large">
-                        <i class="fas fa-comments"></i> Let's Talk AI Design
-                    </a>
-                    <a href="index.html" class="btn btn-secondary btn-large">
-                        <i class="fas fa-arrow-left"></i> View More Projects
-                    </a>
-                    <a href="../assets/resume/JosephBrownAICombatResume.pdf" class="btn btn-outline btn-large" target="_blank">
-                        <i class="fas fa-download"></i> Download Resume
-                    </a>
-                </div>
+            <h2 style="font-size: 2.5rem; background: linear-gradient(45deg, var(--theme-primary), var(--theme-secondary)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-bottom: 1rem;">Want to Discuss AI Combat Design?</h2>
+            <p style="font-size: 1.2rem; color: var(--color-light-gray); margin-bottom: 2rem; max-width: 800px; margin-left: auto; margin-right: auto;">I'd love to talk about the specific challenges, architectural decisions, and lessons learned from building this AI combat system. Every project teaches something new about creating engaging, intelligent opponents.</p>
+            <div style="display: flex; gap: 1.5rem; justify-content: center; flex-wrap: wrap;">
+                <a href="../index.html#contact" class="btn btn-primary btn-large">
+                    <i class="fas fa-comments"></i> Let's Talk AI Design
+                </a>
+                <a href="index.html" class="btn btn-secondary btn-large">
+                    <i class="fas fa-arrow-left"></i> View More Projects
+                </a>
+                <a href="../assets/resume/JosephBrownAICombatResume.pdf" class="btn btn-outline btn-large" target="_blank">
+                    <i class="fas fa-download"></i> Download Resume
+                </a>
             </div>
         </div>
     </section>
@@ -599,66 +620,5 @@
     </footer>
 
     <script src="../script.js"></script>
-    <script>
-        // Project-specific JavaScript for tabs and interactions
-        document.addEventListener('DOMContentLoaded', function() {
-            // Technical tabs functionality
-            document.querySelectorAll('.tech-tab-btn').forEach(btn => {
-                btn.addEventListener('click', () => {
-                    const tabId = btn.dataset.tab;
-                    
-                    // Remove active classes
-                    document.querySelectorAll('.tech-tab-btn').forEach(b => b.classList.remove('active'));
-                    document.querySelectorAll('.tech-tab-content').forEach(c => c.classList.remove('active'));
-                    
-                    // Add active classes
-                    btn.classList.add('active');
-                    document.getElementById(tabId).classList.add('active');
-                });
-            });
-            
-            // Gallery thumbnail interactions
-            document.querySelectorAll('.thumbnail').forEach((thumb, index) => {
-                thumb.addEventListener('click', () => {
-                    const mainImage = document.querySelector('.gallery-item.main img');
-                    const thumbImage = thumb.querySelector('img');
-                    if (mainImage && thumbImage) {
-                        const tempSrc = mainImage.src;
-                        const tempAlt = mainImage.alt;
-                        mainImage.src = thumbImage.src;
-                        mainImage.alt = thumbImage.alt;
-                        thumbImage.src = tempSrc;
-                        thumbImage.alt = tempAlt;
-                    }
-                });
-            });
-            
-            // Smooth scrolling for anchor links
-            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-                anchor.addEventListener('click', function (e) {
-                    e.preventDefault();
-                    const target = document.querySelector(this.getAttribute('href'));
-                    if (target) {
-                        target.scrollIntoView({
-                            behavior: 'smooth',
-                            block: 'start'
-                        });
-                    }
-                });
-            });
-            
-            // Add hover effects to archetype cards
-            document.querySelectorAll('.archetype-card').forEach(card => {
-                card.addEventListener('mouseenter', () => {
-                    card.style.transform = 'translateY(-5px)';
-                    card.style.transition = 'transform 0.3s ease';
-                });
-                
-                card.addEventListener('mouseleave', () => {
-                    card.style.transform = 'translateY(0)';
-                });
-            });
-        });
-    </script>
 </body>
 </html>
