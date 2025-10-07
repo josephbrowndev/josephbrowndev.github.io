@@ -15,7 +15,7 @@
             <a href="../index.html" class="nav-logo">Joseph Brown</a>
             <ul class="nav-menu">
                 <li><a href="../index.html" class="nav-link">Home</a></li>
-                <li><a href="/skills.html" class="nav-link">Skills</a></li>
+                <li><a href="../skills.html" class="nav-link">Skills</a></li>
                 <li><a href="index.html" class="nav-link">Projects</a></li>
                 <li><a href="resume.html" class="nav-link">Resume</a></li>
                 <li><a href="../contact.html" class="nav-link">Contact</a></li>
@@ -31,7 +31,7 @@
     <!-- Mobile Menu -->
     <div class="mobile-menu">
         <a href="../index.html" class="mobile-nav-link">Home</a>
-        <a href="/skills.html" class="mobile-nav-link">Skills</a>
+        <a href="../skills.html" class="mobile-nav-link">Skills</a>
         <a href="index.html" class="mobile-nav-link">Projects</a>
         <a href="resume.html" class="mobile-nav-link">Resume</a>
         <a href="../contact.html" class="mobile-nav-link">Contact</a>
@@ -57,192 +57,180 @@
     </div>
 
     <!-- Projects Hero -->
-    <section class="projects-hero">
+    <section class="page-hero">
         <div class="container">
-            <h1 class="projects-hero-title">Learning & Development Portfolio</h1>
-            <p class="projects-hero-subtitle">
+            <h1 class="page-title">Learning & Development Portfolio</h1>
+            <p class="page-subtitle">
                 Showcasing my journey as an entry-level game developer through published projects, academic work, and continuous learning
             </p>
         </div>
     </section>
 
     <!-- Projects Grid -->
-    <section class="projects-grid-section">
+    <section class="section">
         <div class="container">
-            <div class="projects-grid">
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(500px, 1fr)); gap: 3rem;">
                 
                 <!-- Limitless Runner Project -->
-                <div class="project-grid-item limitless-theme featured" 
-                     data-project="limitless-runner" 
-                     data-project-url="limitless-runner.html">
-                    <div class="project-thumbnail">
-                        <div class="thumbnail-media">
-                            <div class="project-video-container">
-                                <!-- Static thumbnail image -->
-                                <img src="../assets/images/limitless-runner/CleanCloding.png" 
-                                     alt="Limitless Runner Gameplay" 
-                                     class="project-thumbnail-image">
-                                
-                                <div class="thumbnail-overlay">
-                                    <div class="play-button video-play-btn" 
-                                         data-video-id="F65bM0gajLo"
-                                         data-video-title="Limitless Runner - Gameplay Demo">
-                                        <i class="fas fa-play-circle"></i>
-                                    </div>
-                                    <div class="project-preview-content">
-                                        <h4>Published Steam Game</h4>
-                                        <p>Procedural • Endless • First Commercial Release</p>
-                                    </div>
-                                </div>
+                <div class="project-card limitless-theme featured" 
+                     style="display: flex; flex-direction: column; cursor: pointer;"
+                     onclick="window.location.href='limitless-runner.html'">
+                    <div style="position: relative; border-radius: var(--radius-lg) var(--radius-lg) 0 0; overflow: hidden;">
+                        <img src="../assets/images/limitless-runner/CleanCloding.png" 
+                             alt="Limitless Runner Gameplay" 
+                             style="width: 100%; height: 250px; object-fit: cover;">
+                        
+                        <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: linear-gradient(to bottom, transparent 0%, rgba(0,0,0,0.7) 100%); display: flex; align-items: center; justify-content: center; opacity: 0; transition: opacity 0.3s;">
+                            <div class="play-button video-play-btn" 
+                                 data-video-id="F65bM0gajLo"
+                                 data-video-title="Limitless Runner - Gameplay Demo"
+                                 onclick="event.stopPropagation();"
+                                 style="font-size: 4rem; color: var(--theme-secondary); cursor: pointer;">
+                                <i class="fas fa-play-circle"></i>
                             </div>
                         </div>
-                        <div class="project-info">
-                            <span class="project-badge">Published</span>
-                            <h3>Limitless Runner</h3>
-                            <p class="project-type">First Published Steam Game</p>
-                            <div class="project-tags">
-                                <span class="tag">Blueprint Scripting</span>
-                                <span class="tag">Procedural Generation</span>
-                                <span class="tag">Steam Publishing</span>
+                    </div>
+                    
+                    <div style="padding: 2rem; flex: 1; display: flex; flex-direction: column;">
+                        <span class="project-badge" style="background: linear-gradient(45deg, #22c55e, #4ade80); color: white; padding: 0.5rem 1rem; border-radius: 20px; font-size: 0.9rem; font-weight: bold; margin-bottom: 1rem; display: inline-block; width: fit-content;">Published</span>
+                        <h3 style="color: #22c55e; font-size: 1.8rem; margin-bottom: 0.5rem;">Limitless Runner</h3>
+                        <p style="color: var(--theme-secondary); font-style: italic; margin-bottom: 1rem;">First Published Steam Game</p>
+                        
+                        <div class="project-tags" style="display: flex; gap: 0.5rem; margin-bottom: 1.5rem; flex-wrap: wrap;">
+                            <span class="tag">Blueprint Scripting</span>
+                            <span class="tag">Procedural Generation</span>
+                            <span class="tag">Steam Publishing</span>
+                        </div>
+                        
+                        <div class="hero-stat-grid" style="grid-template-columns: repeat(3, 1fr); margin-bottom: 1.5rem;">
+                            <div class="stat">
+                                <span class="stat-value" style="color: #22c55e;">Published</span>
+                                <span class="stat-label">Status</span>
                             </div>
-                            <div class="project-stats">
-                                <div class="stat">
-                                    <span class="stat-value" style="color: #22c55e;">Published</span>
-                                    <span class="stat-label">Status</span>
-                                </div>
-                                <div class="stat">
-                                    <span class="stat-value" style="color: #22c55e;">5</span>
-                                    <span class="stat-label">Platform Types</span>
-                                </div>
-                                <div class="stat">
-                                    <span class="stat-value">∞</span>
-                                    <span class="stat-label">Levels</span>
-                                </div>
+                            <div class="stat">
+                                <span class="stat-value" style="color: #22c55e;">5</span>
+                                <span class="stat-label">Platform Types</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-value">∞</span>
+                                <span class="stat-label">Levels</span>
                             </div>
                         </div>
-                        <div class="project-actions">
-                            <a href="https://store.steampowered.com/app/3843330/Limitless_Runner/" class="btn btn-primary" target="_blank" onclick="event.stopPropagation()">
+                        
+                        <div style="display: flex; gap: 1rem; margin-top: auto;">
+                            <a href="https://store.steampowered.com/app/3843330/Limitless_Runner/" class="btn btn-primary" target="_blank" onclick="event.stopPropagation()" style="flex: 1; text-align: center;">
                                 <i class="fab fa-steam"></i> View on Steam
                             </a>
-                            <a href="limitless-runner.html" class="btn btn-secondary" onclick="event.stopPropagation()">
-                                <i class="fas fa-info-circle"></i> Project Details
+                            <a href="limitless-runner.html" class="btn btn-secondary" onclick="event.stopPropagation()" style="flex: 1; text-align: center;">
+                                <i class="fas fa-info-circle"></i> Details
                             </a>
                         </div>
                     </div>
                 </div>
 
                 <!-- Blood and Sand Project -->
-                <div class="project-grid-item blood-sand-theme" 
-                     data-project="blood-sand" 
-                     data-project-url="blood-and-sand.html">
-                    <div class="project-thumbnail">
-                        <div class="thumbnail-media">
-                            <div class="project-video-container">
-                                <!-- Static thumbnail image -->
-                                <img src="../assets/images/blood-and-sand/Combat1.png" 
-                                     alt="Blood and Sand Combat" 
-                                     class="project-thumbnail-image">
-                                
-                                <div class="thumbnail-overlay">
-                                    <div class="play-button video-play-btn" 
-                                         data-video-id="BZ1hM8KzCBo"
-                                         data-video-title="Blood and Sand - AI Learning Demo">
-                                        <i class="fas fa-play-circle"></i>
-                                    </div>
-                                    <div class="project-preview-content">
-                                        <h4>AI Learning Project</h4>
-                                        <p>Academic • Blueprint-Based • Basic AI</p>
-                                    </div>
-                                </div>
+                <div class="project-card" 
+                     style="display: flex; flex-direction: column; cursor: pointer;"
+                     onclick="window.location.href='blood-and-sand.html'">
+                    <div style="position: relative; border-radius: var(--radius-lg) var(--radius-lg) 0 0; overflow: hidden;">
+                        <img src="../assets/images/blood-and-sand/Combat1.png" 
+                             alt="Blood and Sand Combat" 
+                             style="width: 100%; height: 250px; object-fit: cover;">
+                        
+                        <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: linear-gradient(to bottom, transparent 0%, rgba(0,0,0,0.7) 100%); display: flex; align-items: center; justify-content: center; opacity: 0; transition: opacity 0.3s;">
+                            <div class="play-button video-play-btn" 
+                                 data-video-id="BZ1hM8KzCBo"
+                                 data-video-title="Blood and Sand - AI Learning Demo"
+                                 onclick="event.stopPropagation();"
+                                 style="font-size: 4rem; color: var(--theme-secondary); cursor: pointer;">
+                                <i class="fas fa-play-circle"></i>
                             </div>
                         </div>
-                        <div class="project-info">
-                            <span class="project-badge">Academic Project</span>
-                            <h3>Blood and Sand</h3>
-                            <p class="project-type">AI Behavior Learning Project</p>
-                            <div class="project-tags">
-                                <span class="tag">Blueprint Visual Scripting</span>
-                                <span class="tag">Basic AI Behaviors</span>
-                                <span class="tag">Learning Focus</span>
+                    </div>
+                    
+                    <div style="padding: 2rem; flex: 1; display: flex; flex-direction: column;">
+                        <span class="project-badge" style="background: linear-gradient(45deg, var(--theme-primary), var(--theme-primary-dark)); color: var(--theme-secondary); padding: 0.5rem 1rem; border-radius: 20px; font-size: 0.9rem; font-weight: bold; margin-bottom: 1rem; display: inline-block; width: fit-content;">Academic Project</span>
+                        <h3 style="color: var(--theme-primary); font-size: 1.8rem; margin-bottom: 0.5rem;">Blood and Sand</h3>
+                        <p style="color: var(--theme-secondary); font-style: italic; margin-bottom: 1rem;">AI Behavior Learning Project</p>
+                        
+                        <div class="project-tags" style="display: flex; gap: 0.5rem; margin-bottom: 1.5rem; flex-wrap: wrap;">
+                            <span class="tag">Blueprint Visual Scripting</span>
+                            <span class="tag">Basic AI Behaviors</span>
+                            <span class="tag">Learning Focus</span>
+                        </div>
+                        
+                        <div class="hero-stat-grid" style="grid-template-columns: repeat(3, 1fr); margin-bottom: 1.5rem;">
+                            <div class="stat">
+                                <span class="stat-value">Basic</span>
+                                <span class="stat-label">AI Level</span>
                             </div>
-                            <div class="project-stats">
-                                <div class="stat">
-                                    <span class="stat-value">Basic</span>
-                                    <span class="stat-label">AI Level</span>
-                                </div>
-                                <div class="stat">
-                                    <span class="stat-value">Academic</span>
-                                    <span class="stat-label">Project Type</span>
-                                </div>
-                                <div class="stat">
-                                    <span class="stat-value">Blueprint</span>
-                                    <span class="stat-label">Primary Tool</span>
-                                </div>
+                            <div class="stat">
+                                <span class="stat-value">Academic</span>
+                                <span class="stat-label">Project Type</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-value">Blueprint</span>
+                                <span class="stat-label">Primary Tool</span>
                             </div>
                         </div>
-                        <div class="project-actions">
-                            <a href="https://youtu.be/-jrbOJhxaas" class="btn btn-primary" target="_blank" onclick="event.stopPropagation()">
+                        
+                        <div style="display: flex; gap: 1rem; margin-top: auto;">
+                            <a href="https://youtu.be/-jrbOJhxaas" class="btn btn-primary" target="_blank" onclick="event.stopPropagation()" style="flex: 1; text-align: center;">
                                 <i class="fab fa-youtube"></i> View Trailer
                             </a>
-                            <a href="blood-and-sand.html" class="btn btn-outline" onclick="event.stopPropagation()">
-                                <i class="fas fa-info-circle"></i> Project Details
+                            <a href="blood-and-sand.html" class="btn btn-outline" onclick="event.stopPropagation()" style="flex: 1; text-align: center;">
+                                <i class="fas fa-info-circle"></i> Details
                             </a>
                         </div>
                     </div>
                 </div>
 
                 <!-- Current Learning -->
-                <div class="project-grid-item current-theme" 
-                     data-project="current-learning" 
-                     data-project-url="/skills.html">
-                    <div class="project-thumbnail">
-                        <div class="thumbnail-media">
-                            <div class="project-video-container">
-                                <!-- Static image for learning project -->
-                                <div class="project-image">
-                                    <i class="fas fa-graduation-cap"></i>
-                                </div>
-                                
-                                <div class="thumbnail-overlay">
-                                    <div class="play-button">
-                                        <i class="fas fa-book-open"></i>
-                                    </div>
-                                    <div class="project-preview-content">
-                                        <h4>Continuous Learning</h4>
-                                        <p>C++ • Backend • Professional Development</p>
-                                    </div>
-                                </div>
+                <div class="project-card current-theme" 
+                     style="display: flex; flex-direction: column; cursor: pointer;"
+                     onclick="window.location.href='../skills.html'">
+                    <div style="position: relative; border-radius: var(--radius-lg) var(--radius-lg) 0 0; overflow: hidden; height: 250px; display: flex; align-items: center; justify-content: center; background: linear-gradient(145deg, var(--color-charcoal), var(--color-dark-gray));">
+                        <i class="fas fa-graduation-cap" style="font-size: 5rem; color: var(--theme-secondary); opacity: 0.3;"></i>
+                        
+                        <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: linear-gradient(to bottom, transparent 0%, rgba(0,0,0,0.7) 100%); display: flex; align-items: center; justify-content: center;">
+                            <div style="text-align: center; color: var(--theme-secondary);">
+                                <i class="fas fa-book-open" style="font-size: 3rem; margin-bottom: 1rem;"></i>
+                                <p style="font-size: 1.2rem; font-weight: bold;">Continuous Learning</p>
                             </div>
                         </div>
-                        <div class="project-info">
-                            <span class="project-badge">In Progress</span>
-                            <h3>Current Learning & Development</h3>
-                            <p class="project-type">Skill Development | Professional Growth</p>
-                            <div class="project-tags">
-                                <span class="tag">C++ Learning</span>
-                                <span class="tag">Gameplay Development</span>
-                                <span class="tag">Unreal Engine Specialization</span>
+                    </div>
+                    
+                    <div style="padding: 2rem; flex: 1; display: flex; flex-direction: column;">
+                        <span class="project-badge" style="background: linear-gradient(45deg, #7c3aed, #a78bfa); color: white; padding: 0.5rem 1rem; border-radius: 20px; font-size: 0.9rem; font-weight: bold; margin-bottom: 1rem; display: inline-block; width: fit-content;">In Progress</span>
+                        <h3 style="color: #7c3aed; font-size: 1.8rem; margin-bottom: 0.5rem;">Current Learning & Development</h3>
+                        <p style="color: var(--theme-secondary); font-style: italic; margin-bottom: 1rem;">Skill Development | Professional Growth</p>
+                        
+                        <div class="project-tags" style="display: flex; gap: 0.5rem; margin-bottom: 1.5rem; flex-wrap: wrap;">
+                            <span class="tag">C++ Learning</span>
+                            <span class="tag">Gameplay Development</span>
+                            <span class="tag">Unreal Engine Specialization</span>
+                        </div>
+                        
+                        <div class="hero-stat-grid" style="grid-template-columns: repeat(3, 1fr); margin-bottom: 1.5rem;">
+                            <div class="stat">
+                                <span class="stat-value">Active</span>
+                                <span class="stat-label">Status</span>
                             </div>
-                            <div class="project-stats">
-                                <div class="stat">
-                                    <span class="stat-value">Active</span>
-                                    <span class="stat-label">Status</span>
-                                </div>
-                                <div class="stat">
-                                    <span class="stat-value">C++</span>
-                                    <span class="stat-label">Focus</span>
-                                </div>
-                                <div class="stat">
-                                    <span class="stat-value">Daily</span>
-                                    <span class="stat-label">Practice</span>
-                                </div>
+                            <div class="stat">
+                                <span class="stat-value">C++</span>
+                                <span class="stat-label">Focus</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-value">Daily</span>
+                                <span class="stat-label">Practice</span>
                             </div>
                         </div>
-                        <div class="project-actions">
-                            <a href="/skills.html" class="btn btn-primary" onclick="event.stopPropagation()">
+                        
+                        <div style="display: flex; gap: 1rem; margin-top: auto;">
+                            <a href="../skills.html" class="btn btn-primary" onclick="event.stopPropagation()" style="flex: 1; text-align: center;">
                                 <i class="fas fa-code"></i> View Skills
                             </a>
-                            <a href="../contact.html" class="btn btn-outline" onclick="event.stopPropagation()">
+                            <a href="../contact.html" class="btn btn-outline" onclick="event.stopPropagation()" style="flex: 1; text-align: center;">
                                 <i class="fas fa-envelope"></i> Get In Touch
                             </a>
                         </div>
@@ -250,29 +238,31 @@
                 </div>
 
                 <!-- Future Projects -->
-                <div class="project-grid-item coming-soon">
-                    <div class="project-thumbnail">
-                        <div class="thumbnail-media">
-                            <div class="project-image">
-                                <i class="fas fa-plus-circle"></i>
-                            </div>
-                            <div class="thumbnail-overlay">
-                                <div class="project-preview-content">
-                                    <h4>More Projects Coming</h4>
-                                    <p>As I continue learning and growing</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="project-info">
-                            <h3>Future Projects</h3>
-                            <p class="project-type">Coming as I Learn & Develop</p>
-                            <div class="project-tags">
-                                <span class="tag">Future</span>
-                                <span class="tag">Learning Goals</span>
+                <div class="project-card" 
+                     style="display: flex; flex-direction: column; opacity: 0.7;">
+                    <div style="position: relative; border-radius: var(--radius-lg) var(--radius-lg) 0 0; overflow: hidden; height: 250px; display: flex; align-items: center; justify-content: center; background: linear-gradient(145deg, var(--color-charcoal), var(--color-dark-gray));">
+                        <i class="fas fa-plus-circle" style="font-size: 5rem; color: var(--theme-secondary); opacity: 0.3;"></i>
+                        
+                        <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; display: flex; align-items: center; justify-content: center;">
+                            <div style="text-align: center; color: var(--theme-secondary);">
+                                <i class="fas fa-plus-circle" style="font-size: 3rem; margin-bottom: 1rem;"></i>
+                                <p style="font-size: 1.2rem; font-weight: bold;">More Projects Coming</p>
+                                <p style="font-size: 0.9rem; opacity: 0.8;">As I continue learning and growing</p>
                             </div>
                         </div>
-                        <div class="project-actions">
-                            <a href="../index.html#contact" class="btn btn-outline">Get In Touch</a>
+                    </div>
+                    
+                    <div style="padding: 2rem; flex: 1; display: flex; flex-direction: column;">
+                        <h3 style="color: var(--theme-primary); font-size: 1.8rem; margin-bottom: 0.5rem;">Future Projects</h3>
+                        <p style="color: var(--color-light-gray); font-style: italic; margin-bottom: 1rem;">Coming as I Learn & Develop</p>
+                        
+                        <div class="project-tags" style="display: flex; gap: 0.5rem; margin-bottom: 1.5rem; flex-wrap: wrap;">
+                            <span class="tag">Future</span>
+                            <span class="tag">Learning Goals</span>
+                        </div>
+                        
+                        <div style="display: flex; gap: 1rem; margin-top: auto;">
+                            <a href="../index.html#contact" class="btn btn-outline" style="flex: 1; text-align: center;">Get In Touch</a>
                         </div>
                     </div>
                 </div>
@@ -281,12 +271,12 @@
     </section>
 
     <!-- Call to Action -->
-    <section class="projects-cta">
+    <section class="section gradient-bg" style="text-align: center;">
         <div class="container">
-            <h2>Ready to Learn & Contribute</h2>
-            <p>Looking for entry-level opportunities to apply my current skills while growing in a supportive environment.</p>
-            <div class="cta-buttons">
-                <a href="contact.html" class="btn btn-primary">Start a Conversation</a>
+            <h2 style="font-size: 2.5rem; background: linear-gradient(45deg, var(--theme-primary), var(--theme-secondary)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-bottom: 1rem;">Ready to Learn & Contribute</h2>
+            <p style="font-size: 1.2rem; color: var(--color-light-gray); margin-bottom: 2rem; max-width: 800px; margin-left: auto; margin-right: auto;">Looking for entry-level opportunities to apply my current skills while growing in a supportive environment.</p>
+            <div style="display: flex; gap: 1.5rem; justify-content: center; flex-wrap: wrap;">
+                <a href="../contact.html" class="btn btn-primary">Start a Conversation</a>
                 <a href="../assets/resume/JosephBrownEntryLevelGameplayProgrammer.pdf" class="btn btn-secondary" target="_blank">Download Resume</a>
             </div>
         </div>
