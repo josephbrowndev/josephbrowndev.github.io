@@ -5,14 +5,159 @@
 // for hover, video, navigation, and project detail interactions
 // ========================================
 
+ // ========================================
+    // MODULAR NAVBAR AND FOOTER LOADING
+    // ========================================
+
+/**
+ * Load navbar and footer dynamically from external HTML files
+ */
+function loadModularComponents() {
+    // Determine if we're in a subfolder
+    const isInSubfolder = window.location.pathname.includes('/projects/');
+    
+    // Load Navbar
+    const navbarPlaceholder = document.getElementById('navbar-placeholder');
+    if (navbarPlaceholder) {
+        const navbarPath = isInSubfolder ? 'navbar-subfolder.html' : 'navbar.html';
+        fetch(navbarPath)
+            .then(response => {
+                if (!response.ok) throw new Error('Navbar not found');
+                return response.text();
+            })
+            .then(data => {
+                navbarPlaceholder.innerHTML = data;
+                console.log('Navbar loaded successfully');
+                // Re-initialize mobile menu after navbar loads
+                initializeMobileMenuAfterLoad();
+            })
+            .catch(error => {
+                console.warn('Navbar loading skipped:', error.message);
+                // If navbar files don't exist yet, initialize existing navbar
+                initializeMobileMenuAfterLoad();
+            });
+    } else {
+        // No placeholder found, use existing navbar
+        console.log('Using inline navbar');
+    }
+    
+    // Load Footer
+    const footerPlaceholder = document.getElementById('footer-placeholder');
+    if (footerPlaceholder) {
+        const footerPath = isInSubfolder ? '../footer.html' : 'footer.html';
+        fetch(footerPath)
+            .then(response => {
+                if (!response.ok) throw new Error('Footer not found');
+                return response.text();
+            })
+            .then(data => {
+                footerPlaceholder.innerHTML = data;
+                console.log('Footer loaded successfully');
+            })
+            .catch(error => {
+                console.warn('Footer loading skipped:', error.message);
+            });
+    } else {
+        console.log('Using inline footer');
+    }
+}
+
+/**
+ * Initialize mobile menu after navbar is dynamically loaded
+ * This is separated so it can be called after fetch completes
+ */
+function initializeMobileMenuAfterLoad() {
+    const hamburger = document.querySelector('.hamburger');
+    const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+    const mobileMenu = document.querySelector('.mobile-menu');
+    const body = document.body;
+
+    // Use either hamburger or mobile-menu-btn class
+    const menuToggle = hamburger || mobileMenuBtn;
+
+    if (menuToggle && mobileMenu) {
+        console.log('Mobile menu elements found and initializing');
+        
+        // Remove any existing event listeners by cloning
+        const newMenuToggle = menuToggle.cloneNode(true);
+        menuToggle.parentNode.replaceChild(newMenuToggle, menuToggle);
+        
+        // Toggle mobile menu
+        newMenuToggle.addEventListener('click', function(e) {
+            e.preventDefault();
+            console.log('Mobile menu clicked!');
+            
+            const isActive = mobileMenu.classList.contains('active');
+            
+            if (isActive) {
+                // Close menu
+                mobileMenu.classList.remove('active');
+                newMenuToggle.classList.remove('active');
+                body.classList.remove('mobile-menu-open');
+                body.style.overflow = '';
+                body.style.position = '';
+                body.style.width = '';
+                console.log('Menu closed');
+            } else {
+                // Open menu
+                mobileMenu.classList.add('active');
+                newMenuToggle.classList.add('active');
+                body.classList.add('mobile-menu-open');
+                body.style.overflow = 'hidden';
+                body.style.position = 'fixed';
+                body.style.width = '100%';
+                console.log('Menu opened');
+            }
+        });
+
+        // Close menu when clicking on a link
+        const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
+        mobileNavLinks.forEach(link => {
+            link.addEventListener('click', function() {
+                mobileMenu.classList.remove('active');
+                newMenuToggle.classList.remove('active');
+                body.classList.remove('mobile-menu-open');
+                body.style.overflow = '';
+                body.style.position = '';
+                body.style.width = '';
+                console.log('Menu closed via link click');
+            });
+        });
+
+        // Close menu when clicking outside
+        document.addEventListener('click', function(event) {
+            const isClickInsideNav = newMenuToggle.contains(event.target) || mobileMenu.contains(event.target);
+            
+            if (!isClickInsideNav && mobileMenu.classList.contains('active')) {
+                mobileMenu.classList.remove('active');
+                newMenuToggle.classList.remove('active');
+                body.classList.remove('mobile-menu-open');
+                body.style.overflow = '';
+                body.style.position = '';
+                body.style.width = '';
+                console.log('Menu closed via outside click');
+            }
+        });
+
+        // Close menu when window is resized to desktop size
+        window.addEventListener('resize', function() {
+            if (window.innerWidth > 768 && mobileMenu.classList.contains('active')) {
+                mobileMenu.classList.remove('active');
+                newMenuToggle.classList.remove('active');
+                body.classList.remove('mobile-menu-open');
+                body.style.overflow = '';
+                body.style.position = '';
+                body.style.width = '';
+                console.log('Menu closed due to resize');
+            }
+        });
+    } else {
+        console.log('Mobile menu elements not found');
+    }
+}
+
 // Conflict resolution on hover, video, and nav bar selection fixed
 document.addEventListener('DOMContentLoaded', function() {
-
-    // ========================================
-    // LOAD MODULAR NAVBAR AND FOOTER
-    // ========================================
-    
-    loadModularComponents();
     
     // ========================================
     // MOBILE MENU FUNCTIONALITY
@@ -1128,156 +1273,7 @@ document.addEventListener('DOMContentLoaded', function() {
         setTimeout(initializeLimitlessRunnerTechnical, 100);
     }
 
-    // ========================================
-    // MODULAR NAVBAR AND FOOTER LOADING
-    // ========================================
-
-/**
- * Load navbar and footer dynamically from external HTML files
- */
-function loadModularComponents() {
-    // Determine if we're in a subfolder
-    const isInSubfolder = window.location.pathname.includes('/projects/');
-    
-    // Load Navbar
-    const navbarPlaceholder = document.getElementById('navbar-placeholder');
-    if (navbarPlaceholder) {
-        const navbarPath = isInSubfolder ? 'navbar-subfolder.html' : 'navbar.html';
-        fetch(navbarPath)
-            .then(response => {
-                if (!response.ok) throw new Error('Navbar not found');
-                return response.text();
-            })
-            .then(data => {
-                navbarPlaceholder.innerHTML = data;
-                console.log('Navbar loaded successfully');
-                // Re-initialize mobile menu after navbar loads
-                initializeMobileMenuAfterLoad();
-            })
-            .catch(error => {
-                console.warn('Navbar loading skipped:', error.message);
-                // If navbar files don't exist yet, initialize existing navbar
-                initializeMobileMenuAfterLoad();
-            });
-    } else {
-        // No placeholder found, use existing navbar
-        console.log('Using inline navbar');
-    }
-    
-    // Load Footer
-    const footerPlaceholder = document.getElementById('footer-placeholder');
-    if (footerPlaceholder) {
-        const footerPath = isInSubfolder ? '../footer.html' : 'footer.html';
-        fetch(footerPath)
-            .then(response => {
-                if (!response.ok) throw new Error('Footer not found');
-                return response.text();
-            })
-            .then(data => {
-                footerPlaceholder.innerHTML = data;
-                console.log('Footer loaded successfully');
-            })
-            .catch(error => {
-                console.warn('Footer loading skipped:', error.message);
-            });
-    } else {
-        console.log('Using inline footer');
-    }
-}
-
-/**
- * Initialize mobile menu after navbar is dynamically loaded
- * This is separated so it can be called after fetch completes
- */
-function initializeMobileMenuAfterLoad() {
-    const hamburger = document.querySelector('.hamburger');
-    const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
-    const mobileMenu = document.querySelector('.mobile-menu');
-    const body = document.body;
-
-    // Use either hamburger or mobile-menu-btn class
-    const menuToggle = hamburger || mobileMenuBtn;
-
-    if (menuToggle && mobileMenu) {
-        console.log('Mobile menu elements found and initializing');
-        
-        // Remove any existing event listeners by cloning
-        const newMenuToggle = menuToggle.cloneNode(true);
-        menuToggle.parentNode.replaceChild(newMenuToggle, menuToggle);
-        
-        // Toggle mobile menu
-        newMenuToggle.addEventListener('click', function(e) {
-            e.preventDefault();
-            console.log('Mobile menu clicked!');
-            
-            const isActive = mobileMenu.classList.contains('active');
-            
-            if (isActive) {
-                // Close menu
-                mobileMenu.classList.remove('active');
-                newMenuToggle.classList.remove('active');
-                body.classList.remove('mobile-menu-open');
-                body.style.overflow = '';
-                body.style.position = '';
-                body.style.width = '';
-                console.log('Menu closed');
-            } else {
-                // Open menu
-                mobileMenu.classList.add('active');
-                newMenuToggle.classList.add('active');
-                body.classList.add('mobile-menu-open');
-                body.style.overflow = 'hidden';
-                body.style.position = 'fixed';
-                body.style.width = '100%';
-                console.log('Menu opened');
-            }
-        });
-
-        // Close menu when clicking on a link
-        const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
-        mobileNavLinks.forEach(link => {
-            link.addEventListener('click', function() {
-                mobileMenu.classList.remove('active');
-                newMenuToggle.classList.remove('active');
-                body.classList.remove('mobile-menu-open');
-                body.style.overflow = '';
-                body.style.position = '';
-                body.style.width = '';
-                console.log('Menu closed via link click');
-            });
-        });
-
-        // Close menu when clicking outside
-        document.addEventListener('click', function(event) {
-            const isClickInsideNav = newMenuToggle.contains(event.target) || mobileMenu.contains(event.target);
-            
-            if (!isClickInsideNav && mobileMenu.classList.contains('active')) {
-                mobileMenu.classList.remove('active');
-                newMenuToggle.classList.remove('active');
-                body.classList.remove('mobile-menu-open');
-                body.style.overflow = '';
-                body.style.position = '';
-                body.style.width = '';
-                console.log('Menu closed via outside click');
-            }
-        });
-
-        // Close menu when window is resized to desktop size
-        window.addEventListener('resize', function() {
-            if (window.innerWidth > 768 && mobileMenu.classList.contains('active')) {
-                mobileMenu.classList.remove('active');
-                newMenuToggle.classList.remove('active');
-                body.classList.remove('mobile-menu-open');
-                body.style.overflow = '';
-                body.style.position = '';
-                body.style.width = '';
-                console.log('Menu closed due to resize');
-            }
-        });
-    } else {
-        console.log('Mobile menu elements not found');
-    }
-}
+   
 });
 
 
