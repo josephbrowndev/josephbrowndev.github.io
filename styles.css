@@ -81,11 +81,11 @@ img { max-width: 100%; height: auto; display: block; }
 .hamburger.active .bar:nth-child(2) { opacity: 0; }
 .hamburger.active .bar:nth-child(3) { transform: rotate(45deg) translate(-5px, -6px); }
 
-.mobile-menu { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100vh; background: linear-gradient(145deg, var(--color-deep-black), var(--color-charcoal)); z-index: 1000; flex-direction: column; justify-content: center; align-items: center; transform: translateY(-100%); transition: transform var(--transition); padding-top: 80px; border-top: 2px solid var(--theme-primary); }
-.mobile-menu.active { display: flex; transform: translateY(0); }
-.mobile-nav-link { display: block; color: var(--color-white); text-decoration: none; font-size: 1.5rem; font-weight: 500; padding: 1.5rem 0; transition: var(--transition); }
-.mobile-nav-link:hover, .mobile-nav-link.active { color: var(--theme-secondary); }
-
+.mobile-menu { display: flex; /* Keep as flex, not none! */ position: fixed; top: 70px; /* Below navbar */ left: 0; width: 100%; height: calc(100vh - 70px); /* Fill rest of screen */ background: linear-gradient(145deg, var(--color-deep-black), var(--color-charcoal));     z-index: 999; flex-direction: column; justify-content: flex-start; /* Start from top */ align-items: center; padding-top: 3rem; border-top: 2px solid var(--theme-primary); /* Hidden by default with transform */ transform: translateX(-100%); /* Slide from left */ opacity: 0; transition: transform 0.3s ease, opacity 0.3s ease; pointer-events: none; /* Disable clicks when hidden */ }
+.mobile-menu.active { transform: translateX(0); /* Slide in */ opacity: 1; pointer-events: auto; /* Enable clicks when visible */ }
+.mobile-nav-link { display: block; color: var(--color-white); text-decoration: none; font-size: 1.5rem; font-weight: 500; padding: 1.5rem 0; transition: var(--transition); width: 100%; text-align: center; }
+.mobile-nav-link:hover, 
+.mobile-nav-link.active { color: var(--theme-secondary); background: rgba(220, 38, 38, 0.1); }
 /* ========================================
    5. TYPOGRAPHY
    ======================================== */
@@ -303,8 +303,8 @@ img { max-width: 100%; height: auto; display: block; }
 @media (max-width: 768px) {  
   .nav-menu { display: none !important; }  
   .hamburger { display: flex !important; }
-  .mobile-menu { display: none; /* Hidden by default */ }
-  .mobile-menu.active { display: flex !important; /* Show when active */ }
+  .mobile-menu { display: flex; /* Hidden by default */ }
+  /*.mobile-menu.active { display: flex !important; /* Show when active */ }*\
   .hero-title { font-size: 2.5rem; }
   .page-title { font-size: 2.5rem; }
   .hero-buttons { flex-direction: column; align-items: center; }
