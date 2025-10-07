@@ -300,7 +300,9 @@ img { max-width: 100%; height: auto; display: block; }
   .metrics-grid { grid-template-columns: repeat(2, 1fr); }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 768px) {  
+  .nav-menu { display: none !important; }  
+  .hamburger { display: flex !important; }
   .hero-title { font-size: 2.5rem; }
   .page-title { font-size: 2.5rem; }
   .hero-buttons { flex-direction: column; align-items: center; }
