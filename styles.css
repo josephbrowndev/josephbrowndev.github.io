@@ -280,7 +280,7 @@ img { max-width: 100%; height: auto; display: block; }
 .limitless-theme .metrics-grid { background: rgba(34, 197, 94, 0.05); }
 .limitless-theme .metric-card { border-color: rgba(34, 197, 94, 0.2); }
 .limitless-theme .icon-item:hover { background: rgba(34, 197, 94, 0.1); }
-.limitless-theme .stat { background: rgba(34, 197, 94, 0.1); }
+.limitless-theme .stat { background: rgba(34, 197, 94, 0.1); border-color: rgba(34, 197, 94, 0.2); }
 
 .current-theme.hero::before, .current-theme.page-hero::before, .current-theme.detail-hero::before { background: radial-gradient(circle at 20% 80%, rgba(124, 58, 237, 0.15) 0%, transparent 50%), radial-gradient(circle at 80% 20%, rgba(167, 139, 250, 0.1) 0%, transparent 50%); }
 .current-theme .hero-stat { background: rgba(124, 58, 237, 0.1); }
@@ -289,7 +289,7 @@ img { max-width: 100%; height: auto; display: block; }
 .current-theme .metrics-grid { background: rgba(124, 58, 237, 0.05); }
 .current-theme .metric-card { border-color: rgba(124, 58, 237, 0.2); }
 .current-theme .icon-item:hover { background: rgba(124, 58, 237, 0.1); }
-.current-theme .stat { background: rgba(124, 58, 237, 0.1); }
+.current-theme .stat { background: rgba(124, 58, 237, 0.1); border-color: rgba(124, 58, 237, 0.2); }
 
 /* ========================================
    19. RESPONSIVE UPDATES
