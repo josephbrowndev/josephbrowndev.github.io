@@ -132,8 +132,8 @@ Founder of Unusual Crypt Studios and game systems architect with hands-on Unreal
 
 ## PROFESSIONAL EXPERIENCE TIMELINE
 
-**13 Years Testing & Validation Experience (2012 - Present)**
-- Comprehensive gameplay testing across multiple genres and platforms
+**8 Years Professional Development Experience (2014 - 2022)**
+- Comprehensive gameplay testing and development across multiple genres and platforms
 - Physics simulation testing and validation
 - AI behavior verification and edge case identification
 - Performance benchmarking and optimization validation
@@ -212,7 +212,7 @@ Founder of Unusual Crypt Studios and game systems architect with hands-on Unreal
 - **Performance Expert:** Maintained 60+ FPS with 20+ concurrent AI agents
 - **System Architect:** Designed and implemented modular combat and procedural generation systems
 - **Cross-Platform:** Experience developing and validating games across multiple platforms
-- **13 Years Experience:** Comprehensive testing and validation across game development
+- **8 Years Professional Experience:** Comprehensive development and validation across game development (2014-2022)
 
 ---
 
