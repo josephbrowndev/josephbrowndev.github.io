@@ -292,6 +292,15 @@ img { max-width: 100%; height: auto; display: block; }
 .current-theme .icon-item:hover { background: rgba(124, 58, 237, 0.1); }
 .current-theme .stat { background: rgba(124, 58, 237, 0.1); border-color: rgba(124, 58, 237, 0.2); }
 
+.runes-theme.hero::before, .runes-theme.page-hero::before, .runes-theme.detail-hero::before { background: radial-gradient(circle at 20% 80%, rgba(59, 130, 246, 0.15) 0%, transparent 50%), radial-gradient(circle at 80% 20%, rgba(147, 197, 253, 0.1) 0%, transparent 50%); }
+.runes-theme .hero-stat { background: rgba(59, 130, 246, 0.1); }
+.runes-theme .content-card { border-color: rgba(59, 130, 246, 0.2); }
+.runes-theme .highlight-box { background: rgba(59, 130, 246, 0.1); }
+.runes-theme .metrics-grid { background: rgba(59, 130, 246, 0.05); }
+.runes-theme .metric-card { border-color: rgba(59, 130, 246, 0.2); }
+.runes-theme .icon-item:hover { background: rgba(59, 130, 246, 0.1); }
+.runes-theme .stat { background: rgba(59, 130, 246, 0.1); border-color: rgba(59, 130, 246, 0.2); }
+
 /* ========================================
    19. RESPONSIVE UPDATES
    ======================================== */
